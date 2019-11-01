@@ -544,15 +544,7 @@
         ]
       },
       "messageHandlers": {
-        "rows": [
-          [
-            {
-              "title": "global variables",
-              "message": "before:prepare",
-              "code": "window.draw_stimulus = \r\n(component, position, rotation, target, display_function, \r\ncostum_x=NaN, costum_y = NaN, serial_number = 1) => {\r\n\r\n\r\n  var x = (Number.isNaN(costum_x)) ? ((position % 10) * 32 - 160) : costum_x\r\n  var y = (Number.isNaN(costum_y)) ? Math.floor(position / 10) * 32 - 160 : costum_y\r\n\r\n\r\n  switch (display_function) {\r\n    \r\n    case 1:\r\n    component.options.content.push({\r\n      type: 'text',\r\n      left: x, top: y, angle: 0,\r\n      text: target? 'T':'L',\r\n      fontSize: 32,\r\n      fontFamily: 'Helvetica, Arial, Sans-Serif',\r\n      fill: 'black'\r\n    });\r\n   \r\n    break;\r\n    case 2:\r\n    component.options.content.push({\r\n    type: 'rect',\r\n    left: x, top: y, angle: 0,width:32, height:32,\r\n    fill: target? '#FF5733':'#16A085'\r\n  });\r\n  break;\r\n\r\n   case 3:\r\n    if (target) {\r\n      var stype = 1;\r\n    } else {\r\n      var stype = 2+serial_number%3;\r\n    }\r\n    component.options.content.push({\r\n    type: stype%2==0?'rect':'circle',\r\n    left: x, top: y, angle: 0,width:32, height:32,\r\n    fill: stype>2? '#FF5733':'#16A085'\r\n  });\r\n  break;\r\n  }\r\n}"
-            }
-          ]
-        ]
+        "rows": []
       },
       "viewport": [
         800,
@@ -1411,7 +1403,7 @@
         ]
       },
       "title": "Sequence",
-      "_tab": "Behavior"
+      "_tab": "Scripts"
     },
     "9": {
       "id": "9",
@@ -1447,8 +1439,8 @@
           [
             {
               "title": "",
-              "message": "",
-              "code": ""
+              "message": "before:prepare",
+              "code": "window.draw_stimulus = \r\n(component, position, rotation, target, display_function, \r\ncostum_x=NaN, costum_y = NaN, serial_number = 1) => {\r\n\r\n\r\n  var x = (Number.isNaN(costum_x)) ? ((position % 10) * 32 - 160) : costum_x\r\n  var y = (Number.isNaN(costum_y)) ? Math.floor(position / 10) * 32 - 160 : costum_y\r\n\r\n\r\n  switch (display_function) {\r\n    \r\n    case 1:\r\n    component.options.content.push({\r\n      type: 'text',\r\n      left: x, top: y, angle: 0,\r\n      text: target? 'T':'L',\r\n      fontSize: 32,\r\n      fontFamily: 'Helvetica, Arial, Sans-Serif',\r\n      fill: 'black'\r\n    });\r\n   \r\n    break;\r\n    case 2:\r\n    component.options.content.push({\r\n    type: 'rect',\r\n    left: x, top: y, angle: 0,width:32, height:32,\r\n    fill: target? '#FF5733':'#16A085'\r\n  });\r\n  break;\r\n\r\n   case 3:\r\n    if (target) {\r\n      var stype = 1;\r\n    } else {\r\n      var stype = 2+serial_number%3;\r\n    }\r\n    component.options.content.push({\r\n    type: stype%2==0?'rect':'circle',\r\n    left: x, top: y, angle: 0,width:32, height:32,\r\n    fill: stype>2? '#FF5733':'#16A085'\r\n  });\r\n  break;\r\n  }\r\n}"
             }
           ]
         ]
@@ -1722,7 +1714,7 @@
         600
       ],
       "title": "Instructions11_feedback3",
-      "_tab": "Content",
+      "_tab": "Scripts",
       "tardy": true
     },
     "13": {
@@ -2916,7 +2908,7 @@
         600
       ],
       "title": "Instructions2_vs",
-      "_tab": "Content"
+      "_tab": "Scripts"
     },
     "19": {
       "id": "19",
@@ -3325,7 +3317,7 @@
         600
       ],
       "title": "FirstDemoSearch",
-      "_tab": "Content"
+      "_tab": "Scripts"
     },
     "20": {
       "id": "20",
@@ -3510,7 +3502,7 @@
       "children": [
         "24"
       ],
-      "_tab": "Content"
+      "_tab": "Scripts"
     },
     "24": {
       "id": "24",
@@ -3801,7 +3793,7 @@
         600
       ],
       "title": "Instructions4_feedback1",
-      "_tab": "Behavior",
+      "_tab": "Scripts",
       "tardy": true,
       "timeout": "3000"
     },
@@ -3935,7 +3927,7 @@
         600
       ],
       "title": "Instructions5_another",
-      "_tab": "Content"
+      "_tab": "Scripts"
     },
     "31": {
       "id": "31",
@@ -4418,7 +4410,7 @@
         600
       ],
       "title": "secondDemoSearch",
-      "_tab": "Content"
+      "_tab": "Scripts"
     },
     "33": {
       "id": "33",
@@ -4464,7 +4456,7 @@
       "children": [
         "34"
       ],
-      "_tab": "Content"
+      "_tab": "Scripts"
     },
     "34": {
       "id": "34",
@@ -4509,7 +4501,7 @@
         ]
       },
       "title": "Sequence",
-      "_tab": "Behavior"
+      "_tab": "Scripts"
     },
     "37": {
       "id": "37",
@@ -4604,7 +4596,7 @@
         600
       ],
       "title": "Instructions7_feedback2",
-      "_tab": "Behavior",
+      "_tab": "Scripts",
       "tardy": true,
       "timeout": "3000"
     },
@@ -7342,7 +7334,7 @@
         600
       ],
       "title": "Instructions8_estimation",
-      "_tab": "Content"
+      "_tab": "Scripts"
     },
     "39": {
       "id": "39",
@@ -7611,7 +7603,7 @@
             {
               "title": "Prepare stimulus",
               "message": "before:prepare",
-              "code": "// Enumerate all possible positions and rotations.\n// Because we place stimuli on a 10x10 grid, there\n// are 100 possible positions.\nconst positions = Array(100).fill().map((_, i) => i)\nconst rotations = [0, 45, 90, 135, 180, 225, 270, 315]\n\n// If a target is present, we need to generate \n// one additional item\nconst setSize = this.parameters.set_size\n\n\n// Sample positions and rotations\nconst item_positions = this.random.sample(\n  positions, setSize, false // without replacement\n)\n\nthis.parameters.item_positions = item_positions;\n\nconst item_rotations = this.random.sample(\n  rotations, setSize, true // *with* replacement\n)\n\nthis.parameters.item_rotations = item_rotations;\n\nwindow.draw_stimulus = \n(position, rotation, target, display_function, \ncostum_x=NaN, costum_y = NaN, serial_number = 1) => {\n\n\n  var x = (Number.isNaN(costum_x)) ? ((position % 10) * 32 - 160) : costum_x\n  var y = (Number.isNaN(costum_y)) ? Math.floor(position / 10) * 32 - 160 : costum_y\n\n\n  switch (display_function) {\n    \n    case 1:\n    this.options.content.push({\n      type: 'text',\n      left: x, top: y, angle: rotation,\n      text: target? 'T':'L',\n      fontSize: 32,\n      fontFamily: 'Helvetica, Arial, Sans-Serif',\n      fill: 'black'\n    });\n   \n    break;\n    case 2:\n    this.options.content.push({\n    type: 'rect',\n    left: x, top: y, angle: rotation,width:32, height:32,\n    fill: target? '#FF5733':'#16A085'\n  });\n  break;\n\n   case 3:\n    if (target) {\n      var stype = 1;\n    } else {\n      var stype = 2+serial_number%3;\n    }\n    this.options.content.push({\n    type: stype%2==0?'rect':'circle',\n    left: x, top: y, angle: rotation,width:32, height:32,\n    fill: stype>2? '#FF5733':'#16A085'\n  });\n  break;\n  }\n}\n\n// // Render the items one by one\n// this.parameters.item_positions.forEach((position, i) => {\n//   if (!(i+1==this.parameters.target_number)) \n//   {window.draw_stimulus(\n//     position,\n//     this.parameters.item_rotations[i],\n//     (i+1)==this.parameters.target_number,\n//     this.parameters.display_function, NaN, NaN, i\n//   )}\n// })\n\n// render target\nwindow.draw_stimulus(\n  125,\n  0,\n  1,\n  this.parameters.display_function,\n  -160,-63\n)\n\n// render first distractor\nwindow.draw_stimulus(\n  125,\n  0,\n  0,\n  this.parameters.display_function,\n  -160,32,2\n)\n\n// render second distractor\nwindow.draw_stimulus(\n  125,\n  0,\n  0,\n  this.parameters.display_function,\n  -67,32,3\n)\n\n// render third distractor\nwindow.draw_stimulus(\n  125,\n  0,\n  0,\n  this.parameters.display_function,\n  90,32,4\n)"
+              "code": "// Enumerate all possible positions and rotations.\n// Because we place stimuli on a 10x10 grid, there\n// are 100 possible positions.\nconst positions = Array(100).fill().map((_, i) => i)\nconst rotations = [0, 45, 90, 135, 180, 225, 270, 315]\n\n// If a target is present, we need to generate \n// one additional item\nconst setSize = this.parameters.set_size\n\n\n// Sample positions and rotations\nconst item_positions = this.random.sample(\n  positions, setSize, false // without replacement\n)\n\nthis.parameters.item_positions = item_positions;\n\nconst item_rotations = this.random.sample(\n  rotations, setSize, true // *with* replacement\n)\n\nthis.parameters.item_rotations = item_rotations;\n\n\n\n// // Render the items one by one\n// this.parameters.item_positions.forEach((position, i) => {\n//   if (!(i+1==this.parameters.target_number)) \n//   {window.draw_stimulus(\n//     position,\n//     this.parameters.item_rotations[i],\n//     (i+1)==this.parameters.target_number,\n//     this.parameters.display_function, NaN, NaN, i\n//   )}\n// })\n\n// render target\nwindow.draw_stimulus(\n  125,\n  0,\n  1,\n  this.parameters.display_function,\n  -160,-63\n)\n\n// render first distractor\nwindow.draw_stimulus(\n  125,\n  0,\n  0,\n  this.parameters.display_function,\n  -160,32,2\n)\n\n// render second distractor\nwindow.draw_stimulus(\n  125,\n  0,\n  0,\n  this.parameters.display_function,\n  -67,32,3\n)\n\n// render third distractor\nwindow.draw_stimulus(\n  125,\n  0,\n  0,\n  this.parameters.display_function,\n  90,32,4\n)"
             }
           ]
         ]
@@ -7668,7 +7660,7 @@
       "children": [
         "41"
       ],
-      "_tab": "Content"
+      "_tab": "Scripts"
     },
     "41": {
       "id": "41",
@@ -7712,7 +7704,7 @@
         ]
       },
       "title": "Sequence",
-      "_tab": "Behavior"
+      "_tab": "Scripts"
     },
     "42": {
       "id": "42",
@@ -7845,7 +7837,7 @@
         600
       ],
       "title": "Instructions10_feedback2",
-      "_tab": "Behavior",
+      "_tab": "Scripts",
       "tardy": true,
       "timeout": "3000"
     },

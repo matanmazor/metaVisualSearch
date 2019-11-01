@@ -1,0 +1,9 @@
+trial_number,set_size,target_number,display_function
+1,1,1,1
+2,5,1,1
+3,15,1,1
+4,30,1,1
+5,1,1,2
+6,5,1,2
+7,15,1,2
+8,30,1,2
