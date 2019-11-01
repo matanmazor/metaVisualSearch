@@ -1613,7 +1613,7 @@
             {
               "title": "",
               "message": "before:prepare",
-              "code": "// Enumerate all possible positions and rotations.\r\n// Because we place stimuli on a 10x10 grid, there\r\n// are 100 possible positions.\r\nconst positions = Array(100).fill().map((_, i) => i)\r\nconst rotations = [0, 45, 90, 135, 180, 225, 270, 315]\r\n\r\n// If a target is present, we need to generate \r\n// one additional item\r\nconst setSize = this.parameters.set_size\r\n\r\n\r\n// Sample positions and rotations\r\nconst item_positions = this.random.sample(\r\n  positions, setSize, false // without replacement\r\n)\r\n\r\nthis.parameters.item_positions = item_positions;\r\n\r\nconst item_rotations = this.random.sample(\r\n  rotations, setSize, true // *with* replacement\r\n)\r\n\r\nthis.parameters.item_rotations = item_rotations;\r\n\r\n\r\n"
+              "code": "// Enumerate all possible positions and rotations.\r\n// Because we place stimuli on a 10x10 grid, there\r\n// are 100 possible positions.\r\nconst positions = Array(100).fill().map((_, i) => i)\r\nconst rotations = [0, 45, 90, 135, 180, 225, 270, 315]\r\n\r\n// If a target is present, we need to generate \r\n// one additional item\r\nconst setSize = this.parameters.set_size\r\n\r\n\r\n// Sample positions and rotations\r\nconst item_positions = this.random.sample(\r\n  positions, setSize+1, false // without replacement\r\n)\r\n\r\nthis.parameters.item_positions = item_positions;\r\n\r\nconst item_rotations = this.random.sample(\r\n  rotations, setSize+1, true // *with* replacement\r\n)\r\n\r\nthis.parameters.item_rotations = item_rotations;\r\n\r\n\r\n"
             }
           ]
         ]
