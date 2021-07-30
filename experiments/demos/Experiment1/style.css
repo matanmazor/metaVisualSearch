@@ -1,0 +1,18 @@
+textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {font-family: 'Inria Serif'; 
+    font-size: 200%; 
+    letter-spacing:0.05em; 
+    text-align:center}
+    
+p { font-family: 'Quicksand', sans-serif; }
+
+button { font-family: 'Inria Serif', sans-serif;  font-weight: bold}
+
+textarea { font-family: 'Quicksand', sans-serif; }
+
+input { font-family: 'Quicksand', sans-serif; }
