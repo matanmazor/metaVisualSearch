@@ -1,0 +1,2449 @@
+{
+  "components": {
+    "1": {
+      "id": "1",
+      "type": "lab.html.Screen",
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "continue",
+          "event": "click",
+          "target": "button",
+          "filter": ""
+        },
+        {
+          "label": "continue",
+          "event": "keypress",
+          "target": "",
+          "filter": "Space"
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": "window.bonus = 0;"
+        }
+      ],
+      "title": "Instructions",
+      "content": "<main class=\"content-vertical-center content-horizontal-center\">\n\n  <div class=\"w-m text-justify\">\n    <h1>Your task</h1>\n    <p>This experiment has three parts.</p>\n    <p> It involves searching for things and estimating the difficulty of different search tasks. </p>\n    <p> In the last two parts of the experiment you will earn points. If your final point count is at the top 30% of our participants, you will receive a bonus of £1. </p>\n  </div>\n</main>\n\n<footer class=\"content-horizontal-right\">\n  <button id=\"continue\">Continue &rarr;</button>\n</footer>",
+      "_tab": "Content"
+    },
+    "3": {
+      "id": "3",
+      "type": "lab.flow.Loop",
+      "children": [
+        "8"
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "templateParameters": {
+        "columns": [
+          {
+            "name": "trial_number",
+            "type": "number"
+          },
+          {
+            "name": "set_size",
+            "type": "number"
+          },
+          {
+            "name": "display_function",
+            "type": "number"
+          }
+        ],
+        "rows": [
+          [
+            "1",
+            "2",
+            "4"
+          ],
+          [
+            "2",
+            "4",
+            "4"
+          ],
+          [
+            "3",
+            "8",
+            "4"
+          ],
+          [
+            "5",
+            "2",
+            "2"
+          ],
+          [
+            "6",
+            "4",
+            "2"
+          ],
+          [
+            "7",
+            "8",
+            "2"
+          ],
+          [
+            "9",
+            "2",
+            "3"
+          ],
+          [
+            "10",
+            "4",
+            "3"
+          ],
+          [
+            "11",
+            "8",
+            "3"
+          ]
+        ]
+      },
+      "sample": {
+        "mode": "draw-shuffle",
+        "n": ""
+      },
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": "window.estimates = {};\r\nwindow.trialBonuses ={}; \r\nwindow.timeToEstimate = {};"
+        },
+        {
+          "title": "",
+          "message": "end",
+          "code": "this.data.estimates = window.estimates;\r\nthis.data.trialBonuses = window.trialBonuses; \r\nthis.data.timeToEstimate = window.timeToEstimate;"
+        }
+      ],
+      "title": "meta search task",
+      "_tab": "Content",
+      "_collapsed": false
+    },
+    "7": {
+      "id": "7",
+      "type": "lab.flow.Loop",
+      "children": [
+        "9"
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "templateParameters": {
+        "columns": [
+          {
+            "name": "set_size",
+            "type": "number"
+          },
+          {
+            "name": "display_function",
+            "type": "number"
+          },
+          {
+            "name": "trial_number",
+            "type": "string"
+          }
+        ],
+        "rows": [
+          [
+            "7",
+            "1",
+            "1"
+          ],
+          [
+            "7",
+            "1",
+            "2"
+          ],
+          [
+            "7",
+            "1",
+            "3"
+          ],
+          [
+            "7",
+            "1",
+            "4"
+          ]
+        ]
+      },
+      "sample": {
+        "mode": "sequential",
+        "n": ""
+      },
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": "  window.demoRTs=[]\r\n"
+        },
+        {
+          "title": "",
+          "message": "end",
+          "code": "this.data.accuracy = window.accuracy;\r\nthis.data.RT = window.RT;"
+        }
+      ],
+      "title": "Visual search intro",
+      "_tab": "Content",
+      "_collapsed": false
+    },
+    "8": {
+      "id": "8",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": "0",
+          "top": "0",
+          "width": 400,
+          "height": 400,
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        },
+        {
+          "type": "i-text",
+          "version": "3.5.1",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": -237,
+          "width": 454.66,
+          "height": 48.82,
+          "fill": "black",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "How long (in seconds) will it take you to find the      \nwhen mixed with this set of distractors?",
+          "fontSize": "20",
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "96",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "Prepare stimulus",
+          "message": "before:prepare",
+          "code": "// Enumerate all possible positions and rotations.\n// Because we place stimuli on a 10x10 grid, there\n// are 100 possible positions.\nconst positions = Array(100).fill().map((_, i) => i)\nconst rotations = [0, 45, 90, 135, 180, 225, 270, 315]\n\n// If a target is present, we need to generate \n// one additional item\nconst setSize = this.parameters.set_size\n\n\n// Sample positions and rotations\nconst item_positions = this.random.sample(\n  positions, setSize, false // without replacement\n)\n\nthis.parameters.item_positions = item_positions;\n\nconst item_rotations = this.random.sample(\n  rotations, setSize, true // *with* replacement\n)\n\nthis.parameters.item_rotations = item_rotations;\n\n// Render the items one by one\nthis.parameters.item_positions.forEach((position, i) => {\n  if (!(i+1==this.parameters.target_number)) {window.draw_stimulus(\n    this,\n    position,\n    this.parameters.item_rotations[i],\n    0,\n    this.parameters.display_function, NaN, NaN, i\n    \n  )}\n})\n\nwindow.draw_stimulus(\n  this,\n  125,\n  0,\n  1,\n  this.parameters.display_function,\n  223,-250\n)\n"
+        },
+        {
+          "title": "slider",
+          "message": "run",
+          "code": "// Create a pointer to the current component,\r\n// to be used inside of p5.js\r\nvar component = this\r\n\r\n// p5.js instantiation\r\n// (note that the library script has been added\r\n// to the HTML page header via the study-wide options)\r\nlet myp5 = new p5(window.makeS(component), this.options.el)"
+        },
+        {
+          "title": "",
+          "message": "after:end",
+          "code": " const calculateBonus = function(x) {\r\n  return 10/Math.sqrt(x);\r\n}\r\n  window.estimates[this.parameters.trial_number] = \r\n  this.state.response*1000;\r\n  window.trialBonuses[this.parameters.trial_number] = \r\n  calculateBonus(this.state.response)\r\n  window.timeToEstimate[this.parameters.trial_number] = \r\n  this.state.duration;"
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "Estimation",
+      "correctResponse": "",
+      "_tab": "Content",
+      "timeout": "",
+      "tardy": false
+    },
+    "9": {
+      "id": "9",
+      "type": "lab.flow.Sequence",
+      "children": [
+        "34",
+        "12",
+        "17",
+        "18",
+        "20"
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": "// Enumerate all possible positions and rotations.\r\n// Because we place stimuli on a 10x10 grid, there\r\n// are 100 possible positions.\r\nconst positions = Array(100).fill().map((_, i) => i)\r\nconst rotations = [0, 45, 90, 135, 180, 225, 270, 315]\r\n\r\n// If a target is present, we need to generate \r\n// one additional item\r\nconst setSize = this.parameters.set_size+1\r\nthis.parameters.numbers_order =  this.random.sample(\r\n  [1,2,3,4,5], 5, false)\r\n\r\n// Sample positions and rotations\r\nconst item_positions = this.random.sample(\r\n  positions, setSize, false // without replacement\r\n)\r\n\r\nthis.parameters.item_positions = item_positions;\r\n\r\nconst item_rotations = this.random.sample(\r\n  rotations, setSize, true // *with* replacement\r\n)\r\n\r\nthis.parameters.item_rotations = item_rotations;\r\n\r\n\r\n\r\n"
+        }
+      ],
+      "title": "Trial",
+      "_tab": "Content"
+    },
+    "12": {
+      "id": "12",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": "400",
+          "height": "400",
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": 18.69,
+          "height": 36.16,
+          "fill": "#aaaaaa",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "+",
+          "fontSize": 32,
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "44",
+          "styles": {}
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": -25,
+          "top": "-75",
+          "width": 124.52,
+          "height": 36.16,
+          "fill": "black",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "Find the ",
+          "fontSize": "32",
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "94",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": "window.draw_stimulus(\r\n  this,\r\n  125,\r\n  0,\r\n  1,\r\n  this.parameters.display_function,\r\n  50,-75\r\n)\r\n\r\n"
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "targetSpec",
+      "timeout": "1000",
+      "_tab": "Scripts"
+    },
+    "13": {
+      "id": "13",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": "0",
+          "top": "0",
+          "width": 400,
+          "height": 400,
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        },
+        {
+          "type": "i-text",
+          "version": "3.5.1",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": -237,
+          "width": 454.66,
+          "height": 48.82,
+          "fill": "black",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "How long (in seconds) will it take you to find the      \nwhen mixed with this set of distractors?",
+          "fontSize": "20",
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "96",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "Prepare stimulus",
+          "message": "before:prepare",
+          "code": "\n// Enumerate all possible positions and rotations.\n// Because we place stimuli on a 10x10 grid, there\n// are 100 possible positions.\nconst positions = Array(100).fill().map((_, i) => i)\nconst rotations = [0, 45, 90, 135, 180, 225, 270, 315]\n\n// If a target is present, we need to generate \n// one additional item\nconst setSize = 3\n\n// Sample positions and rotations\nconst item_positions = this.random.sample(\n  positions, setSize, false // without replacement\n)\n\nthis.parameters.item_positions = item_positions;\n\nconst item_rotations = this.random.sample(\n  rotations, setSize, true // *with* replacement\n)\n\nthis.parameters.item_rotations = item_rotations;\n\n// Render the items one by one\nthis.parameters.item_positions.forEach((position, i) => {\n  if (!(i+1==0)) {window.draw_stimulus(\n    this,\n    position,\n    this.parameters.item_rotations[i],\n    0,\n    1, NaN, NaN, i\n    \n  )}\n})\n\n\nwindow.draw_stimulus(\n  this,\n  125,\n  0,\n  1,\n  1,\n  223,-250\n)\n"
+        },
+        {
+          "title": "slider",
+          "message": "run",
+          "code": "// Create a pointer to the current component,\r\n// to be used inside of p5.js\r\nvar component = this\r\nwindow.first = true;\r\nwindow.makeS = (component) => {\r\n  var estimate = 0;\r\n  var bonus = 0;\r\n  let mouseBoolean = false\r\n\r\n  // p5.js initialization function\r\n  return (p) => {\r\n\r\n    let x = 100\r\n    let y = 100\r\n\r\n    function drawBackground() {\r\n        //blue bar\r\n        p.fill(255)\r\n        p.stroke(0)\r\n        p.rect(p.width/4, p.height*0.9, p.width/2, 20)\r\n        p.noStroke()\r\n        \r\n        // axes labels\r\n        p.fill(0)\r\n        p.textSize(15)\r\n        p.textStyle(p.NORMAL);\r\n        p.textFont('Quicksand')\r\n        p.text('seconds', p.width/2, p.height*0.9 +35)\r\n        p.push()\r\n        p.translate(p.width*0.3-50, p.height*0.5)\r\n        p.rotate(-Math.PI/2)\r\n        p.text('points', 0,0)\r\n        p.pop()\r\n        p.stroke(153);\r\n        p.line(p.width*0.3, p.height*0.8, \r\n              p.width*0.3, p.height*0.2);\r\n        p.noStroke()\r\n\r\n\r\n\r\n        //ruler\r\n        for (i = 1; i < 10; i++) {\r\n          p.rect(p.width/4 + i * (p.width / 20), p.height*0.9, 1, -3)\r\n          p.text(i/2.5, p.width/4 + i * (p.width / 20), p.height*0.9 - 10)\r\n        }\r\n\r\n        if (window.first) {\r\n          //previous RTs\r\n          for (RT of window.demoRTs) {\r\n            var center_x = p.width/4+p.width/8*RT\r\n            p.triangle(center_x-4, p.height*0.9+30, center_x+4, p.height*0.9+30,center_x, p.height*0.9+25,)\r\n          }\r\n        }\r\n    }\r\n\r\n    p.setup = function () {\r\n      var cnv = p.createCanvas(\r\n        component.options.canvas.width / window.devicePixelRatio,\r\n        component.options.canvas.height / window.devicePixelRatio\r\n      )\r\n      p.noStroke();\r\n      p.textAlign(p.CENTER,p.CENTER);\r\n\r\n\r\n      // Make it so that HTML positions for the canvases\r\n      // are calculated relative to the container surrounding them\r\n      component.options.canvas.parentElement.style.position = 'relative'\r\n\r\n      // Set the canvas dimensions relative to the container\r\n      // surrounding it.\r\n      cnv.style('display', 'block')\r\n      cnv.style('position', 'absolute')\r\n      cnv.style('left', '0')\r\n      cnv.style('top', '0')\r\n      cnv.style('z-index', '20')\r\n      drawBackground();\r\n    }\r\n\r\n    p.draw = function() {\r\n      \r\n      if (mouseOverSlider()) {\r\n        p.clear()\r\n        drawBackground();\r\n      }\r\n      \r\n      function estimate2width (estimate) {\r\n        return estimate*(p.width/8)\r\n      }\r\n      \r\n      function mouseOverSlider() {\r\n        return p.mouseX>p.width/4 &&\r\n                p.mouseX<p.width*(3/4) &&\r\n                p.mouseY>p.height*0.9-20 &&\r\n                p.mouseY<p.height*0.9+40\r\n      }\r\n      \r\n\r\n      if (mouseOverSlider()) {\r\n        estimate = Math.max((8*p.mouseX/(p.width))-2,0.1);\r\n        bonus = 10/Math.sqrt(estimate);\r\n        \r\n        if (p.mouseIsPressed) {\r\n            mouseBoolean = true\r\n        }\r\n\r\n        //draw bonus\r\n        p.fill(0);\r\n        p.ellipse(p.width*0.3, p.height*0.8-(0.6*bonus*p.height/32), 72, 72);\r\n        p.fill(255);\r\n        p.ellipse(p.width*0.3, p.height*0.8-(0.6*bonus*p.height/32), 70, 70);\r\n        p.fill(0);\r\n        p.textSize(28)\r\n        // p.textStyle(p.BOLD);\r\n        p.textFont(\"Permanent Marker\");\r\n        p.text(bonus.toFixed(1), p.width*0.3, p.height*0.8-(0.6*bonus*p.height/32))\r\n      }\r\n\r\n      //red bar\r\n      p.fill(0)\r\n      p.rect(p.width/4, p.height*0.9, estimate2width(estimate), 20)\r\n\r\n      if (mouseBoolean && !p.mouseIsPressed && mouseOverSlider()) {\r\n        mouseBoolean = false\r\n        //move to next component\r\n        component.respond(estimate)\r\n        //close sketch\r\n        p.remove()\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n// p5.js instantiation\r\n// (note that the library script has been added\r\n// to the HTML page header via the study-wide options)\r\nlet myp5 = new p5(window.makeS(component), this.options.el)"
+        },
+        {
+          "title": "",
+          "message": "after:end",
+          "code": "const calculateBonus = function(x) {\r\n  return 10/Math.sqrt(x);\r\n}\r\nwindow.demoEstimate = this.state.response*1000;\r\nwindow.demoBonus = calculateBonus(this.state.response);\r\nwindow.first = false\r\n"
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "EstimationDemo",
+      "correctResponse": "",
+      "_tab": "Scripts",
+      "timeout": "",
+      "tardy": false
+    },
+    "17": {
+      "id": "17",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": "400",
+          "height": "400",
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": 18.69,
+          "height": 36.16,
+          "fill": "#aaaaaa",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "+",
+          "fontSize": 32,
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "134",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "keydown",
+          "target": "",
+          "filter": " Space"
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "Prepare stimulus",
+          "message": "before:prepare",
+          "code": "\n// Render the items one by one\nthis.parameters.item_positions.forEach((position, i) => {\n  \n  window.draw_stimulus(\n    this,\n    position,\n    0,\n    i==0,\n    this.parameters.display_function\n  )\n})\n\n"
+        },
+        {
+          "title": "",
+          "message": "after:end",
+          "code": "window.demoRT = (this.state.duration/1000).toPrecision(2)"
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "Stimulus",
+      "correctResponse": "",
+      "_tab": "Scripts",
+      "timeout": ""
+    },
+    "18": {
+      "id": "18",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": "400",
+          "height": "400",
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": 18.69,
+          "height": 36.16,
+          "fill": "#aaaaaa",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "+",
+          "fontSize": 32,
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "135",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "1",
+          "event": "keypress",
+          "target": "",
+          "filter": "1"
+        },
+        {
+          "label": "2",
+          "event": "keypress",
+          "target": "",
+          "filter": "2"
+        },
+        {
+          "label": "3",
+          "event": "keypress",
+          "target": "",
+          "filter": "3"
+        },
+        {
+          "label": "4",
+          "event": "keypress",
+          "target": "",
+          "filter": "4"
+        },
+        {
+          "label": "5",
+          "event": "keypress",
+          "target": "",
+          "filter": "5"
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "Prepare stimulus",
+          "message": "before:prepare",
+          "code": "// Stimulus generation --------------------------------------------\n\nvar items_to_display = Math.min(5,this.parameters.item_positions.length)\nfor (i=0; i<items_to_display; i++) {\n  window.draw_numbers(\n    this,\n    this.parameters.item_positions[i],\n    0,\n    String(this.parameters.numbers_order[i]), 'black'\n  )\n}"
+        },
+        {
+          "title": "",
+          "message": "after:end",
+          "code": "if (this.state.correct) {\r\n  window.msg = 'This one took you\\n' + window.demoRT + ' seconds.'\r\n} else {\r\n  window.msg = 'You got this one wrong.\\nTry to be as accurate \\nas possible.'\r\n};\r\n\r\nwindow.correct = this.state.correct;\r\n\r\nif (this.state.correct & window.demoRT<4) {\r\n  window.demoRTs.push(window.demoRT)\r\n}"
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "numbers",
+      "correctResponse": "${parameters.numbers_order[0]}",
+      "_tab": "Scripts"
+    },
+    "19": {
+      "id": "19",
+      "type": "lab.html.Screen",
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "continue",
+          "event": "click",
+          "target": "button",
+          "filter": ""
+        },
+        {
+          "label": "continue",
+          "event": "keypress",
+          "target": "",
+          "filter": "Space"
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "run",
+          "code": "var feedback = document.getElementById(\"feedback\").innerHTML\r\nfeedback = feedback.replace(/_estimate_/g,String((window.demoEstimate/1000).toPrecision(2)))\r\nfeedback = feedback.replace(/_num_points_/g, String(window.demoBonus.toPrecision(2)))\r\ndocument.getElementById(\"feedback\").innerHTML = feedback;"
+        }
+      ],
+      "title": "estimation_feedback",
+      "content": "<main class=\"content-vertical-center content-horizontal-center\">\n  <div class=\"w-m text-justify\">\n    <p id = 'feedback'>For this first estimation, you estimated that it will take you <b>_estimate_</b> seconds to find 1 <i>T</i> among 3 randomly positioned rotated <i>L</i>'s. <br/>\n    If you will find the <i>T</i> in _estimate_ seconds or less in part 3 of the experiment, you will get <b>_num_points_</b> points. Otherwise, you will get zero points. Your final number of points will determine whether you get a bonus or not. </p>\n    <p>In the next 12 trials you wil estimate how long it will take you to find one tilted orange bar among different distractors.</p>\n  </div>\n</main>\n\n<footer class=\"content-horizontal-right\">\n  <button id=\"continue\">Continue &rarr;</button>\n</footer>",
+      "_tab": "Content",
+      "tardy": true
+    },
+    "20": {
+      "id": "20",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": "0",
+          "top": "0",
+          "width": 400,
+          "height": 400,
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": 18.69,
+          "height": 36.16,
+          "fill": "#aaaaaa",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "+",
+          "fontSize": 32,
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "44",
+          "styles": {}
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": -75,
+          "width": 209.09,
+          "height": 36.16,
+          "fill": "black",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "${window.msg}",
+          "fontSize": 32,
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "211",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "feedback",
+      "timeout": "${window.correct?2000:5000}",
+      "_tab": "Scripts",
+      "tardy": true
+    },
+    "21": {
+      "id": "21",
+      "type": "lab.html.Screen",
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "continue",
+          "event": "click",
+          "target": "button",
+          "filter": ""
+        },
+        {
+          "label": "continue",
+          "event": "keypress",
+          "target": "",
+          "filter": "Space"
+        }
+      ],
+      "messageHandlers": [],
+      "title": "Instructions2a",
+      "content": "<main class=\"content-vertical-center content-horizontal-center\">\n  <div class=\"w-m text-justify\">\n    <h1>Part 2</h1>\n    <p>Good, you finished the first part!</p>\n    <p>Now, you will estimate how long it will take you to find various targets when mixed with different numbers of various distractors.</p>\n  </div>\n</main>\n\n<footer class=\"content-horizontal-right\">\n  <button id=\"continue\">Continue &rarr;</button>\n</footer>",
+      "_tab": "Content"
+    },
+    "22": {
+      "id": "22",
+      "type": "lab.html.Screen",
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "continue",
+          "event": "click",
+          "target": "button",
+          "filter": ""
+        },
+        {
+          "label": "continue",
+          "event": "keypress",
+          "target": "",
+          "filter": "Space"
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": ""
+        }
+      ],
+      "title": "Instructions3",
+      "content": "<main class=\"content-vertical-center content-horizontal-center\">\n  <div class=\"w-m text-justify\">\n  <h1>Part 3</h1>\n    <p>You finished the second part!</p>\n    <p>In the third and last part of the experiment, you will perform three trials of each visual search task for which you gave a time estimate. Try to be as fast and accurate as possible, as your bonus depends on this! \n      Just like in the first part, there's no time pressure on pressing the number key, but only on pressing the <kbd>spacebar</kbd>.\n      \n    </p>\n  </div>\n</main>\n\n<footer class=\"content-horizontal-right\">\n  <button id=\"continue\">Continue &rarr;</button>\n</footer>",
+      "_tab": "Content"
+    },
+    "23": {
+      "id": "23",
+      "type": "lab.html.Screen",
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "continue",
+          "event": "click",
+          "target": "button",
+          "filter": ""
+        },
+        {
+          "label": "continue",
+          "event": "keypress",
+          "target": "",
+          "filter": "Space"
+        }
+      ],
+      "messageHandlers": [],
+      "title": "Instructions1a",
+      "content": "<main class=\"content-vertical-center content-horizontal-center\">\n  <div class=\"w-m text-justify\">\n    <h1>Part 1</h1>\n    <p>In the first part, you will find a target hidden among distractors.</p>\n    <p>First, a gray cross will appear on the screen. Look at the cross. Then, the target and distractors will appear. When you spot the target, press <kbd>spacebar</kbd> as quickly as possible. </p> \n    <p> Upon pressing the <kbd>spacebar</kbd>, the target and distractors\n    will be replaced by up to 5 numbers. To move to the next trial, type in the number that replaced the target.</p>\n  </div>\n</main>\n\n<footer class=\"content-horizontal-right\">\n  <button id=\"continue\">Continue &rarr;</button>\n</footer>",
+      "_tab": "Content"
+    },
+    "25": {
+      "id": "25",
+      "type": "lab.html.Form",
+      "content": "<main class=\"content-vertical-center content-horizontal-center\">\n    <div class=\"w-m text-justify\">\n    <h1>Thank you.</h1>\n    <p id = 'bonus_msg'></p>\n    <p>We will appreciate any thoughts or comments you have about the experiment. You can use the box below to share them with us. Thank you!</p>\n  </div>\n</main>\n\n<div style=\"text-align:center\">\n<form>\n   <textarea name=\"message\" rows=\"10\" cols=\"30\">Your feedback here.</textarea>\n  <br>\n  <input id=\"submit\" type=\"submit\">\n</form>\n</div>",
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "submit",
+          "event": "click",
+          "target": "submit",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "run",
+          "code": "this.data.accuracy = window.accuracy;\r\nthis.data.RT = window.RT;\r\nthis.data.bonus = window.bonus;\r\ndocument.getElementById(\"bonus_msg\").innerHTML = \"You collected \"+ String(Math.round(window.bonus))+ \" points. You will get a bonus of 1£ if this is within the top 30% of our participants\";\r\n"
+        },
+        {
+          "title": "",
+          "message": "",
+          "code": "this.options.events['click button[type=\"submit\"]'] = function() {\r\n  // Get slider value\r\n  const feedback = document.querySelector('input[name=\"message\"]').value\r\n  this.data.feedback = feedback\r\n}"
+        }
+      ],
+      "title": "Form",
+      "_tab": "Scripts",
+      "tardy": true
+    },
+    "27": {
+      "id": "27",
+      "type": "lab.html.Screen",
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "",
+          "code": ""
+        }
+      ],
+      "title": "Screen",
+      "content": "<header>\r\n  <h1>Thank you!</h1>\r\n</header>\r\n <main>\r\n   <p><strong>The experiment is now complete.</strong></p>\r\n   </main>\r\n<footer class=\"content-horizontal-right\">\r\n  <p>You can now close the window</p>\r\n</footer>",
+      "_tab": "Content",
+      "timeout": "0"
+    },
+    "34": {
+      "id": "34",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": "400",
+          "height": "400",
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": 18.69,
+          "height": 36.16,
+          "fill": "#aaaaaa",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "+",
+          "fontSize": 32,
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "44",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": ""
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "Fixation",
+      "timeout": "1000",
+      "_tab": "Scripts"
+    },
+    "35": {
+      "id": "35",
+      "type": "lab.html.Screen",
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "continue",
+          "event": "click",
+          "target": "button",
+          "filter": ""
+        },
+        {
+          "label": "continue",
+          "event": "keypress",
+          "target": "",
+          "filter": "Space"
+        }
+      ],
+      "messageHandlers": [],
+      "title": "Instructions2b",
+      "content": "<main class=\"content-vertical-center content-horizontal-center\">\n  <div class=\"w-m text-justify\">\n    <p> In each trial, you will estimate how long it will take you to find a target when mixed with other distractors presented in a square. Only the identity and number of distractors are relevant here, not their specific locations.</p>\n    <p>Be as accurate as possible.</p>\n    <p>In the third part, you will perform these searching tasks, and receive points only if you find the target as fast as your estimate, or faster. You will get more points if your estimate was that you will find the target quickly, and less points if you estimated that finding the target will take you long.</p>\n     <p>To help you in your estimation, small black arrows will mark your search times from the first part of the experiment. </p>\n    \n  </div>\n</main>\n\n<footer class=\"content-horizontal-right\">\n  <button id=\"continue\">Continue &rarr;</button>\n</footer>",
+      "_tab": "Content"
+    },
+    "36": {
+      "id": "36",
+      "type": "lab.html.Screen",
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "continue",
+          "event": "click",
+          "target": "button",
+          "filter": ""
+        },
+        {
+          "label": "continue",
+          "event": "keypress",
+          "target": "",
+          "filter": "Space"
+        }
+      ],
+      "messageHandlers": [],
+      "title": "Instructions1b",
+      "content": "<main class=\"content-vertical-center content-horizontal-center\">\n  <div class=\"w-m text-justify\">\n   <p>Be quick to press the spacebar. There's no time pressure on pressing the right number key.</p>\n\n    <p>Let's start!</p>\n  </div>\n</main>\n\n<footer class=\"content-horizontal-right\">\n  <button id=\"continue\">Continue &rarr;</button>\n</footer>",
+      "_tab": "Content"
+    },
+    "37": {
+      "id": "37",
+      "type": "lab.flow.Loop",
+      "children": [
+        "38"
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "templateParameters": {
+        "columns": [
+          {
+            "name": "trial_number",
+            "type": "number"
+          },
+          {
+            "name": "set_size",
+            "type": "number"
+          },
+          {
+            "name": "display_function",
+            "type": "number"
+          }
+        ],
+        "rows": [
+          [
+            "1",
+            "2",
+            "4"
+          ],
+          [
+            "2",
+            "4",
+            "4"
+          ],
+          [
+            "3",
+            "8",
+            "4"
+          ],
+          [
+            "5",
+            "2",
+            "2"
+          ],
+          [
+            "6",
+            "4",
+            "2"
+          ],
+          [
+            "7",
+            "8",
+            "2"
+          ],
+          [
+            "9",
+            "2",
+            "3"
+          ],
+          [
+            "10",
+            "4",
+            "3"
+          ],
+          [
+            "11",
+            "8",
+            "3"
+          ]
+        ]
+      },
+      "sample": {
+        "mode": "draw-shuffle",
+        "n": ""
+      },
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": "window.accuracy = {}\r\nwindow.time = {}\r\nwindow.counter = 0;"
+        },
+        {
+          "title": "",
+          "message": "end",
+          "code": "this.data.accuracy = window.accuracy;\r\nthis.data.RT = window.time;\r\nthis.data.bonus = window.bonus;"
+        }
+      ],
+      "title": "Visual search task",
+      "_tab": "Content",
+      "_collapsed": false
+    },
+    "38": {
+      "id": "38",
+      "type": "lab.flow.Loop",
+      "children": [
+        "39"
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "templateParameters": {
+        "columns": [
+          {
+            "name": "repetition",
+            "type": "string"
+          },
+          {
+            "name": "",
+            "type": "string"
+          }
+        ],
+        "rows": [
+          [
+            "1",
+            ""
+          ],
+          [
+            "2",
+            ""
+          ],
+          [
+            "3",
+            ""
+          ]
+        ]
+      },
+      "sample": {
+        "mode": "sequential"
+      },
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": "window.accuracy[this.parameters.trial_number] = [];\r\nwindow.time[this.parameters.trial_number] = [];"
+        }
+      ],
+      "title": "inner loop",
+      "_tab": "Scripts"
+    },
+    "39": {
+      "id": "39",
+      "type": "lab.flow.Sequence",
+      "children": [
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": "// Enumerate all possible positions and rotations.\r\n// Because we place stimuli on a 10x10 grid, there\r\n// are 100 possible positions.\r\nconst positions = Array(100).fill().map((_, i) => i)\r\nconst rotations = [0, 45, 90, 135, 180, 225, 270, 315]\r\n\r\n// If a target is present, we need to generate \r\n// one additional item\r\nconst setSize = this.parameters.set_size+1\r\nthis.parameters.numbers_order =  this.random.sample(\r\n  [1,2,3,4,5], 5, false)\r\n\r\n// Sample positions and rotations\r\nconst item_positions = this.random.sample(\r\n  positions, setSize, false // without replacement\r\n)\r\n\r\nthis.parameters.item_positions = item_positions;\r\n\r\nconst item_rotations = this.random.sample(\r\n  rotations, setSize, true // *with* replacement\r\n)\r\n\r\nthis.parameters.item_rotations = item_rotations;\r\n"
+        }
+      ],
+      "title": "Trial",
+      "_tab": "Scripts"
+    },
+    "40": {
+      "id": "40",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": "400",
+          "height": "400",
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": 18.69,
+          "height": 36.16,
+          "fill": "#aaaaaa",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "+",
+          "fontSize": 32,
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "44",
+          "styles": {}
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": -25,
+          "top": "-75",
+          "width": 124.52,
+          "height": 36.16,
+          "fill": "black",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "Find the ",
+          "fontSize": "32",
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "94",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": "window.draw_stimulus(\r\n  this,\r\n  125,\r\n  0,\r\n  1,\r\n  this.parameters.display_function,\r\n  50,-75\r\n)\r\n\r\n"
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "Fixation",
+      "timeout": "1000",
+      "_tab": "Scripts"
+    },
+    "41": {
+      "id": "41",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": "400",
+          "height": "400",
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": 18.69,
+          "height": 36.16,
+          "fill": "#aaaaaa",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "+",
+          "fontSize": 32,
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "269",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "keydown",
+          "target": "",
+          "filter": " Space"
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "Prepare stimulus",
+          "message": "before:prepare",
+          "code": "\n// Render the items one by one\nthis.parameters.item_positions.forEach((position, i) => {\n    window.draw_stimulus(\n      this,\n      position,\n      this.parameters.item_rotations[i],\n      i==0,\n      this.parameters.display_function,\n      NaN, NaN, i\n    )\n})\n\n\n"
+        },
+        {
+          "title": "",
+          "message": "after:end",
+          "code": "window.time[this.parameters.trial_number].push(this.state.duration);"
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "Stimulus",
+      "correctResponse": "",
+      "_tab": "Scripts",
+      "timeout": ""
+    },
+    "42": {
+      "id": "42",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": "400",
+          "height": "400",
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": 18.69,
+          "height": 36.16,
+          "fill": "#aaaaaa",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "+",
+          "fontSize": 32,
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "270",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "1",
+          "event": "keypress",
+          "target": "",
+          "filter": "1"
+        },
+        {
+          "label": "2",
+          "event": "keypress",
+          "target": "",
+          "filter": "2"
+        },
+        {
+          "label": "3",
+          "event": "keypress",
+          "target": "",
+          "filter": "3"
+        },
+        {
+          "label": "4",
+          "event": "keypress",
+          "target": "",
+          "filter": "4"
+        },
+        {
+          "label": "5",
+          "event": "keypress",
+          "target": "",
+          "filter": "5"
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "Prepare stimulus",
+          "message": "before:prepare",
+          "code": "// Stimulus generation --------------------------------------------\n\nvar items_to_display = Math.min(5,this.parameters.item_positions.length)\nfor (i=0; i<items_to_display; i++) {\n  window.draw_numbers(\n    this,\n    this.parameters.item_positions[i],\n    0,\n    String(this.parameters.numbers_order[i]), 'black'\n  )\n}"
+        },
+        {
+          "title": "",
+          "message": "after:end",
+          "code": "window.accuracy[this.parameters.trial_number].push(this.state.correct);\r\n\r\nwindow.correct = this.state.correct\r\n\r\nif (window.correct) {\r\n  window.bonus += window.trialBonuses[this.parameters.trial_number];\r\n}"
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "numbers",
+      "correctResponse": "${parameters.numbers_order[0]}",
+      "_tab": "Scripts"
+    },
+    "43": {
+      "id": "43",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": "400",
+          "height": "400",
+          "fill": "#ffffff",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "98"
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": 18.69,
+          "height": 36.16,
+          "fill": "#aaaaaa",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "+",
+          "fontSize": 32,
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "100",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "Inter-trial interval",
+      "timeout": "${window.correct?1000:3000}",
+      "_tab": "Scripts",
+      "tardy": true
+    },
+    "44": {
+      "id": "44",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "i-text",
+          "version": "3.5.1",
+          "originX": "center",
+          "originY": "center",
+          "left": -25,
+          "top": -75,
+          "width": 645.72,
+          "height": 120.05,
+          "fill": "black",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "You finished ${window.counter}\n out of a total of 36 search trials. \nPress Space when you are ready to continue.",
+          "fontSize": "32",
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "94",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "space",
+          "event": "keypress",
+          "target": "",
+          "filter": "Space"
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": "window.counter+=1\r\nwindow.skip = window.counter!=18;"
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "trialsLeft",
+      "timeout": "",
+      "_tab": "Scripts",
+      "skipCondition": "${ window.skip }",
+      "skip": false,
+      "tardy": true
+    },
+    "root": {
+      "id": "root",
+      "title": "root",
+      "type": "lab.flow.Sequence",
+      "children": [
+        "1",
+        "23",
+        "36",
+        "7",
+        "21",
+        "35",
+        "13",
+        "19",
+        "3",
+        "22",
+        "37",
+        "25",
+        "27"
+      ],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "plugins": [
+        {
+          "type": "lab.plugins.Metadata"
+        }
+      ],
+      "metadata": {
+        "title": "meta_VS_color_orientation",
+        "description": "",
+        "repository": "",
+        "contributors": "Michael Kriechbaumer\nFelix Henninger"
+      },
+      "messageHandlers": [],
+      "files": []
+    }
+  },
+  "version": [
+    20,
+    2,
+    2
+  ],
+  "files": {
+    "files": {
+      "index.html": {
+        "content": "data:text/html,%3C!doctype%20html%3E%0A%3Chtml%3E%0A%3Chead%3E%0A%20%20%3Cmeta%20charset%3D%22utf-8%22%3E%0A%20%20%3Ctitle%3EExperiment%3C%2Ftitle%3E%0A%20%20%3C!--%20viewport%20setup%20--%3E%0A%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%2C%20initial-scale%3D1%22%3E%0A%20%20%3C!--%20p5.js%20library%20--%3E%0A%20%20%3Cscript%20src%3D%22https%3A%2F%2Fcdn.jsdelivr.net%2Fnpm%2Fp5%2Flib%2Fp5.min.js%22%3E%3C%2Fscript%3E%0A%20%20%3C!--%20Slider%20library%2C%20styles%20and%20dependencies%20--%3E%0A%20%20%3C!--Plugin%20CSS%20file%20with%20desired%20skin--%3E%0A%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A%2F%2Fcdnjs.cloudflare.com%2Fajax%2Flibs%2Fion-rangeslider%2F2.3.0%2Fcss%2Fion.rangeSlider.min.css%22%2F%3E%0A%20%20%3C!--jQuery--%3E%0A%20%20%3Cscript%20src%3D%22https%3A%2F%2Fcdnjs.cloudflare.com%2Fajax%2Flibs%2Fjquery%2F3.3.1%2Fjquery.min.js%22%3E%3C%2Fscript%3E%0A%20%20%3C!--Plugin%20JavaScript%20file--%3E%0A%20%20%3Cscript%20src%3D%22https%3A%2F%2Fcdnjs.cloudflare.com%2Fajax%2Flibs%2Fion-rangeslider%2F2.3.0%2Fjs%2Fion.rangeSlider.min.js%22%3E%3C%2Fscript%3E%0A%20%20%3Cscript%3E%0A%20%20%20%20window.draw_stimulus%20%3D%20%0A(component%2C%20position%2C%20rotation%2C%20target%2C%20display_function%2C%20%0Acostum_x%3DNaN%2C%20costum_y%20%3D%20NaN%2C%20serial_number%20%3D%201)%20%3D%3E%20%7B%0A%0A%0A%20%20var%20x%20%3D%20(Number.isNaN(costum_x))%20%3F%20((position%20%25%2010)%20*%2032%20-%20160)%20%3A%20costum_x%0A%20%20var%20y%20%3D%20(Number.isNaN(costum_y))%20%3F%20Math.floor(position%20%2F%2010)%20*%2032%20-%20160%20%3A%20costum_y%0A%0A%0A%20%20switch%20(display_function)%20%7B%0A%20%20%20%20%0A%20%20%20%20case%201%3A%0A%20%20%20%20component.options.content.push(%7B%0A%20%20%20%20%20%20type%3A%20'text'%2C%0A%20%20%20%20%20%20left%3A%20x%2C%20top%3A%20y%2C%20angle%3A%20rotation%2C%0A%20%20%20%20%20%20text%3A%20target%3F%20'T'%3A'L'%2C%0A%20%20%20%20%20%20fontSize%3A%2025%2C%0A%20%20%20%20%20%20fontFamily%3A%20'Helvetica%2C%20Arial%2C%20Sans-Serif'%2C%0A%20%20%20%20%20%20fill%3A%20'black'%2C%0A%20%20%20%20%20%20angle%3A%20target%3F%200%3A90%0A%20%20%20%20%7D)%3B%0A%20%20%20%0A%20%20%20%20break%3B%0A%20%20%20%20case%202%3A%20%2F%2F%20color%0A%20%20%20%20component.options.content.push(%7B%0A%20%20%20%20type%3A%20'rect'%2C%0A%20%20%20%20left%3A%20x%2C%20top%3A%20y%2C%20angle%3A%2020%2Cwidth%3A12%2C%20height%3A25%2C%0A%20%20%20%20fill%3A%20target%3F%20'%23FF5733'%3A'%2316A085'%0A%20%20%7D)%3B%0A%20%20break%3B%0A%0A%20%20%20case%203%3A%20%2F%2F%20conjunction%0A%20%20%20%20if%20(target)%20%7B%0A%20%20%20%20%20%20var%20stype%20%3D%201%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20var%20stype%20%3D%202%2Bserial_number%252%3B%0A%20%20%20%20%7D%0A%20%20%20%20component.options.content.push(%7B%0A%20%20%20%20type%3A%20'rect'%2C%0A%20%20%20%20left%3A%20x%2C%20top%3A%20y%2C%20angle%3A%20stype%252%3D%3D0%3F0%3A20%2Cwidth%3A12%2C%20height%3A25%2C%0A%20%20%20%20fill%3A%20stype%3E2%3F%20'%2316A085'%3A'%23FF5733'%0A%20%20%7D)%3B%0A%20%20break%3B%0A%20%20case%204%3A%20%2F%2Forientation%0A%20%20%20%20component.options.content.push(%7B%0A%20%20%20%20type%3A%20'rect'%2C%0A%20%20%20%20left%3A%20x%2C%20top%3A%20y%2C%20angle%3A%20target%3F%2020%3A0%2C%20rotation%2Cwidth%3A12%2C%20height%3A25%2C%0A%20%20%20%20fill%3A%20'%23FF5733'%0A%20%20%7D)%3B%0A%20%20break%3B%0A%20%20%7D%0A%7D%0A%0Awindow.draw_numbers%20%3D%20(component%2C%20position%2C%20rotation%2C%20content%2C%20color%20%3D%20'black'%2C%0Acostum_x%3DNaN%2C%20costum_y%20%3D%20NaN)%20%3D%3E%20%7B%0A%20%20var%20x%20%3D%20(Number.isNaN(costum_x))%20%3F%20((position%20%25%2010)%20*%2032%20-%20160)%20%3A%20costum_x%0A%20%20var%20y%20%3D%20(Number.isNaN(costum_y))%20%3F%20Math.floor(position%20%2F%2010)%20*%2032%20-%20160%20%3A%20costum_y%0A%0A%20%20component.options.content.push(%7B%0A%20%20%20%20type%3A%20'text'%2C%0A%20%20%20%20left%3A%20x%2C%20top%3A%20y%2C%20angle%3A%20rotation%2C%0A%20%20%20%20text%3A%20content%2C%0A%20%20%20%20fontSize%3A%2032%2C%0A%20%20%20%20fontFamily%3A%20'Helvetica%2C%20Arial%2C%20Sans-Serif'%2C%0A%20%20%20%20fill%3A%20color%0A%20%20%7D)%0A%7D%0A%3C%2Fscript%3E%0A%20%20%3C!--%20lab.js%20library%20and%20experiment%20code%20--%3E%0A%20%20%24%7B%20header%20%7D%0A%20%20%3Clink%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPermanent%2BMarker%22%20rel%3D%22stylesheet%22%3E%20%0A%20%20%3Clink%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DQuicksand%22%20rel%3D%22stylesheet%22%3E%20%0A%20%20%3Clink%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInria%2BSerif%22%20rel%3D%22stylesheet%22%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%20%3C!--%20If%20you'd%20rather%20have%20a%20container%20with%20a%20fixed%20width%0A%20%20%20%20%20%20%20and%20variable%20height%2C%20try%20removing%20the%20fullscreen%20class%20below%20--%3E%0A%20%20%3Cdiv%20class%3D%22container%20fullscreen%22%20data-labjs-section%3D%22main%22%3E%0A%20%20%20%20%3Cmain%20class%3D%22content-vertical-center%20content-horizontal-center%22%3E%0A%20%20%20%20%20%20%3Cdiv%3E%0A%20%20%20%20%20%20%20%20%3Ch2%3ELoading%20Experiment%3C%2Fh2%3E%0A%20%20%20%20%20%20%20%20%3Cp%3EThe%20experiment%20is%20loading%20and%20should%20start%20in%20a%20few%20seconds%3C%2Fp%3E%0A%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%3C%2Fmain%3E%0A%20%20%3C%2Fdiv%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E%0A",
+        "source": "library"
+      },
+      "style.css": {
+        "content": "data:text/css,textarea%20%7B%0D%0A%20%20%20%20display%3A%20block%3B%0D%0A%20%20%20%20margin-left%3A%20auto%3B%0D%0A%20%20%20%20margin-right%3A%20auto%3B%0D%0A%7D%0D%0A%0D%0Ah1%20%7Bfont-family%3A%20'Inria%20Serif'%3B%20%0D%0A%20%20%20%20font-size%3A%20200%25%3B%20%0D%0A%20%20%20%20letter-spacing%3A0.05em%3B%20%0D%0A%20%20%20%20text-align%3Acenter%7D%0D%0A%20%20%20%20%0D%0Ap%20%7B%20font-family%3A%20'Quicksand'%2C%20sans-serif%3B%20%7D%0D%0A%0D%0Abutton%20%7B%20font-family%3A%20'Inria%20Serif'%2C%20sans-serif%3B%20%20font-weight%3A%20bold%7D%0D%0A%0D%0Atextarea%20%7B%20font-family%3A%20'Quicksand'%2C%20sans-serif%3B%20%7D%0D%0A%0D%0Ainput%20%7B%20font-family%3A%20'Quicksand'%2C%20sans-serif%3B%20%7D",
+        "source": "library"
+      }
+    },
+    "bundledFiles": {
+      "lib/lab.js": {
+        "type": "application/javascript"
+      },
+      "lib/lab.js.map": {
+        "type": "text/plain"
+      },
+      "lib/lab.fallback.js": {
+        "type": "application/javascript"
+      },
+      "lib/lab.legacy.js": {
+        "type": "application/javascript"
+      },
+      "lib/lab.legacy.js.map": {
+        "type": "text/plain"
+      },
+      "lib/lab.css": {
+        "type": "text/css"
+      },
+      "lib/loading.svg": {
+        "type": "image/svg+xml"
+      }
+    }
+  }
+}
