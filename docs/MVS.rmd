@@ -1,0 +1,1169 @@
+---
+title             : "Internal models of visual search are rich, person-specific, and mostly accurate"
+shorttitle        : "Internal models of visual search"
+
+author:
+  - name: Matan Mazor
+    affiliation: "1" 
+    address:
+    - WC1 3BG, London UK
+    email:  m.mazor.17@ucl.ac.uk
+    corresponding : yes    # Define only one corresponding author
+  - name: Max Siegel
+    affiliation: "2"
+    address:
+    - MA 02139, USA
+    email:  maxs@mit.edu
+  - name: Joshua B. Tenenbaum
+    affiliation: "2"
+    address:
+    - MA 02139, USA
+    email:  jbt@mit.edu
+    
+affiliation:
+  - id            : "1"
+    institution   : "Wellcome Centre for Human Neuroimaging, University College London"
+  - id            : "2"
+    institution   : "Department of Brain and Cognitive Sciences, Massachusetts Institue of Technology"
+
+abstract: |
+  Having an internal model of one’s attention can be useful for effectively managing limited perceptual and cognitive resources. While previous work has hinted to the existence of an internal model of attention, it is still unknown how rich and flexible this model is, whether it corresponds to one’s own attention or alternatively to a generic person-invariant schema, and whether it is specified as a list of facts and rules, or alternatively as a probabilistic simulation model.  To this end, we designed a task to test participants’ ability to estimate their own behavior in a visual search task with novel displays. In four online experiments (two exploratory and two pre-registered), prospective search time estimates reflected accurate metacognitive knowledge of key findings in the visual search literature, including the set-size effect, higher efficiency of feature- over conjunction- searches, and visual search asymmetry for familiar and unfamiliar stimuli. We further find that participants’ estimates fit better with their own search times compared to the search times of other participants. Together, we interpret our findings as suggesting that people hold an internal model of visual search that is rich, person specific, and mostly accurate.
+
+  
+  <!-- https://tinyurl.com/ybremelq -->
+  
+keywords          : "metacognition, self-model, intuitive theories, visual search"
+wordcount         : "5525"
+
+bibliography      : ["r-references.bib"]
+
+floatsintext      : no
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+linenumbers       : yes
+mask              : no
+draft             : no
+
+documentclass     : "apa6"
+classoption       : "man"
+output            : papaja::apa6_word
+appendix          : "Appendix1.rmd"
+---
+
+```{r setup, include = FALSE}
+library('papaja')
+library('dplyr')
+library('magrittr')
+library('broom')
+library('tidyr')
+library('BayesFactor')
+library('lmerTest')
+library('ppcor')
+library('ggplot2')
+library('png')
+library('grid')
+library('png')
+library('cowplot')
+library('modeest') # for mode
+options(warn=-1)
+
+r_refs('r-references.bib')
+set.seed(42)
+
+```
+
+```{r analysis-preferences}
+# Seed for random number generation
+set.seed(42)
+knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
+```
+
+## Introduction
+
+In order to efficiently interact with the world, agents construct *mental models*: simplified representations of the environment and of other agents that are accurate enough to generate useful predictions and handle missing data [@forrester1971counterintuitive; @friston2010free; @tenenbaum2011grow]. For example, participants’ ability to predict the temporal unfolding of physical scenes has been attributed to an ‘intuitive physics engine’: a simplified model of the physical world that uses approximate, probabilistic simulations to make rapid inferences [@battaglia2013simulation].  Similarly, having a simplified model of planning and decision-making allows humans to infer the beliefs and desires of other agents based on their observed behaviour [@baker2011bayesian]. Finally, in motor control, an internal model of one’s motor system and body allows subjects to monitor and control their body [@wolpert1995internal]. This internal forward model has also been proposed to play a role in differentiating self and other [@blakemore1998central].  In recent years, careful experimental and computational work has advanced our understanding of these internal models: their scope, the abstractions that they make, and the consequences of these abstractions for faithfully and efficiently modeling the environment.
+
+Agents may benefit from having a simplified model not only of the environment, other agents, and their motor system, but also of their own perceptual, cognitive and psychological states. For example, it has been suggested that knowing which items are more subjectively memorable is useful for making negative recognition judgments ["I would have remembered this object if I saw it"; @brown1977memorability]. Similarly, children guided their decisions and evidence accumulation based on model-based expectations about the perception of hidden items [@magid2017intuitive]. In the context of perception and attention, @graziano2015attention argued that having a simplified Attention Schema - a simplified model of attention and its dynamics - is crucial for monitoring and controlling one’s attention, similar to how a body-schema supports motor control.
+
+Indeed, people are not only capable of predicting the temporal unfolding of physical scenes, or the behaviour of other agents, but also the workings of their own attention under hypothetical scenarios. In one study, participants held accurate beliefs about the serial nature of visual search for a conjunction of features, and the parallel nature of visual search for a distinct color [@levin2008visual]. Similarly, the majority of third graders knew that the addition of distractors makes finding the target harder, particularly if the distractors and target are of the same color [@miller1977children]. These and similar studies established the existence of metacognitive knowledge about visual search, as a result raising new questions about its structure, limits, and origins. We identify three such open questions. First, do internal models of visual search represent search difficulty along a continuum, or alternatively classify search displays as being either ‘easy’ or ‘hard’? Second, to what extent is knowledge about visual search learned or calibrated based on first-person experience? And third, are internal models of visual search structured as a list of facts and laws, or as an approximate probabilistic simulation? 
+
+Here we take a first step toward providing answers to these three questions, using visual search as our model test case for internal models of perception and attention more generally. Participants estimated their prospective search times in visual search tasks and then performed the same searches. Similar to using colliding balls [@smith2013sources] and falling blocks [@battaglia2013simulation] to study intuitive physics, here we chose visual search for being thoroughly studied and for following robust behavioural laws. In Experiments 1 and 2, we used simple colored shapes as our stimuli, and compared participants’ intuitive theories to scientific theories of attention that distinguish parallel from serial processing. We found that participants represented the relative efficiency of different search tasks along a continuum, but had a persistent bias to assume serial search. In experiments 3 and 4 we used unfamiliar stimuli from the Omniglot dataset [@lake2011one] with the purpose of testing the richness and compositional nature of participants’ internal models, and their reliance on person-specific knowledge. We find that participants do remarkably well in predicting their search times for novel stimuli. Furthermore, we show that internal models of visual search are person-specific, in that they are better fitted to one’s own search behaviour compared with the search behaviour of other participants. Although estimation time analysis failed to provide direct evidence for online simulation, we suggest that a graded, person-specific representation of visual search is most consistent with a simulation account.
+
+# Experiments 1 and 2: shape, orientation, and color
+
+An internal model of visual search may take a similar form to that of a scientific theory, by specifying an ontology of concepts and a set of causal laws that operate over them [@gopnik1997words; @gerstenberg2017intuitive]. For example, participants may hold an intuitive theory of visual search that is similar to Anne Treisman’s *Feature Integration Theory*. According to Feature Integration Theory, visual search comprises two stages: a pre-attentive parallel stage, and a serial focused attention stage [@treisman1986features;@treisman1990conjunction]. In the first stage, visual features (such as color, orientation, and intensity) are extracted from the display to generate spatial ‘feature maps’. Targets that are defined by a single feature with respect to their surroundings can be located based on these feature maps alone (*feature search*; for example searching for a red car in a road full of yellow taxis). Since the extraction of the feature map is pre-attentive, in these cases the search can be completed immediately. In contrast, sometimes the target can only be identified by integrating over multiple features (*conjunction search*; for example if the road has not only yellow taxis, but also red buses). In such cases, attention must be serially deployed to items in the display until the target is identified.
+
+A simplifying assumption of Feature Integration Theory is that there is no transfer of information between the pre-attentive and focused attention stages. In other words, observers cannot selectively direct their focused attention to items that produced strong activations in the pre-attentive stage. Guided Search  models [@wolfe1989guided; @wolfe1994guided; @wolfe2021guided] assume instead that participants use these pre-attentive guiding signals in their serial search. Compared to Feature Integration Theory, Guided Search models provide much better fit to empirical data, at the expense of being more complex and rich in detail. To date, it is unknown where do mental models of visual search fall on this performance-complexity trade-off: do people differentiate between ‘easy’ and ‘hard’ searches like in Feature Integration Theory, or do they represent search difficulty on a continuum, more like Guided Search?  
+
+In Experiments 1 and 2 we used stimuli that lend themselves to a categorical distinction between parallel and serial search: simple geometrical shapes of different colors and orientations. We asked whether participants’ mental models of visual search predict which search displays demand serial deployment of attention and which don’t. Critically, participants gave their search time estimates before they were asked to perform searches involving these or similar stimuli, so their search time estimates reflected prior beliefs about search efficiency. Experiment 2 was designed to replicate and generalize the results of Exp. 1 to a new stimulus dimension (orientation) and distractor set sizes. Our hypotheses and analysis plan for Experiment 2, based on the results of Experiment 1, were pre-registered prior to data collection (pre-registration document: [osf.io/2dpq9](osf.io/2dpq9)).
+
+
+## Participants
+
+For Exp. 1, 100 participants were recruited from Amazon's crowdsourcing web-service Mechanical Turk. Exp. 1 took about 20 minutes to complete. Each participant was paid \$2.50. The highest performing 30% of participants received an additional bonus of \$1.50.  For Exp. 2, 100 participants were recruited from the Prolific crowdsourcing web-service. The experiment took about 15 minutes to complete. Each participant was paid \£1.5. The highest performing 30\% of participants received an additional bonus of \£1. 
+
+## Procedure
+The study was built using the Lab.js platform [@henninger2019lab] and hosted on a JATOS server [@lange2015just]. 
+
+### Familiarization {-}
+First, participants were acquainted with the visual search task. The instructions for this part were as follows:
+
+>In the first part, you will find a target hidden among distractors. First, a gray cross will appear on the screen. Look at the cross. Then, the target and distractors will appear. When you spot the target, press the spacebar as quickly as possible. Upon pressing the spacebar, the target and distractors will be replaced by up to 5 numbers. To move to the next trial, type in the number that replaced the target.
+
+The instructions were followed by four trials of an example visual search task (searching for a *T* among 7 *L*s). Feedback was delivered on speed and accuracy. The purpose of this part of the experiment was to familiarize participants with the task. 
+
+### Estimation {-}
+
+After familiarization, participants estimated how long it would take them to perform various visual search tasks involving novel stimuli and various set sizes. On each trial, they were presented with a target stimulus and a display of distractors and were asked to estimate how long it would take to find the target if it was hidden among the distractors (see Fig. \@ref(fig:MVS-methods1)). 
+
+To motivate accurate estimates, we explained that these visual search tasks will be performed in the last part of the experiment, and that bonus points will be awarded for trials in which participants respond as fast or faster than their estimation. The number of points awarded for a successful search changed as a function of the search time estimate according to the rule
+$points=\frac{1}{\sqrt{secs}}$. This rule was chosen for being exponential with respect to the log response times, incentivizing participants to be consistent in their ratings across short and long search tasks (see Appendix \@ref(App:bonus)). The report scale ranged from 0.1 to 4 seconds in Exp. 1 and to 2 seconds in Exp. 2. 
+
+```{r MVS-methods1, cache=TRUE, echo=FALSE, fig.cap="Experimental design. Participants first performed five similar visual search trials and received feedback about their speed and accuracy. Then, they were asked to estimate the duration of novel visual search tasks. Bonus points were awarded for accurate estimates, and more points were awarded for risky estimates. Finally, in the visual search part participants performed three consecutive trials of each visual search task for which they gave a search time estimates. Right panels: stimuli used for Experiments 1 and 2.", fig.align='center', out.width = '100%'}
+knitr::include_graphics("figures/methods1.png")
+```
+
+After one practice trial (estimating search time for finding one *T* among 3 randomly positioned *L*s), we turned to our stimuli of interest. In Experiment 1, participants estimated how long it would take them to find a red (#FF5733) square among green (#16A085) squares (color condition), red circles (shape condition) and a mix of green squares, red circles, and green circles (shape-color conjunction condition), for set sizes 1, 5, 15 and 30. Together, participants estimated the expected search time of 12 different search tasks (see Figure \@ref(fig:MVS-methods1), upper right panel). In Experiment 2, participants rated how long it would take them to find a red tilted bar (20\° off vertical) among green titled bars (color condition), red vertical bars (orientation condition) and a mix of green tilted and red vertical bars (orientation-color conjunction condition) for set sizes 2, 4, and 8. Together, participants estimated the expected search time of 9 different search tasks (see Figure \@ref(fig:MVS-methods1), lower right panel). In both experiments, the order of estimation trials was randomized between participants. 
+
+### Visual Search {-}
+Participants performed three consecutive search tasks for each of the 12 (Exp. 1) or 9 (Exp. 2) search types. The order of presentation was randomized between participants. No feedback was delivered about speed. To motivate accurate responses, error trials were followed by a 5-second pause. 
+
+## Results
+
+```{r MVS-e1-descriptives, include=FALSE, cache=TRUE}
+# load data
+min_RT <- 0.2 #seconds
+max_RT <- 5
+max_tte <- 30 #time to estimate
+max_exclude <- 30 #percent
+
+e1=list();
+
+e1$df <- read.csv('../data/expt1.csv');
+
+filterDataFrame <- function(e) {
+  
+  e$all_subjects <- e$df$Subj_id%>%unique();
+
+  e$N_total <- e$all_subjects%>%length();
+
+  # summarize accuracy
+  e$acc <- e$df %>% 
+    group_by(Subj_id) %>%
+    summarize(acc = mean(accuracy, na.rm=TRUE)) %>%
+    pull(acc);
+  
+  e$num_errors <- length(which(e$df$accuracy==0));
+  e$too_fast <- length(which(e$df$RT<min_RT));
+  e$too_slow <- length(which(e$df$RT>max_RT));
+  e$slow_est <- length(which(e$df$timeToEstimate>max_tte))/3;
+  
+  # add an 'include' column based on reaction time, estimation time, 
+  # and response accuracy
+  e$df %<>%
+    mutate(include=ifelse(accuracy==1 & 
+                            !is.na(RT) &
+                            RT>min_RT &
+                            RT<max_RT,
+                            1,0)) %>%
+    mutate(timeToEstimate = ifelse(timeToEstimate <30, 
+                                   timeToEstimate, NA ))
+  
+  e$filtered_df <- e$df %>%
+    group_by(Subj_id) %>% 
+    filter(mean(include)>(100-max_exclude)/100) %>%
+    filter(include==1);
+  
+  # how many participants have survived exclusion?
+  e$N <- length(unique(e$filtered_df$Subj_id))
+  
+  # average all three trials from each search type
+  e$avgd <- e$filtered_df %>% 
+    group_by(Subj_id,search_type,set_size) %>%
+    summarize_at(vars('RT','estimates','timeToEstimate'),mean)
+
+  return(e)
+}
+
+e1 <- e1%>%filterDataFrame();
+
+```
+
+```{r MVS-e2-descriptives, include=FALSE}
+e2=list();
+
+# In the pre-registration document, Exp. 2 is Exp. 3 and vice versa. 
+e2$df <- read.csv('../data/expt3.csv');
+
+e2 <- e2%>%filterDataFrame();
+```
+
+
+Accuracy in the visual search task was reasonably high in both Experiments (Exp. 1: `r e1$acc%>%t.test()%>%apa_print()%>%'$'(estimate)`; Exp. 2: `r e2$acc%>%t.test()%>%apa_print()%>%'$'(estimate)`). Error trials and visual search trials that took shorter than `r min_RT` seconds or longer than `r max_RT` seconds were excluded from all further analysis. Participants were excluded if more than `r max_exclude`\% of their trials were excluded based on the aforementioned criteria, leaving `r e1$N` and `r e2$N` participants for the main analysis of Experiments 1 and 2, respectively. 
+```{r MVS-e1-search-slopes, include=FALSE, cache=TRUE}
+
+getSlopes <- function(e) {
+  
+  # fit a linear model predicting RT from set size for each 
+  # subject and search type
+  e$search_slopes <- e$filtered_df %>%
+    group_by(Subj_id,search_type) %>%
+    do(model=lm(RT~set_size,data=.)) %>%
+    tidy(model) %>%
+    filter(term=='set_size');
+  
+  e$mean_search_slopes <- e$search_slopes %>%
+  group_by(search_type) %>%
+  summarize(mean=mean(estimate)*1000) %>%
+  spread(key=search_type, value=mean);
+  
+  dfs<-e$filtered_df
+  dfs[,c(7)]=scale(dfs[,c(7)]) # center set size
+  e$RT_model <- lmer(RT ~ set_size*search_type + ((1+set_size*search_type)| Subj_id), data=dfs);
+  e$est_model <- lmer(estimates ~ set_size*search_type + ((1+set_size*search_type)| Subj_id), data=dfs); 
+  
+  return(e)
+}
+
+e1 <- e1%>%getSlopes()
+
+
+
+e1$t_slope_color <- e1$search_slopes %>%
+                            filter(search_type=='color') %$%
+                            estimate %>%
+                            t.test(.,mu=0)
+
+e1$BF_slope_color <- e1$search_slopes %>%
+                            filter(search_type=='color') %$%
+                            estimate %>%
+                            ttestBF(.,mu=0)
+
+e1$t_slope_shape <- e1$search_slopes %>%
+                            filter(search_type=='shape') %$%
+                            estimate %>%
+                            t.test(.,mu=0)
+
+e1$t_slope_conj <- e1$search_slopes %>%
+                            filter(search_type=='conjunction') %$%
+                            estimate %>%
+                            t.test(.,mu=0)
+
+e1$search_shape_vs_color <- t.test(
+  e1$search_slopes %>%
+    filter(search_type=='shape') %$%
+    estimate,
+  e1$search_slopes %>% 
+    filter(search_type=='color') %$%
+    estimate,
+  paired=TRUE);
+
+e1$search_shape_vs_conjunction <- t.test(
+  e1$search_slopes %>%
+    filter(search_type=='shape') %$%
+    estimate,
+  e1$search_slopes %>% 
+    filter(search_type=='conjunction') %$%
+    estimate,
+  paired=TRUE)
+
+```
+
+
+```{r MVS-e2-search-slopes, include=FALSE, cache=TRUE}
+
+e2 <- e2 %>%
+  getSlopes()
+
+e2$t_slope_color <- e2$search_slopes %>%
+                            filter(search_type=='color') %$%
+                            estimate %>%
+                            t.test(.,mu=0)
+
+e2$BF_slope_color <- e2$search_slopes %>%
+                            filter(search_type=='color') %$%
+                            estimate %>%
+                            ttestBF(.,mu=0)
+
+e2$t_slope_orientation <- e2$search_slopes %>%
+                            filter(search_type=='orientation') %$%
+                            estimate %>%
+                            t.test(.,mu=0);
+
+e2$BF_slope_orientation <- e2$search_slopes %>%
+                            filter(search_type=='orientation') %$%
+                            estimate %>%
+                            ttestBF(.,mu=0)
+
+e2$t_slope_conj <- e2$search_slopes %>%
+                            filter(search_type=='conjunction') %$%
+                            estimate %>%
+                            t.test(.,mu=0)
+
+e2$search_orientation_vs_color <- t.test(
+  e2$search_slopes %>%
+    filter(search_type=='orientation') %$%
+    estimate,
+  e2$search_slopes %>% 
+    filter(search_type=='color') %$%
+    estimate,
+  paired=TRUE);
+
+e2$search_orientation_vs_conjunction <- t.test(
+  e2$search_slopes %>%
+    filter(search_type=='orientation') %$%
+    estimate,
+  e2$search_slopes %>% 
+    filter(search_type=='conjunction') %$%
+    estimate,
+  paired=TRUE)
+
+
+```
+
+
+### Search times {-}
+
+For each participant and distractor type, we extracted the slope of the function relating RT to distractor set size. As expected, search slopes for color search were not significantly different from zero in Exp. 1 (`r printnum(e1$mean_search_slopes$color)` ms/item; `r paste(apa_print(e1$t_slope_color)$statistic, apa_print(e1$BF_slope_color, auto_invert=TRUE)$statistic,sep=', ')`) and Exp. 2 (`r printnum(e2$mean_search_slopes$color)` ms/item; `r paste(apa_print(e2$t_slope_color)$statistic, apa_print(e2$BF_slope_color, auto_invert=TRUE)$statistic,sep=', ')`). This is consistent with color being a basic feature that is not dependent on serial attention for its extraction by the visual system [@treisman1986features;@treisman1990conjunction]. The slope for shape search was close, but significantly higher than zero (`r printnum(e1$mean_search_slopes$shape)` ms/item; `r apa_print(e1$t_slope_shape)$statistic`), and the slope for orientation was numerically higher than zero (`r printnum(e2$mean_search_slopes$orientation)` ms/item) but not significantly so (`r paste(apa_print(e2$t_slope_orientation)$statistic, apa_print(e2$BF_slope_orientation, auto_invert=TRUE)$statistic,sep=', ')`). In both Experiments, conjunction search gave rise to search slopes significantly higher than zero (Exp. 1: `r printnum(e1$mean_search_slopes$conjunction)` ms/item (`r apa_print(e1$t_slope_conj)$statistic`; Exp. 2: `r printnum(e2$mean_search_slopes$conjunction)` ms/item (`r apa_print(e2$t_slope_conj)$statistic`; see Figure \@ref(fig:ch4-e1-e2-slopes)). 
+
+```{r MVS-e1-estimation, include=FALSE, cache=TRUE}
+
+analyzeEstimates <- function(e) {
+  
+  # mean search times and estimated search times per participant
+  e$mean_times <- e$filtered_df %>% 
+  group_by(Subj_id) %>%
+  summarize_at(vars('RT','estimates'),mean)
+
+  e$time_comparison = t.test(e$mean_times$estimates, 
+                             e$mean_times$RT, 
+                             paired=TRUE);
+  
+  e$est_slopes <- e$filtered_df %>%
+  group_by(Subj_id,search_type) %>%
+  do(model=lm(estimates~set_size,data=.)) %>%
+  tidy(model) %>%
+  filter(term=='set_size');
+  
+  e$mean_est_slopes <- e$est_slopes %>%
+  group_by(search_type) %>%
+  summarize(mean=mean(estimate)*1000) %>%
+  spread(key=search_type, value=mean)
+  
+  e$slope_comparison <- t.test(
+  aggregate(e$est_slopes$estimate, by=list(e$est_slopes$Subj_id), FUN=mean)$x,
+  aggregate(e$search_slopes$estimate, by=list(e$search_slopes$Subj_id), FUN=mean)$x,
+  paired=TRUE);
+
+  return(e)
+};
+
+e1 <- e1 %>%
+  analyzeEstimates() 
+
+e1$est_shape_vs_color <- t.test(
+  e1$est_slopes %>%
+    filter(search_type=='shape') %$%
+    estimate,
+  e1$est_slopes %>% 
+    filter(search_type=='color') %$%
+    estimate,
+  paired=TRUE);
+
+e1$est_conjunction_vs_color <- t.test(
+  e1$est_slopes %>%
+    filter(search_type=='conjunction') %$%
+    estimate,
+  e1$est_slopes %>% 
+    filter(search_type=='color') %$%
+    estimate,
+  paired=TRUE);
+
+e1$est_conjunction_vs_shape <- t.test(
+  e1$est_slopes %>%
+    filter(search_type=='conjunction') %$%
+    estimate,
+  e1$est_slopes %>% 
+    filter(search_type=='shape') %$%
+    estimate,
+  paired=TRUE)
+
+e1$t_est_slope_color <- e1$est_slopes %>%
+                            filter(search_type=='color') %$%
+                            estimate %>%
+                            t.test(.,mu=0)
+
+# Spearman correlations
+e1$RT_est_corr <- e1$avgd %>%
+  group_by(Subj_id) %>%
+  summarize(COR = cor(RT,estimates,method = 'spearman',use='complete.obs'))
+
+# Spearman part correlations, controlling for set size
+e1$RT_est_corr_no_set_size <- e1$avgd %>%
+  group_by(Subj_id) %>%
+  na.omit() %>%
+  summarize(COR = spcor.test(estimates,RT,set_size,method = 'spearman')$estimate)
+
+# Spearman part correlations, controlling for search type slope
+e1$RT_est_corr_no_type <- e1$avgd %>%
+  group_by(Subj_id) %>%
+  na.omit() %>%
+  summarize(COR = spcor.test(estimates,RT, 
+    list(
+      ifelse(search_type=='conjunction',1,0)*set_size,
+      ifelse(search_type=='shape',1,0)*set_size),
+    method = 'spearman')$estimate);
+
+# Spearman part correlations, controlling for search type and set size and for the interaction between them.
+e1$RT_est_corr_no_set_size_type <- e1$avgd %>%
+  group_by(Subj_id) %>%
+  na.omit() %>%
+  summarize(COR = spcor.test(estimates,RT, list(
+    set_size,
+    ifelse(search_type=='conjunction',1,0)*set_size,
+    ifelse(search_type=='shape',1,0)*set_size),
+    method = 'spearman')$estimate)
+
+```
+
+```{r MVS-e2-estimation, include=FALSE, cache=TRUE}
+
+
+e2 <-  e2 %>%
+  analyzeEstimates()
+
+
+e2$est_orientation_vs_color <- t.test(
+  e2$est_slopes %>%
+    filter(search_type=='orientation') %$%
+    estimate,
+  e2$est_slopes %>% 
+    filter(search_type=='color') %$%
+    estimate,
+  paired=TRUE);
+
+e2$est_conjunction_vs_color <- t.test(
+  e2$est_slopes %>%
+    filter(search_type=='conjunction') %$%
+    estimate,
+  e2$est_slopes %>% 
+    filter(search_type=='color') %$%
+    estimate,
+  paired=TRUE);
+
+e2$est_conjunction_vs_orientation <- t.test(
+  e2$est_slopes %>%
+    filter(search_type=='conjunction') %$%
+    estimate,
+  e2$est_slopes %>% 
+    filter(search_type=='orientation') %$%
+    estimate,
+  paired=TRUE);
+
+e2$t_est_slope_color <- e2$est_slopes %>%
+                            filter(search_type=='color') %$%
+                            estimate %>%
+                            t.test(.,mu=0);
+
+e2$t_est_slope_orientation <- e2$est_slopes %>%
+                            filter(search_type=='orientation') %$%
+                            estimate %>%
+                            t.test(.,mu=0)
+
+# Spearman correlations
+e2$RT_est_corr <- e2$avgd %>%
+  group_by(Subj_id) %>%
+  summarize(COR = cor(RT,estimates,method = 'spearman',use='complete.obs'))
+
+# Spearman part correlations, controlling for set size
+e2$RT_est_corr_no_set_size <- e2$avgd %>%
+  group_by(Subj_id) %>%
+  na.omit() %>%
+  summarize(COR = spcor.test(estimates,RT,set_size,method = 'spearman')$estimate)
+
+# Spearman part correlations, controlling for search type slope
+e2$RT_est_corr_no_type <- e2$avgd %>%
+  group_by(Subj_id) %>%
+  na.omit() %>%
+  summarize(COR = spcor.test(estimates,RT, 
+    list(
+      ifelse(search_type=='conjunction',1,0)*set_size,
+      ifelse(search_type=='orientation',1,0)*set_size),
+    method = 'spearman')$estimate);
+
+# Spearman part correlations, controlling for search type and set size and for the interaction between them.
+e2$RT_est_corr_no_set_size_type <- e2$avgd %>%
+  group_by(Subj_id) %>%
+  na.omit() %>%
+  summarize(COR = spcor.test(estimates,RT, list(
+    set_size,
+    ifelse(search_type=='conjunction',1,0)*set_size,
+    ifelse(search_type=='orientation',1,0)*set_size),
+    method = 'spearman')$estimate)
+
+```
+
+### Estimation accuracy {-}
+
+We next turned to analyze participants' prospective search time estimates, and their alignment with actual search times. In both Experiments, participants generally overestimated their search times. This was the case for all search types across the two Experiments (see Figure \@ref(fig:MVS-e1-e2-slopes), left panels: all markers are above the dashed $x=y$ diagonal). This is expected, based on our bonus scheme that incentivized conservative estimates (see Appendix \@ref(App:bonus)). Despite this bias, estimates were correlated with true search times, supporting a metacognitive insight into visual search behaviour (see Fig. \@ref(fig:ch4-e1-e2-slopes), left panels. Within subject Spearman correlations, Exp. 1: `r apa_print(t.test(e1$RT_est_corr$COR))$full_result`; Exp 2: `r apa_print(t.test(e2$RT_est_corr$COR))$full_result`). 
+
+To test participants' intuitive theory of visual search, we analyzed their estimates as if they were search times, and extracted *estimation slopes* relating estimates to the number of distractors in the display (see Fig. \@ref(fig:ch4-e1-e2-slopes), right panels). Estimation slopes (expected ms/item) were steeper than search slopes for all search types. In particular, although search time for a deviant color was unaffected by the number of distractors, participants estimated that color searches with more distractors should take longer (mean estimated slope in Exp. 1: `r printnum(e1$mean_est_slopes$color)` ms/item; `r apa_print(e1$t_est_slope_color)$statistic`; in Exp 2: `r printnum(e2$mean_est_slopes$color)` ms/item; `r apa_print(e2$t_est_slope_color)$statistic`). In other words, at the group level, participants showed no metacognitive insight into the parallel nature of color search. 
+
+Although they were significantly different from zero, in both Experiments estimation slopes for color search were significantly shallower than for conjunction search (Exp. 1: `r apa_print(e1$est_conjunction_vs_color)$statistic`, Exp. 2: `r apa_print(e2$est_conjunction_vs_color)$statistic`). In contrast, although true search slopes were shallower for shape and orientation than for conjunction (p's<0.001), the difference in estimation slopes was not significant (difference between shape and conjunction slopes: `r apa_print(e1$est_conjunction_vs_shape)$statistic`; difference between orientation and conjunction slopes: `r apa_print(e2$est_conjunction_vs_orientation)$statistic`). 
+
+
+```{r ch4-e1-e2-slopes, echo=FALSE,cache=TRUE,fig.cap="Left panels: median estimated search times plotted against true search times for the different search types (coded by color), and set sizes (coded by circle size; from small to large), for Exp. 1 (upper panel) and 2 (lower panel). Error bars represent the standard error of the median. Right panels: distribution of search (top) and estimated (bottom) slopes for the three search types in Exp. 1 (upper panel) and 2 (lower panel). The dashed line indicates $y=x$."}
+
+plotSlopes <- function(e) {
+  e$est_slopes$measure='estimate'
+  e$search_slopes$measure='RT'
+  e$slopes <- bind_rows(e$est_slopes,e$search_slopes) %>%
+    mutate(measure = factor(measure, levels=c('RT','estimate')),
+           estimate_ms = estimate*1000)
+  e$slope_figure <- ggplot(e$slopes,aes(x=estimate_ms,fill=search_type))+
+    geom_vline(xintercept = 0) +
+    geom_vline(xintercept = 1) +
+    geom_density(alpha=0.5, color='black')+
+      labs(x="slope (ms/item)", y = "")+
+    facet_grid(measure ~ .,scales='free_y') +
+    scale_fill_manual(values = c("#648FFF","#DC267F","#FFB000")) + 
+    scale_color_manual(values = c("#648FFF","#DC267F","#FFB000")) +
+      theme_classic()+
+    theme(aspect.ratio=0.5, 
+          legend.position='none',
+          axis.title.y=element_blank(),
+          axis.text.y=element_blank(),
+          axis.ticks.y=element_blank(),
+          );
+  
+  return(e);
+};
+
+#http://davidmlane.com/hyperstat/A106993.html
+semedian <- function(x) {return(se(x, na.rm=TRUE)*1.253)}
+
+plotMedian <- function(e) {
+  
+  e$median <- e$avgd %>%
+  group_by(search_type,set_size) %>%
+  summarize_at(vars('RT','estimates','timeToEstimate'),median, na.rm=TRUE)%>%
+    mutate(RT=RT*1000,
+           estimates=estimates*1000,
+           timeToEstimate=timeToEstimate*1000)
+
+  e$sem <- e$avgd %>%
+    group_by(search_type,set_size) %>%
+    summarize_at(vars('RT','estimates','timeToEstimate'),semedian)%>%
+    mutate(RT=RT*1000,
+           estimates=estimates*1000,
+           timeToEstimate=timeToEstimate*1000)
+  
+  e$median_figure <- ggplot(e$median,
+         aes(x=RT,y=estimates,color=search_type,fill=search_type,size=set_size, order=desc(set_size)))+
+    geom_errorbar(
+      aes(ymin = estimates-e$sem$estimates,ymax = estimates + e$sem$estimates),size=0.5)+
+    geom_errorbar(
+      aes(xmin = RT-e$sem$RT,xmax = RT + e$sem$RT),size=0.5)+
+    geom_abline(slope=c(1),intercept=0,linetype=c('dashed'))+
+    geom_point(aes(order=desc(set_size)),color='black',pch=21,alpha=0.5)+
+    geom_path(size=0.5)+
+    theme_classic() + 
+    coord_fixed(ratio=0.5)+labs(x='RT (ms)',
+                                y='estimates (ms)') +
+    scale_fill_manual(values = c("#648FFF","#DC267F","#FFB000")) + 
+    scale_color_manual(values = c("#648FFF","#DC267F","#FFB000")) +
+    guides(size=FALSE) +
+    scale_y_continuous(limits=c(200,2000),
+                       breaks=seq(0,2000,by=500))+
+    scale_x_continuous(limits=c(200,2000),
+                       breaks=seq(0,2000,by=500))+
+    theme(legend.position=c(0.8,0.4),
+          legend.title = element_blank(),
+          legend.background = element_blank(),
+          legend.box.background = element_blank());
+  
+  return(e)
+};
+
+e1 <- e1 %>%
+  plotSlopes() %>%
+  plotMedian()
+
+e2 <- e2 %>%
+  plotSlopes() %>%
+  plotMedian()
+
+p <- plot_grid(e1$median_figure+labs(title='Experiment 1')+labs(x=''),e1$slope_figure+labs(x=''),
+          e2$median_figure+labs(title='Experiment 2'),e2$slope_figure)
+
+ggsave('figures/exp1and2Results.png',p,width=6, height=6);
+#after some manual tweaks
+img <- png::readPNG('figures/results12.png');
+grid::grid.raster(img)
+```
+
+### A graded representation of search efficiency {-}
+
+In Feature Integration Theory, searches come in two flavours: parallel and serial. If participants' model of visual search shares this simplifying assumption, the results from the previous section indicate that their theories also wrongly specify that shape and orientation searches are serial just like conjunction search. In contrast, a mental model of visual search may represent search efficiency along a continuum, with some searches being highly efficient, some highly inefficient, and others fall somewhere in between the two ends. This is more in line with Guided Search models [@hoffman1979two; @wolfe1989guided; @wolfe2021guided].
+
+```{r MVS-e1-e2-scaled-slopes, echo=FALSE,cache=TRUE, warning=FALSE, message=FALSE, fig.cap="Normalized slopes for feature searches in Experiments 1 (left) and 2 (right). Search and estimate slopes were divided by the conjunction slopes, to yield subject specific estimates."}
+
+compareSlopesInSubj <- function(e) {
+  
+ normalizedRTSlopes <- e$slopes %>%
+    filter(measure=='RT') %>%
+    group_by(Subj_id) %>%
+    filter(estimate_ms[search_type=='conjunction']>0) %>%
+    mutate(scaled_slope = estimate_ms/estimate_ms[search_type=='conjunction']) %>%
+    filter(search_type != 'conjunction')
+  
+  normalizedEstimateSlopes <- e$slopes %>%
+    filter(measure=='estimate') %>%
+    group_by(Subj_id) %>%
+    filter(estimate_ms[search_type=='conjunction']>0) %>%
+    mutate(scaled_slope = estimate_ms/estimate_ms[search_type=='conjunction']) %>%
+    filter(search_type != 'conjunction')
+  
+  e$normalizedSlopes <- rbind(normalizedRTSlopes, normalizedEstimateSlopes);
+  
+  e$normalized_slope_figure <- ggplot(e$normalizedSlopes,aes(x=scaled_slope,fill=search_type))+
+    geom_vline(xintercept = 0) +
+    geom_vline(xintercept = 1) +
+    geom_density(alpha=0.5, color='black')+
+      labs(x="scaled slope", y = "")+
+    facet_grid(measure ~ .,scales='free_y') +
+    scale_fill_manual(values = c("#648FFF","#FFB000")) + 
+    scale_color_manual(values = c("#648FFF","#FFB000")) +
+    theme_classic()+
+    scale_x_continuous(limits=c(-3,3),breaks=c(0,1), labels=c('0','conj.'))+
+    theme(aspect.ratio=0.5, 
+          axis.title.y=element_blank(),
+          axis.text.y=element_blank(),
+          axis.ticks.y=element_blank(),
+          legend.position="top",
+          legend.title = element_blank()
+          );
+  
+   e$normalizedSlopes <- 
+    e$normalizedSlopes %>% 
+    mutate(id=paste(search_type,measure,sep='_')) %>%
+    dplyr::select(c('Subj_id','id','scaled_slope')) %>%
+    spread(key=id,value=scaled_slope)%>%na.omit();
+  
+  return(e)
+}
+
+e1 <- compareSlopesInSubj(e1);
+
+e2 <- compareSlopesInSubj(e2);
+
+plot_grid(e1$normalized_slope_figure+labs(title='Experiment 1'),
+          e2$normalized_slope_figure+labs(title='Experiment 2'))
+```
+
+To decide between these two options, we focused on the slopes for shape and orientation. These searches were more efficient than conjunction search, but not as efficient as colour search. We tested if this efficiency gradient was represented in search time estimates of single individuals, or alternatively, emerged at the group level only. To this end, we scaled subject-specific RT and estimate slopes with respect to conjunction slopes $\beta_{scaled}=\frac{\beta}{\beta_{conjunction}}$. If representations of search efficiency are dichotomous, single participants can represent shape search either as being equally difficult as conjunction search, or as equally easy as color search. This predicts that the distribution of scaled estimate slopes should peak either at 1 or at the same value as color search. Instead, scaled estimate slopes for both shape and orientation peaked at values lower than 1 and higher than color search, indicating a graded representation of search efficiency in the intuitive theories of single subjects (See Fig. \@ref(MVS:ch4-e1-e2-scaled-slopes). Exp. 1: median: `r e1$normalizedSlopes$shape_estimate%>%median()%>%printnum()`; mode: `r e1$normalizedSlopes$shape_estimate%>%modeest::mlv()%>%printnum()`; One sided Wilcoxon test against 1: `r e1$normalizedSlopes$shape_estimate%>%wilcox.test(mu=1, alternative='less')%>%apa_print()%>%'$'(statistic)`; One sided Wilcoxon test against color slope: `r e1$normalizedSlopes$shape_estimate%>%wilcox.test(e1$normalizedSlopes$color_estimate, alternative='greater', paired=TRUE)%>%apa_print()%>%'$'(statistic)`.  Exp. 2: median: `r e2$normalizedSlopes$orientation_estimate%>%median()%>%printnum()`; mode: `r e2$normalizedSlopes$orientation_estimate%>%modeest::mlv()%>%printnum()`; One sided Wilcoxon test against 1: `r e2$normalizedSlopes$orientation_estimate%>%wilcox.test(mu=1, alternative='less')%>%apa_print()%>%'$'(statistic)`; One sided Wilcoxon test against color slope: `r e2$normalizedSlopes$orientation_estimate%>%wilcox.test(e2$normalizedSlopes$color_estimate, alternative='greater', paired=TRUE)%>%apa_print()%>%'$'(statistic)`). 
+
+# Experiments 3 and 4: complex, unfamiliar stimuli
+
+In Experiments 1 and 2 an internal model of visual search allowed participants to accurately estimate how long it would take them to find a target stimulus in arrays of distractor stimuli. Participants had insight into the set-size effect and into the fact that conjunction searches are more difficult than feature searches. Importantly, this knowledge could not have been acquired in the familiarization phase of the experiment, where we used ‘T’ and ‘L’s as our stimuli and all displays had the same number of distractors. We also found that participants’ internal models of visual search represented search efficiency along a gradient, and were systematically biased to overestimate the effect of set-size, even in feature searches in which the number of distractors had no effect on search time.
+
+In Experiments 3 and 4 we asked how rich this model is, by using displays of complex stimuli with which participants are likely to no or little prior experience (letters from a medieval Alphabet and from the Futurama TV series). Here, insight into the set size effect and its absence in feature searches would not be useful for generating accurate search time estimates. Instead, participants’ mental model of visual search must be capable of extracting relevant features from rich stimuli, and use these features to generate stimulus-specific predictions based on some intricate model of how visual search works. Using these more complex stimuli further allowed us to ask if search-time estimates rely on person-specific knowledge. Exp. 4 followed Exp. 3 and was pre-registered (pre-registration document: [osf.io/dprtk](osf.io/dprtk)). 
+
+## Participants
+
+For Exp. 3, 100 participants were recruited from the Prolific crowdsourcing web-service. The experiment took about 15
+minutes to complete. Participants were paid \£1.5. The highest performing 30\% of participants received an additional bonus of \£1. For Exp. 4, 200 participants were recruited from the Prolific crowdsourcing web-service. We recruited more participants for Exp. 4 in order to have sufficient statistical power for our inter-subject correlation analysis. The experiment took about 8 minutes to complete. Participants were paid \$1.27. The highest performing 30\% of participants received an additional bonus of \$0.75. 
+
+## Procedure
+
+The procedure for Experiments 3 and 4 was similar to that of Exp. 1 with several changes. 
+
+Stimuli were letters drawn by Mechanical Turk workers [@lake2011one], instead of geometrical shapes (see Fig. \@ref(fig:MVS-methods2)). In Exp. 3, we used letters from the *Alphabet of the Magi*. In Exp. 4, we used letters from the *Futurama* television series as well as Latin letters. We explained to participants that they will search for a specific letter (the target letter) among copies of another letter (the distractor letter). In Exp. 3, both target and distractor were letters from the Alphabet of the Magi, and distractors were drawn by different Mechanical Turk workers. In Exp. 4, on half of the trials the target was a Latin letter and distractors were Futurama letters and on the other half the target was a Futurama letter and distractors were Latin letters. In these experiments, distractors were copies of the same letter drawn by the same Mechanical Turk worker. This was important for our visual search asymmetry analysis (see below).
+
+```{r MVS-methods2, cache=TRUE, echo=FALSE, fig.cap="In Exp. 3, stimuli were characters from the Alphabet of the Magi, and distractors were drawn by different Mechanical Turk Users. In Exp.4, stimuli were characters from the Latin and Futurama alphabets. Stimulus pairs 1-4 and 5-8 are identical except for the target assignment. In Exp. 4, all distractors in a display were drawn by the same Mechanical Turk user, and were presented on an invisible clock face.", fig.align='center', out.width = '100%'}
+knitr::include_graphics("figures/methods2.png")
+```
+
+In the familiarization part, we used as target and distractors two letters from the Alphabet of the Magi (Exp. 3) and two letters from the Futurama alphabet (Exp. 4). Importantly, these letters were only used for training, and did not appear in the Estimation or Visual search parts. In the Estimation part participants gave search time estimates for 8 search tasks, all involving 10 distractors, and in the Visual Search part they performed these search tasks. To minimize random variation in spatial configurations (which was important for the search asymmetry analysis), in Exp. 4 letters appeared on an invisible clock face. Finally, the report scale ranged from 0.1 to 4 seconds in Exp. 3 and to 2 seconds in Exp. 4.
+
+## Results
+
+```{r MVS-e3-descriptives, include=FALSE, cache=TRUE}
+
+e3=list();
+
+## In the report, Exp. 2 and 3 are swapped. That's okay.
+e3$df <- read.csv('../data/expt2.csv');
+
+# summarize accuracy
+e3$acc <- e3$df %>% 
+  group_by(Subj_id) %>%
+  summarize(acc = mean(accuracy, na.rm=TRUE))%>%
+  pull(acc)
+
+e3$num_errors <- length(which(e3$df$accuracy==0))
+e3$num_too_slow <- length(which(e3$df$RT>max_RT))
+e3$num_slow_est <- length(which(e3$df$timeToEstimate>max_tte))/3
+
+# add an 'include' column based on reaction time, estimation time, 
+# and response accuracy
+e3$df %<>%
+  mutate(include=ifelse(accuracy==1 & 
+                          !is.na(RT) &
+                          RT<max_RT, 
+                        1,0)) %>%
+  mutate(timeToEstimate = ifelse(timeToEstimate <30, 
+                                 timeToEstimate, NA ))
+
+
+e3$filtered_df <- e3$df %>%
+  group_by(Subj_id) %>% filter(mean(include)>(100-max_exclude)/100) %>%
+  filter(include==1)
+
+# how many participants have survived exclusion?
+e3$N_filtered <- length(unique(e3$filtered_df$Subj_id))
+```
+
+```{r MVS-e4-descriptives, include=FALSE, cache=TRUE}
+
+e4=list();
+
+## In the report, Exp. 2 and 3 are swapped. That's okay.
+e4$df <- read.csv('../data/expt4.csv');
+
+# summarize accuracy
+e4$acc <- e4$df %>% 
+  group_by(Subj_id) %>%
+  summarize(acc = mean(accuracy, na.rm=TRUE))%>%
+  pull(acc)
+
+e4$num_errors <- length(which(e4$df$accuracy==0))
+e4$num_too_slow <- length(which(e4$df$RT>max_RT))
+e4$num_slow_est <- length(which(e4$df$timeToEstimate>max_tte))/3
+
+# add an 'include' column based on reaction time, estimation time, 
+# and response accuracy
+e4$df %<>%
+  mutate(include=ifelse(accuracy==1 & 
+                          !is.na(RT) &
+                          RT<max_RT, 
+                        1,0)) %>%
+  mutate(timeToEstimate = ifelse(timeToEstimate <30, 
+                                 timeToEstimate, NA ))
+
+
+e4$filtered_df <- e4$df %>%
+  group_by(Subj_id) %>% filter(mean(include)>(100-max_exclude)/100) %>%
+  filter(include==1)
+
+# how many participants have survived exclusion?
+e4$N_filtered <- length(unique(e4$filtered_df$Subj_id))
+```
+
+Accuracy in the visual search task was high in both experiments (Exp. 3: `r e3$acc%>%t.test()%>%apa_print()%>%'$'(estimate)`; Exp. 4: `r e4$acc%>%t.test()%>%apa_print()%>%'$'(estimate)`). 
+Error trials and visual search trials that took shorter than `r min_RT` seconds or longer than `r max_RT` seconds were excluded from all further analysis. Participants were excluded if more than `r max_exclude`\% of their trials were excluded based on the aforementioned criteria, leaving `r e3$N_filtered` and `r e4$N_filtered` participants for the main analysis of Experiments 3 and 4, respectively. 
+
+```{r MVS-e3-estimation, include=FALSE, cache=TRUE}
+
+
+# mean search times and estimated search times per participant
+e3$mean_times <- e3$filtered_df %>% 
+  group_by(Subj_id) %>%
+  summarize_at(vars('RT','estimates'),mean)
+
+e3$time_comparison = t.test(e3$mean_times$estimates, e3$mean_times$RT, paired=TRUE)
+
+# average all three trials from each search type
+e3$avgd <- e3$filtered_df %>% 
+  group_by(Subj_id,search_type) %>%
+  summarize_at(vars('RT','estimates','timeToEstimate'),mean)
+
+# Spearman correlations
+e3$RT_est_corr <- e3$avgd %>%
+  group_by(Subj_id) %>%
+  summarize(COR = cor(RT,estimates,method = 'spearman',use='complete.obs'))
+
+#http://davidmlane.com/hyperstat/A106993.html
+semedian <- function(x) {return(se(x, na.rm=TRUE)*1.253)}
+
+e3$median <- e3$avgd %>%
+  group_by(search_type) %>%
+  summarize_at(vars('RT','estimates','timeToEstimate'),median, na.rm=TRUE)%>%
+    mutate(RT=RT*1000,
+           estimates=estimates*1000,
+           timeToEstimate=timeToEstimate*1000)
+
+e3$sem <- e3$avgd %>%
+  group_by(search_type) %>%
+  summarize_at(vars('RT','estimates', 'timeToEstimate'),semedian)%>%
+    mutate(RT=RT*1000,
+           estimates=estimates*1000,
+           timeToEstimate=timeToEstimate*1000)
+```
+
+```{r MVS-e4-estimation, include=FALSE, cache=TRUE}
+# mean search times and estimated search times per participant
+e4$mean_times <- e4$filtered_df %>% 
+  group_by(Subj_id) %>%
+  summarize_at(vars('RT','estimates'),mean)
+
+e4$time_comparison = t.test(e4$mean_times$estimates, e4$mean_times$RT, paired=TRUE)
+
+# average all three trials from each search type
+e4$avgd <- e4$filtered_df %>% 
+  group_by(Subj_id,search_type) %>%
+  summarize_at(vars('RT','estimates','timeToEstimate'),mean)
+
+# Spearman correlations
+e4$RT_est_corr <- e4$avgd %>%
+  group_by(Subj_id) %>%
+  summarize(COR = cor(RT,estimates,method = 'spearman',use='complete.obs'));
+
+#http://davidmlane.com/hyperstat/A106993.html
+semedian <- function(x) {return(se(x, na.rm=TRUE)*1.253)}
+
+e4$median <- e4$avgd %>%
+  group_by(search_type) %>%
+  summarize_at(vars('RT','estimates','timeToEstimate'),median, na.rm=TRUE) %>%
+  mutate(target = factor(ifelse(search_type<5, 'Latin','Futurama'), levels=c('Latin','Futurama')),
+         stimulus_pair = factor(mod(search_type,4), levels=c(1,2,3,0)),
+         RT=RT*1000,
+         estimates=estimates*1000,
+         timeToEstimate=timeToEstimate*1000)
+
+e4$sem <- e4$avgd %>%
+  group_by(search_type) %>%
+  summarize_at(vars('RT','estimates', 'timeToEstimate'),semedian) %>%
+    mutate(RT=RT*1000,
+           estimates=estimates*1000,
+           timeToEstimate=timeToEstimate*1000)
+```
+
+### Estimation accuracy {-}
+
+In both experiments, search time estimates were positively correlated with true search times (within-subject Spearman correlations in Exp. 3: `r apa_print(t.test(e3$RT_est_corr$COR))$full_result`;  Exp. 4: `r apa_print(t.test(e4$RT_est_corr$COR))$full_result`; see Figures \@ref(fig:MVS-exp3-estimation-scatter) and \@ref(fig:MVS-exp4-estimation-scatter)A). The correlation between search time and search time estimates was significantly weaker in Experiment 4 (`r apa_print(t.test(e3$RT_est_corr$COR,e4$RT_est_corr$COR))$full_result`)). This difference in correlation strength is likely the result of a narrower range of search times in Exp. 4 (with median search times `r round(e4$median$RT%>%min())` - `r round(e4$median$RT%>%max())` ms, per display) than in Exp. 3 (`r round(e3$median$RT%>%min())` - `r round(e3$median$RT%>%max())` ms). 
+
+Importantly, in both experiments all searches involved exactly 10 distractors, so a positive correlation could not be driven by the effect of distractor set size. Furthermore, since participants had no prior experience with our stimuli, their estimates could not have been informed by explicit knowledge about specific letters ('The third letter in the *Alphabet of the Magi* pops out to attention when presented between instances of the fourth letter', or 'the fifth letter in the *Futurama Alphabet* is difficult to find when presented among *d*s'). These positive correlations reveal a more intricate knowledge of visual search. Our next two analyses were designed to test whether estimates were based on person-specific knowledge, and whether their generation involved a simulation of the search process.
+
+```{r MVS-exp3-estimation-scatter, cache=TRUE, echo=FALSE, fig.cap="Estimated search times plotted against true search times in Experiment 2. The dashed line indicates $y=x$. Legend: each search task involved searching for one Omniglot character (top letter) among ten tokens of a second Omniglot character, drawn by 10 different MTurk workers (bottom letter)."}
+#http://davidmlane.com/hyperstat/A106993.html
+semedian <- function(x) {return(se(x, na.rm=TRUE)*1.253)}
+
+e3$median <- e3$avgd %>%
+  group_by(search_type) %>%
+  summarize_at(vars('RT','estimates','timeToEstimate'),median, na.rm=TRUE)%>%
+    mutate(RT=RT*1000,
+           estimates=estimates*1000,
+           timeToEstimate=timeToEstimate*1000)
+
+e3$sem <- e3$avgd %>%
+  group_by(search_type) %>%
+  summarize_at(vars('RT','estimates', 'timeToEstimate'),semedian)%>%
+    mutate(RT=RT*1000,
+           estimates=estimates*1000,
+           timeToEstimate=timeToEstimate*1000)
+
+mylegend <- readPNG('figures/search_legend_exp2.png')
+g <- rasterGrob(mylegend, interpolate=TRUE)
+
+ggplot(e3$median,
+       aes(x=RT,y=estimates, label=rank(RT)))+
+  geom_errorbar(
+    aes(ymin = estimates-e3$sem$estimates,ymax = estimates + e3$sem$estimates),size=0.5)+
+  geom_errorbar(
+    aes(xmin = RT-e3$sem$RT,xmax = RT + e3$sem$RT),size=0.5)+
+  geom_abline(slope=c(1),intercept=0,linetype=c('dashed'))+
+  geom_point()+
+  theme_classic() + labs(x='RT (ms.)', y='estimates (ms.)', title='Estimation accuracy: Experiment 3') +  theme(legend.position='bottom')+geom_text(position = position_nudge(y = -30, x=-30))+ ylim(c(700,1800))+
+  annotation_custom(g, xmin=1050, xmax=1750, ymin=600, ymax=1100) 
+```
+
+```{r MVS-e3-cross-participant-corr, include=FALSE, cache=TRUE}
+
+compare_self_other <- function(RT_by_s,est_by_s) {
+  
+  cor_mat <- cor(est_by_s,RT_by_s,method='spearman',use='pairwise.complete.obs')
+  
+  mean_self_corr <- mean(diag(cor_mat),na.rm=TRUE)
+  
+  mean_other_corr <-  (mean(cor_mat[lower.tri(cor_mat,diag=FALSE)],na.rm=TRUE)
+                       + mean(cor_mat[upper.tri(cor_mat,diag=FALSE)],na.rm=TRUE))/2
+  
+  true_diff <- mean_self_corr - mean_other_corr
+  
+  null_dist = c();
+  null_self = c();
+  for (i in 1:10000) {
+    
+    shuffled_cor_mat <- cor_mat[,sample(ncol(cor_mat))]
+    shuf_self_cor <- mean(diag(shuffled_cor_mat),na.rm=TRUE)
+    shuf_other_cor <-  (mean(shuffled_cor_mat[lower.tri(shuffled_cor_mat,diag=FALSE)],na.rm=TRUE)
+                        + mean(shuffled_cor_mat[upper.tri(shuffled_cor_mat,diag=FALSE)],na.rm=TRUE))/2
+    
+    null_dist <- c(null_dist, shuf_self_cor-shuf_other_cor);
+    null_self <- c(null_self, shuf_self_cor);
+
+  }
+  p_perm <- mean(null_dist>true_diff,na.rm=TRUE)
+  
+  RT_cor <-  cor(RT_by_s,method='spearman',use='pairwise.complete.obs')
+  
+  # How similar are the RTs of different participants? take off-diag entires only.
+  RT_consensus <- (mean(RT_cor[lower.tri(RT_cor,diag=FALSE)],na.rm=TRUE)
+                   + mean(RT_cor[upper.tri(RT_cor,diag=FALSE)],na.rm=TRUE))/2
+  
+  est_cor <- cor(est_by_s,method='spearman',use='pairwise.complete.obs')
+  
+  # How similar are the estimates of different participants? take off-diag entires only.
+  est_consensus <- (mean(est_cor[lower.tri(est_cor,diag=FALSE)],na.rm=TRUE)
+                    + mean(est_cor[upper.tri(est_cor,diag=FALSE)],na.rm=TRUE))/2
+  
+  
+  return(list('p_perm'=p_perm, 
+              'mean_self_corr'=mean_self_corr,
+              'mean_other_corr'=mean_other_corr,
+              'true_diff'=true_diff,
+              'cor_mat'=cor_mat,
+              'RT_consensus' = RT_consensus,
+              'est_consensus' = est_consensus, 
+              'null_self'=null_self))
+}
+
+testCorrelation <- function (e) {
+  
+  e$RT_by_s <- e$avgd %>% 
+    dplyr::select(search_type,Subj_id,RT) %>%
+    spread(key=Subj_id,value=RT,sep='') %>%
+    ungroup() %>%
+    dplyr::select(starts_with('Subj_id'))
+  
+  e$est_by_s <- e$avgd %>% 
+    dplyr::select(search_type,Subj_id,estimates)%>%
+    spread(key=Subj_id,value=estimates,sep='')%>%
+    ungroup() %>%
+    dplyr::select(starts_with('Subj_id'))
+  
+  e$corrTest <- compare_self_other(e$RT_by_s,e$est_by_s)
+  
+  return(e);
+}
+
+e3 <- e3%>%testCorrelation()
+```
+
+```{r MVS-e4-cross-participant-corr, include=FALSE, cache=TRUE}
+
+e4 <- e4%>%testCorrelation()
+
+```
+
+### Cross-participant correlations {#selfself -}
+
+We chose unfamiliar letters as stimuli for Experiments 3 and 4 in order to make heuristic-based estimation more difficult, and to encourage an introspective estimation process. If participants were using idiosyncratic knowledge about their own attention, we would expect to find higher correlations between their search time estimates and their own search times (*self-self alignment*), compared to with the search times of a random surrogate participant (*self-other alignment*). To test this, we ran a non-parametric permutation test, comparing self-self and self-other alignment in prospective search time estimates. In Exp. 3, a numerical difference between self-self (mean Spearman correlation $M_r=$ `r printnum(e3$corr$mean_self_corr)`) and self-other alignment ($M_r=$ `r printnum(e3$corr$mean_other_corr)`) was marginally significant ($p_{perm}=$ `r printnum(e3$corr$p_perm)`). In Experiment 4, we pre-registered this analysis and found a significant advantage for self-self alignment compared with self-other alignment (see Fig. \@ref(fig:MVS-self-other-permutations); mean Spearman correlations for self-self $M_r=$ `r printnum(e4$corr$mean_self_corr)` and self-other $M_r=$ `r printnum(e4$corr$mean_other_corr)`, $p_{perm}=$ `r printnum(e4$corr$p_perm)`). We interpret this result as indicating that at least some of participants’ mental model of visual search builds on idiosyncratic knowledge about their own attention.
+
+
+```{r MVS-self-other-permutations, echo=FALSE,cache=TRUE,fig.cap="True correlation between estimates and search times (self-self alignment, vertical lines) plotted against a null distribution of correlations, when matching the estimates of each participant with the search time of a random surrogate participant (self-other alignment)."}
+
+e3_null <- e3$corrTest$null_self;
+e4_null <- e4$corrTest$null_self;
+
+null_df <- data.frame(e3_null,e4_null) %>%
+  gather('experiment','correlation') %>%
+  mutate(experiment=factor(ifelse(experiment=='e3_null','e3','e4'),
+                           levels=c('e3','e4'),
+                           labels=c('Exp. 3','Exp. 4')));
+
+e3_self <- e3$corrTest$mean_self_corr;
+e4_self <- e4$corrTest$mean_self_corr;
+
+self_df <- data.frame(e3_self,e4_self) %>%
+  gather('experiment','correlation') %>%
+  mutate(experiment=factor(ifelse(experiment=='e3_self','e3','e4'),
+                           levels=c('e3','e4'),
+                           labels=c('Exp. 3','Exp. 4')));
+
+p <- ggplot(null_df,aes(x=correlation))+
+  geom_density(fill='black',alpha=0.3)+
+  geom_vline(data=self_df, aes(xintercept=correlation),size=1)+
+  geom_vline(xintercept=0,linetype=2,size=0.7)+
+  theme_bw()+
+  facet_grid('experiment')+
+  labs(x='mean Spearman correlation')
+
+ggsave('figures/alignment.png',p,width=6, height=4);
+#after some manual tweaks
+img <- png::readPNG('figures/alignment_edited.png');
+grid::grid.raster(img)
+```
+
+```{r MVS-exp4-estimation-scatter, cache=TRUE, echo=FALSE, fig.cap="A. Median estimated search times plotted against true search times in Exp. 4. The dashed line indicates y=x. Legend: each search task involved searching for one character (top letter) among ten tokens of a different character (bottom letter). In four searches, the target character was from the Latin alphabet (circles), and in the other four from the Futurama alphabet (squares). Search pairs that involved the same pair of stimuli with opposite roles are marked by the same color. B. Spearman correlations between estimates and search times for true labels (upper panel) and target-distractor flipped labels (lower panel) in Exp. 4. Spearman correlations significantly dropped, indicating that participants were aware of the search asymmetry for stimulus familiarity."}
+#http://davidmlane.com/hyperstat/A106993.html
+semedian <- function(x) {return(se(x, na.rm=TRUE)*1.253)}
+
+e4$median <- e4$avgd %>%
+  group_by(search_type) %>%
+  summarize_at(vars('RT','estimates','timeToEstimate'),median, na.rm=TRUE) %>%
+  mutate(target = factor(ifelse(search_type<5, 'Latin','Futurama'), levels=c('Latin','Futurama')),
+         stimulus_pair = factor(mod(search_type,4), levels=c(1,2,3,0)),
+         RT=RT*1000,
+         estimates=estimates*1000,
+         timeToEstimate=timeToEstimate*1000)
+
+e4$sem <- e4$avgd %>%
+  group_by(search_type) %>%
+  summarize_at(vars('RT','estimates', 'timeToEstimate'),semedian) %>%
+    mutate(RT=RT*1000,
+           estimates=estimates*1000,
+           timeToEstimate=timeToEstimate*1000)
+
+mylegend <- readPNG('figures/search_legend_exp4.png')
+g <- rasterGrob(mylegend, interpolate=TRUE)
+
+p <- ggplot(e4$median,
+       aes(x=RT,y=estimates, fill=stimulus_pair, color=stimulus_pair, shape=target, label=search_type))+
+  geom_errorbar(
+    aes(ymin = estimates-e4$sem$estimates,ymax = estimates + e4$sem$estimates),size=0.5, color='black')+
+  geom_errorbar(
+    aes(xmin = RT-e4$sem$RT,xmax = RT + e4$sem$RT),size=0.5, color='black')+
+  geom_abline(slope=c(1),intercept=0,linetype=c('dashed'))+
+  geom_point(size=7, color='black',stroke=1)+
+  scale_shape_manual(values=c(21,22))+
+  scale_fill_manual(values = c("#785EF0","#DC267F","#FE6100","#FFB000"))+
+  theme_classic() + labs(x='RT (ms)', y='estimates (ms)', title='Estimation accuracy: Experiment 4') +  theme(legend.position='none') +
+  geom_text(color='black')+
+  ylim(750,950) +
+  xlim(530, 750) +
+  annotation_custom(g, xmin=600, xmax=780, ymax=800, ymin=750) 
+
+ggsave('figures/scatter4.png',p,width=5, height=5);
+#after some manual tweaks
+img <- png::readPNG('figures/scatter4.png');
+grid::grid.raster(img)
+
+```
+
+### Estimation time {-}
+
+```{r MVS-e3-estimation-time, include=FALSE, cache=TRUE}
+
+testEstimationTime <- function(e) {
+  
+  # Spearman correlations
+  e$tte_est_corr <- e$avgd %>%
+  group_by(Subj_id) %>%
+  summarize(COR = cor(timeToEstimate,estimates,method = 'spearman',use='complete.obs'))
+  
+  return(e)
+}
+
+e3<- e3 %>%
+  testEstimationTime()
+
+```
+
+```{r MVS-e4-estimation-time, include=FALSE, cache=TRUE}
+
+e4<- e4 %>%
+  testEstimationTime()
+
+```
+
+We next looked at the time taken to produce search time estimates in the Estimation part. We reasoned that if participants had to mentally simulate searching for the target in order to generate their search time estimates, they would take longer to estimate that a search task will terminate after 1500 compared to 1000 milliseconds. This is similar to how a linear alignment between the degree of rotation and response time in a mental rotation task was taken as support for an internal simulation that evolves over time [@shepard1971mental]. We find no evidence for within-subject correlation between estimates and the time taken to deliver them, not in Exp. 3 (`r apa_print(t.test(e3$tte_est_corr$COR))$statistic`) and not in Exp. 4 (`r apa_print(t.test(e4$tte_est_corr$COR))$statistic`). 
+
+### Visual search asymmetry {#asymmetry -}
+
+```{r MVS-e4-asymmetry, include=FALSE, cache=TRUE}
+
+e4$avgd <- e4$avgd %>%
+  mutate(target = factor(ifelse(search_type<5, 'Latin','Futurama'), levels=c('Latin','Futurama')),
+         stimulus_pair = factor(mod(search_type,4), levels=c(1,2,3,0)));
+
+flipped_estimates <- e4$avgd %>%
+  mutate(target = factor(ifelse(search_type<5, 'Futurama','Latin'), levels=c('Latin','Futurama')),
+         flipped_estimates = estimates)%>%
+  dplyr::select(Subj_id,target,stimulus_pair,flipped_estimates)
+
+e4$avgd <- merge(e4$avgd, flipped_estimates)
+
+# Spearman correlations
+e4$RT_est_corr <- e4$avgd %>%
+  group_by(Subj_id) %>%
+  summarize(COR = cor(RT,estimates,method = 'spearman',use='complete.obs'),
+            COR_flipped = cor(RT,flipped_estimates,method = 'spearman',use='complete.obs'),
+            diff = COR-COR_flipped)
+
+```
+
+In Exp. 4, we put to the test an alternative interpretation for the remarkable alignment between search time and search time estimates that we observed in Exp. 3. We considered the possibility that participants were relying on a heuristic: since search time generally inversely scales with the perceived similarity between the target and distractor stimuli, participants could achieve high accuracy in their estimates by basing them not on an intuitive theory of visual search, but on their impressions of similarity between the stimulus pairs. If all participants know about their visual search behaviour is that searches are harder the more similar the target and distractor are, simply being able to rate the similarity between pairs of stimuli would produce a good alignment between search times and their estimates.
+
+To test if this was the case, we leveraged a well-established phenomenon in visual search: subjects are generally faster detecting an unfamiliar stimulus in an array of familiar distractors compared to when the target is familiar and the distractors are not [@shen2001visual; @malinowski2001effect; @zhang2020visual]. This asymmetry cannot be captured by a similarity-based heuristic [at least if similarity is represented as a symmetric property, cf. @tversky1977features]. By presenting participants with pairs of familiar and unfamiliar letters, and asking them to estimate their search time for when the target is the familiar or unfamiliar letter, we were able to ask if their internal models of visual search had access to this asymmetry in visual search behaviour. 
+
+In order to quantify participants' knowledge of this asymmetry, we extracted the estimated/true search time correlations after inverting the identity of the target and distractor stimuli in the estimates, but not in the actual search times. For example, instead of comparing search times for finding the letter v among 10 square spiral letters (stimulus pair 1) with estimates for the same search, we compared it with estimates for finding one square spiral letter among 10 v's (stimulus pair 5). If estimates were affected by the assignment of stimuli to target and distractor, this inversion should attenuate the correlation, but if visual search estimates reflected a symmetric notion of similarity the correlation should not be affected. 
+
+Inverting the target/distractor assignment dropped the correlation between estimates and search time to zero (`r apa_print(t.test(e4$RT_est_corr%>%pull(COR_flipped)))$estimate`), significantly lower than the original correlation (`r apa_print(t.test(e4$RT_est_corr%>%pull(COR),e4$RT_est_corr%>%pull(COR_flipped),paired=TRUE))$full_result`; see Fig. \@ref(fig:MVS-exp4-asymmetry-fig)). This is in contrast to what is expected if search time estimates reflected symmetric similarity judgments, and in line with an interpretation of our findings as evidence for a rich intuitive theory of visual search.
+
+```{r MVS-exp4-asymmetry-fig, cache=TRUE, echo=FALSE, fig.cap="Spearman correlations between estimates and search times for true labels (upper panel) and target-distractor flipped labels (lower panel) in Exp. 4. Spearman correlations significantly dropped, indicating that participants were aware of the search asymmetry for stimulus familiarity."}
+source("R_rainclouds.R")
+
+long_data <- e4$RT_est_corr %>%
+  gather(key='condition',value='mycor',2:3) %>%
+  mutate(condition=factor(condition, levels=c(
+    'COR_flipped', 
+    'COR')));
+
+sum_long_data <- long_data %>%
+  group_by(condition) %>%
+  summarise(mean_cor=mean(mycor, na.rm=TRUE),
+            se_cor = se(mycor, na.rm=TRUE))
+  
+p <- long_data %>%
+  ggplot(aes(x=condition,y=mycor, group=condition)) +
+  geom_flat_violin(position=position_nudge(x=.2,y=0),adjust=1.5) +
+  geom_point(position=position_jitter(width=.05),size=2,alpha=0.2) +
+  ylab('Spearman correlation') +
+  theme_cowplot() +
+  guides(fill=FALSE,color=FALSE) +
+  geom_boxplot(aes(x=as.numeric(condition)+0.125,y=mycor),
+               outlier.shape = NA, 
+               alpha=0.3, 
+               width=0.1, 
+               color='black') +
+  geom_errorbar(data=sum_long_data,
+                aes(x=as.numeric(condition)+.2,
+                    y=mean_cor,
+                    ymin=mean_cor-se_cor,
+                    ymax=mean_cor+se_cor),
+                width=0.05,
+                color='black',
+                size=1)+
+  geom_line(data=sum_long_data,
+                aes(x=as.numeric(condition)+.2,
+                    y=mean_cor,
+                    group=1),
+                linetype=3,
+            size=0.75)+
+  scale_x_discrete(labels=c('flipped labels','true labels'))+
+  theme(axis.title.y=element_blank())+
+  labs(title='Metacognitive awareness to search asymmetry', y='Spearman correlation',x='');
+
+ggsave('figures/asymmetry.png',p,width=6, height=4);
+#after some manual tweaks
+img <- png::readPNG('figures/asymmetry_edited.png');
+grid::grid.raster(img)
+``` 
+
+Over more than four decades of research on spatial attention, experiments where participants report the presence or absence of a target in a display revealed basic principles such as the set-size effect [@treisman1986features; @treisman1990conjunction; @wolfe1998can], the advantage for feature search over more complicated conjunction and spatial configuration searches [@treisman1986features; @treisman1990conjunction], and asymmetries in the representations of visual features [@treisman1985search; @shen2001visual; @malinowski2001effect]. That we find some of these findings more surprising than others reveals that even without training in psychology, people have a set of expectations and beliefs about their own perception and attention, and about visual search more specifically. 
+
+Here we measured these expectations and their alignment with actual visual search behavior. In four experiments, we show that naive participants provide reasonably accurate prospective estimates for their search times. In line with previous reports, prospective search time estimates reflected accurate knowledge of the set size effect and differences in efficiency between feature and conjunction searches [@levin2008visual; @miller1977children]. We asked whether participants categorically distinguish “easy” from “hard” searches, or alternatively represent search efficiency along a continuum. The estimates of single participants revealed a graded representation of search efficiency, indicating metacognitive knowledge that is on par with contemporary theories of visual search such as Guided Search models. Furthermore, participants provided accurate search time estimates for complex stimuli and displays with which they had no prior experience, and had metacognitive insight into the search asymmetry for familiar and unfamiliar stimuli. 
+
+In Exp. 4, we show that this internal model of visual search is person-specific: participants’ predictions fitted better their own search times compared to the search times of other participants. The fact that this model is not generic suggests that it is learned or calibrated based on first-person experience. Humans accumulate observations not only of external events and objects, but also of their own cognitive and perceptual states. Specifically, subjects have been shown to notice when their attention is captured by a distractor [@adams2021introspective]  even in the absence of an overt eye movement [@adams2020assessing]. These observations can then be integrated into an internal model or an intuitive theory: which items are more or less likely to capture attention, under what circumstances, etc. Future research into the development of this simplified model and its expansion based on new evidence [for example, by measuring intuitions before and after exposure to some evidence; @bonawitz2019sticking] is needed to understand the relation between metacognitive monitoring of attention and metacognitive knowledge of attentional processes.
+
+This relates to recent theoretical and empirical advances underscoring the utility of keeping a *mental self-model*, or a *self-schema* for attention control [@wilterson2020attention], social cognition [@graziano2013consciousnes] , phenomenal experience [@metzinger2003phenomenal], and inference about absence [@mazorinference; @mazor2021zero].  For example, knowing that a red berry would be easy to find among green leaves, a forager can quickly decide that certain bush bears no ripe fruit. Alternatively, knowing that a snake would be difficult to spot in the sand, they might allocate more attentional resources to scanning the ground. Experiments 3 and 4 show that this knowledge is more than a set of heuristics or rules, but reflects an intricate internal model of spatial attention that can be applied to unseen stimuli in novel displays, and is tailored to one’s own perceptual and cognitive machinery. 
+
+Our final question concerned the structure of this internal model: is it specified as a list of facts and laws [similar to how the acquisition of knowledge about mental states between the ages of 2 and 4 was described as the development of a scientific theory; @gopnik1997words], or alternatively as an approximate probabilistic model that can be used to run simulations [similar to the physics engine model of intuitive physics; @battaglia2013simulation]? We found no direct evidence for a simulation account in the time taken to produce search time estimates. Nevertheless, participants’ ability to provide accurate estimates for displays of unfamiliar stimuli, and the better alignment of their estimates with their own search behavior compared to the search behavior of other participants, provide some indirect support for a simulation account - one that is based on a schematic version of one’s own attention. Still, we cannot exclude rule-based implementations of this internal model that are rich in detail and are based on one’s first-person experience, without involving a simulation.   
+
+One important limitation of our current design is its reliance on explicit estimates, which may have potentially resulted in underestimating the richness and accuracy of these internal models. For example, in Experiments 1 and 2 participants’ prospective estimates showed no metacognitive insight into the pop-out effect for color search. This does not necessarily mean that this information was misrepresented in their internal model. Instead, our numeric report scheme may have encouraged participants to adopt an analytical disposition to the problem, rather than relying fully on their intuitions. In support of this, a recent study interpreted the pop-out effect for color absence in the first few trials of a visual search task as indicating accurate implicit metacognitive knowledge of the pop-out effect for color presence [@mazor2021zero]. 
+
+Together, our results reveal an alignment between prospective search time estimates and search times. This alignment places a lower bound on the richness and complexity of participants’ internal model of visual search, and of attention more generally, and opens a promising avenue for studying humans’ intuitive understanding of their own mental processes.
+
+  
