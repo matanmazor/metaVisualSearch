@@ -1,4 +1,9 @@
 # metaVisualSearch
+## Internal models of visual search are rich, person-specific, and mostly accurate
+
+Matan Mazor, Max Siegel & Josh Tenenbaum
+
+![Alignment of estimates and search times in Experiment 3](https://github.com/matanmazor/metaVisualSearch/blob/master/docs/figures/exp3Scatter.png)
 
 ## Experiment demos
 

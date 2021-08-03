@@ -1,6 +1,6 @@
 \Appendix
 
-# Incentive strucutre {#App:bonus}
+# Incentive structure {#App:bonus}
 
 We assume that participants represent the distribution of response times conditional on a specific search array as a right-skewed, positive distribution. Here, we assume that internal distributions of response times abide by the rule that 
 
@@ -25,7 +25,7 @@ We can write $log(x)=\mu+\alpha \cdot \sigma$ for some number $\alpha$. This num
 
 $\mu$ only appears in the third term in the product, which functions as a constant multiplier which scales the expected bonus equally for all choices of $\alpha$. It then follows that the function relating the choice of $\alpha$ to the expected bonus preserves its shape for all possible values of $\mu$:
 
-```{r bonus-scheme, echo=FALSE, message=FALSE, warning=FALSE, fig.cap='Upper panel: response time distributions are modeled as exponents of values drawn from a normal distribution with different values of mu. Lower panel: the estimate value that maximizes the expected bonus is fixed with respect to the the mean of the log(RT) distributions, regardless of what the mean is. The expected bonus is higher for lower values of mu, but to maximize their bonus participants should always choose an estimate that is positioned in the 70 quantile of the RT distribution.', fig.scap='bonus structure'}
+```{r bonus-scheme, echo=FALSE, message=FALSE, warning=FALSE, fig.cap='Upper panel: response time distributions are modeled as exponents of values drawn from a normal distribution with different values of mu. Lower panel: the estimate value that maximizes the expected bonus is fixed with respect to the mean of the log(RT) distributions, regardless of what the mean is. The expected bonus is higher for lower values of mu, but to maximize their bonus participants should always choose an estimate that is positioned in the 70 quantile of the RT distribution.', fig.scap='bonus structure'}
 
 library(dplyr);
 library(ggplot2);
