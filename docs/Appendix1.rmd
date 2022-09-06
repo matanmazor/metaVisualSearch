@@ -10,22 +10,28 @@ We assume that participants represent the distribution of response times conditi
 
 where $\sigma$ is fixed per participant, and $\mu$ varies as a function of search difficulty. 
 
-The participants produces an estimate $x$. The expected bonus given for a trial is now:
+In the estimation part, participants produces an estimate $x$. In case they responds as fast, or faster, than their original estimate, they get a bonus of $\frac{10}{\sqrt{x}}=10\cdot x^{1/2}$. Since 10 is a constant, we ignore it in the following derivations. The expected bonus given for a trial is now:
 
 \begin{align}
-    E[bonus|x]=Pr_{n \sim N(\mu, \sigma)}[\log(x)>n] \cdot e^{-\log(x)/2}.
+    E[bonus|x]=Pr_{logRT \sim N(\mu, \sigma)}[\log(x) \geq logRT] \cdot x^{-1/2}.
 \end{align}
 
-We can write $log(x)=\mu+\alpha \cdot \sigma$ for some number $\alpha$. This number represents the position of the estimate relative to the distribution of response times, with lower values corresponding to more risky estimates, and higher values to more conservative ones. Then the expected bonus is:
+Which can be re-written for $log(x)$ as:
 
 \begin{align}
-    E[bonus|\alpha]&=Pr_{n \sim N(0, 1)}[\alpha>n] \cdot e^{-(\mu+\alpha \cdot \sigma)/2} \\ \nonumber
-    &= Pr_{n \sim N(0, 1)}[\alpha>n] \cdot e^{-(\alpha \cdot \sigma)/2} \cdot e^{-\mu/2}. 
+    E[bonus|\log(x)]= Pr_{logRT \sim N(\mu, \sigma)}[\log(x) \geq logRT] \cdot e^{-\log(x)/2}.
 \end{align}
 
-$\mu$ only appears in the third term in the product, which functions as a constant multiplier which scales the expected bonus equally for all choices of $\alpha$. It then follows that the function relating the choice of $\alpha$ to the expected bonus preserves its shape for all possible values of $\mu$:
+Since we assumed log RTs are distributed normally, we can express $log(x)$ relative to the distribution of log RTs as $log(x)=\mu+\alpha \cdot \sigma$ for some number $\alpha$. This number represents the position of the estimate relative to the distribution of response times, with lower values corresponding to more risky estimates, and higher values to more conservative ones. The expected bonus is then:
 
-```{r bonus-scheme, echo=FALSE, message=FALSE, warning=FALSE, fig.cap='Upper panel: response time distributions are modeled as exponents of values drawn from a normal distribution with different values of mu. Lower panel: the estimate value that maximizes the expected bonus is fixed with respect to the mean of the log(RT) distributions, regardless of what the mean is. The expected bonus is higher for lower values of mu, but to maximize their bonus participants should always choose an estimate that is positioned in the 70 quantile of the RT distribution.', fig.scap='bonus structure'}
+\begin{align}
+    E[bonus|\alpha]&= Pr_{z \sim N(0, 1)}[\alpha>z] \cdot e^{-(\mu+\alpha \cdot \sigma)/2} \\ \nonumber
+    &= Pr_{z \sim N(0, 1)}[\alpha>z] \cdot e^{-(\alpha \cdot \sigma)/2} \cdot e^{-\mu/2}. 
+\end{align}
+
+where $z$ is the standardized $log(RT)$, with mean 0 and standard deviation 1. $\mu$ only appears in the third term in the product, which functions as a constant multiplier that scales the expected bonus equally for all choices of $\alpha$. It then follows that the function relating the choice of $\alpha$ to the expected bonus preserves its shape for all possible values of $\mu$. This function reaches a maximum for $\alpha=0.52$ (the 70th quantile) in Exp. 1-4, and for $\alpha=0$ (the 50th quantile) in Exp. 5:
+
+```{r bonus-scheme, echo=FALSE, message=FALSE, warning=FALSE, fig.cap='Upper panel: response time distributions are modeled as exponents of values drawn from a normal distribution with different values of mu. Middle panel: the estimate value that maximizes the expected bonus is fixed with respect to the mean of the log(RT) distributions, regardless of what the mean is. The expected bonus is higher for lower values of mu, but to maximize their bonus participants should always choose an estimate that is positioned in the 70 quantile of the RT distribution (mean + 0.518 standard deviaions in log space). Lower panel: in Exp. 5, the bonus is maximized for estimates that are aligned with the median of the RT distribution.', fig.scap='bonus structure'}
 
 library(dplyr);
 library(ggplot2);
@@ -59,16 +65,55 @@ df <- rbind(dfminus2,
                   rbind(df0,df1))) %>%
   mutate(expx=exp(x),
          bonus=1/sqrt(expx)*pnorm(x,mu,1),
+         new_bonus = expx^(-4/5)*pnorm(x,mu,1),
          alpha=x-mu,
          mu=factor(mu))
 
+library(dplyr);
+library(ggplot2);
+library(gridExtra);
+mu=0;
+sd = 1;
+
+x <- seq(-5,5,0.001);
+expx <- exp(x)
+muminus2 <- dnorm(x,-2,1)
+muminus1 <- dnorm(x,-1,1)
+mu0 <- dnorm(x,0,1)
+mu1 <- dnorm(x,1,1)
+
+df <- data.frame(x);
+
+dfminus2 <- df %>%mutate(mu = -2,
+                         density = dnorm(x,mu,1));
+
+dfminus1 <- df %>%mutate(mu = -1,
+                         density = dnorm(x,mu,1));
+
+df0 <- df %>%mutate(mu = 0,
+                         density = dnorm(x,mu,1));
+
+df1 <- df %>%mutate(mu = 1,
+                         density = dnorm(x,mu,1));
+
+df <- rbind(dfminus2,
+            rbind(dfminus1,
+                  rbind(df0,df1))) %>%
+  mutate(expx=exp(x),
+         bonus=1/sqrt(expx)*pnorm(x,mu,1),
+         new_bonus = expx^(-4/5)*pnorm(x,mu,1),
+         alpha=x-mu,
+         mu=factor(mu))
+
+
 p1 <- ggplot(df,aes(x=expx,y=density,color=mu))+
-  geom_line(size=1) + labs(x='seconds') + scale_x_continuous(limits=c(0,10))
+  geom_line(size=1) + labs(x='seconds', title='Theoretical RT distributions for different search tasks') + scale_x_continuous(limits=c(0,10))
 
 p2 <- ggplot(df,aes(x=alpha,y=bonus,color=mu))+
-  geom_line(size=1) + labs(x='alpha (sd from mu)',y='expected bonus') + scale_x_continuous(limits=c(-2,4))
+  geom_line(size=1) + labs(x='alpha (sd from mu)',y='expected bonus', title='Incentive structure: Exp. 1-4') + scale_x_continuous(limits=c(-4,4))
 
-
+p3 <- ggplot(df,aes(x=alpha,y=new_bonus,color=mu))+
+  geom_line(size=1) + labs(x='alpha (sd from mu)',y='expected bonus', title='Incentive structure: Exp. 5') + scale_x_continuous(limits=c(-4,4))
 # df <- df %>%
 #   mutate(bonus=1/sqrt(exp(x))*pnorm(x,mu,sd))
 # 
@@ -78,5 +123,5 @@ p2 <- ggplot(df,aes(x=alpha,y=bonus,color=mu))+
 #        y='expected bonus')+
 #   theme_classic()
 
-grid.arrange(p1,p2)
+grid.arrange(p1,p2, p3)
 ```

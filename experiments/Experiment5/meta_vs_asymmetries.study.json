@@ -1,0 +1,2696 @@
+{
+  "components": {
+    "1": {
+      "id": "1",
+      "type": "lab.html.Screen",
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "continue",
+          "event": "click",
+          "target": "button",
+          "filter": ""
+        },
+        {
+          "label": "continue",
+          "event": "keypress",
+          "target": "",
+          "filter": "Space"
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": "window.bonus = 0;"
+        }
+      ],
+      "title": "Instructions",
+      "content": "<main class=\"content-vertical-center content-horizontal-center\">\n\n  <div class=\"w-m text-justify\">\n    <h1>Your task</h1>\n    <p>This experiment has three parts.</p>\n    <p> It involves searching for things and estimating the difficulty of different search tasks. </p>\n    <p> In the last two parts of the experiment you will earn points. If your final point count is at the top 30% of our participants, we will double your payment. </p>\n  </div>\n</main>\n\n<footer class=\"content-horizontal-right\">\n  <button id=\"continue\">Continue &rarr;</button>\n</footer>",
+      "_tab": "Content"
+    },
+    "2": {
+      "id": "2",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": "400",
+          "height": "400",
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": 18.69,
+          "height": 36.16,
+          "fill": "#aaaaaa",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "+",
+          "fontSize": 32,
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "44",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": ""
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "Fixation",
+      "timeout": "500",
+      "_tab": "Behavior"
+    },
+    "3": {
+      "id": "3",
+      "type": "lab.flow.Loop",
+      "children": [
+        "8"
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "templateParameters": {
+        "columns": [
+          {
+            "name": "trial_number",
+            "type": "number"
+          },
+          {
+            "name": "set_size",
+            "type": "number"
+          },
+          {
+            "name": "display_function",
+            "type": "number"
+          }
+        ],
+        "rows": [
+          [
+            "1",
+            "6",
+            "2"
+          ],
+          [
+            "2",
+            "18",
+            "2"
+          ],
+          [
+            "3",
+            "6",
+            "3"
+          ],
+          [
+            "4",
+            "18",
+            "3"
+          ],
+          [
+            "5",
+            "6",
+            "4"
+          ],
+          [
+            "6",
+            "18",
+            "4"
+          ],
+          [
+            "7",
+            "6",
+            "5"
+          ],
+          [
+            "8",
+            "18",
+            "5"
+          ],
+          [
+            "9",
+            "6",
+            "6"
+          ],
+          [
+            "10",
+            "18",
+            "6"
+          ],
+          [
+            "11",
+            "6",
+            "7"
+          ],
+          [
+            "12",
+            "18",
+            "7"
+          ]
+        ]
+      },
+      "sample": {
+        "mode": "draw-shuffle",
+        "n": ""
+      },
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": "window.estimates = {};\r\nwindow.trialBonuses ={}; \r\nwindow.timeToEstimate = {};"
+        },
+        {
+          "title": "",
+          "message": "end",
+          "code": "this.data.estimates = window.estimates;\r\nthis.data.trialBonuses = window.trialBonuses; \r\nthis.data.timeToEstimate = window.timeToEstimate;"
+        }
+      ],
+      "title": "meta search task",
+      "_tab": "Content",
+      "_collapsed": false
+    },
+    "4": {
+      "id": "4",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": "400",
+          "height": "400",
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": 18.69,
+          "height": 36.16,
+          "fill": "#aaaaaa",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "+",
+          "fontSize": 32,
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "134",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "Prepare stimulus",
+          "message": "before:prepare",
+          "code": "\n// Render the items one by one\nthis.parameters.item_positions.forEach((position, i) => {\n  \n  window.draw_stimulus(\n    this,\n    position,\n    0,\n    i==0,\n    'mask'\n  )\n})\n\n"
+        },
+        {
+          "title": "",
+          "message": "after:end",
+          "code": ""
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "Mask",
+      "correctResponse": "",
+      "_tab": "Scripts",
+      "timeout": "50"
+    },
+    "5": {
+      "id": "5",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": "400",
+          "height": "400",
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": 18.69,
+          "height": 36.16,
+          "fill": "#aaaaaa",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "+",
+          "fontSize": 32,
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "134",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "Prepare stimulus",
+          "message": "before:prepare",
+          "code": "\n// Render the items one by one\nthis.parameters.item_positions.forEach((position, i) => {\n  \n  window.draw_stimulus(\n    this,\n    position,\n    0,\n    i==0,\n    'mask'\n  )\n})\n\n"
+        },
+        {
+          "title": "",
+          "message": "after:end",
+          "code": ""
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "Mask",
+      "correctResponse": "",
+      "_tab": "Scripts",
+      "timeout": "50"
+    },
+    "7": {
+      "id": "7",
+      "type": "lab.flow.Loop",
+      "children": [
+        "9"
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "templateParameters": {
+        "columns": [
+          {
+            "name": "set_size",
+            "type": "number"
+          },
+          {
+            "name": "display_function",
+            "type": "number"
+          },
+          {
+            "name": "trial_number",
+            "type": "string"
+          }
+        ],
+        "rows": [
+          [
+            "7",
+            "1",
+            "1"
+          ],
+          [
+            "7",
+            "1",
+            "2"
+          ],
+          [
+            "7",
+            "1",
+            "3"
+          ],
+          [
+            "7",
+            "1",
+            "4"
+          ]
+        ]
+      },
+      "sample": {
+        "mode": "sequential",
+        "n": ""
+      },
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": "  window.demoRTs=[]\r\n"
+        },
+        {
+          "title": "",
+          "message": "end",
+          "code": "this.data.accuracy = window.accuracy;\r\nthis.data.RT = window.RT;"
+        }
+      ],
+      "title": "Visual search intro",
+      "_tab": "Content",
+      "_collapsed": false
+    },
+    "8": {
+      "id": "8",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "4.3.1",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": 400,
+          "height": 400,
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeUniform": false,
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        },
+        {
+          "type": "i-text",
+          "version": "4.3.1",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": -237,
+          "width": 454.66,
+          "height": 48.82,
+          "fill": "black",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeUniform": false,
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "skewX": 0,
+          "skewY": 0,
+          "text": "How long (in seconds) will it take you to find the      \nwhen shuffled with this set of distractors?",
+          "fontSize": "20",
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "96",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "Prepare stimulus",
+          "message": "before:prepare",
+          "code": "// Enumerate all possible positions and rotations.\n// Because we place stimuli on a 10x10 grid, there\n// are 100 possible positions.\nconst positions = Array(100).fill().map((_, i) => i)\nconst rotations = [0, 45, 90, 135, 180, 225, 270, 315]\n\n// If a target is present, we need to generate \n// one additional item\nconst setSize = this.parameters.set_size\n\n\n// Sample positions and rotations\nconst item_positions = this.random.sample(\n  positions, setSize, false // without replacement\n)\n\nthis.parameters.item_positions = item_positions;\n\nconst item_rotations = this.random.sample(\n  rotations, setSize, true // *with* replacement\n)\n\nthis.parameters.item_rotations = item_rotations;\n\n// Render the items one by one\nthis.parameters.item_positions.forEach((position, i) => {\n  if (!(i+1==this.parameters.target_number)) {window.draw_stimulus(\n    this,\n    position,\n    this.parameters.item_rotations[i],\n    0,\n    this.parameters.display_function, NaN, NaN, i\n    \n  )}\n})\n\nwindow.draw_stimulus(\n  this,\n  125,\n  0,\n  1,\n  this.parameters.display_function,\n  223,-250\n)\n"
+        },
+        {
+          "title": "slider",
+          "message": "run",
+          "code": "// Create a pointer to the current component,\r\n// to be used inside of p5.js\r\nvar component = this\r\n\r\n// p5.js instantiation\r\n// (note that the library script has been added\r\n// to the HTML page header via the study-wide options)\r\nlet myp5 = new p5(window.makeS(component), this.options.el)"
+        },
+        {
+          "title": "",
+          "message": "after:end",
+          "code": " const calculateBonus = function(x) {\r\n  return 10/(x**(3/4));\r\n}\r\n  window.estimates[this.parameters.trial_number] = \r\n  this.state.response*1000;\r\n  window.trialBonuses[this.parameters.trial_number] = \r\n  calculateBonus(this.state.response)\r\n  window.timeToEstimate[this.parameters.trial_number] = \r\n  this.state.duration;"
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "Estimation",
+      "correctResponse": "",
+      "_tab": "Content",
+      "timeout": "",
+      "tardy": false
+    },
+    "9": {
+      "id": "9",
+      "type": "lab.flow.Sequence",
+      "children": [
+        "12",
+        "34",
+        "17",
+        "5",
+        "18",
+        "20"
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": "// Enumerate all possible positions and rotations.\r\n// Because we place stimuli on a 10x10 grid, there\r\n// are 100 possible positions.\r\nconst positions = Array(100).fill().map((_, i) => i)\r\nconst rotations = [0, 45, 90, 135, 180, 225, 270, 315]\r\n\r\n// If a target is present, we need to generate \r\n// one additional item\r\nconst setSize = this.parameters.set_size+1\r\nthis.parameters.numbers_order =  this.random.sample(\r\n  [1,2,3,4,5], 5, false)\r\n\r\n// Sample positions and rotations\r\nconst item_positions = this.random.sample(\r\n  positions, setSize, false // without replacement\r\n)\r\n\r\nthis.parameters.item_positions = item_positions;\r\n\r\nconst item_rotations = this.random.sample(\r\n  rotations, setSize, true // *with* replacement\r\n)\r\n\r\nthis.parameters.item_rotations = item_rotations;\r\n\r\n\r\n\r\n"
+        }
+      ],
+      "title": "Trial",
+      "_tab": "Scripts"
+    },
+    "12": {
+      "id": "12",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": "400",
+          "height": "400",
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": 18.69,
+          "height": 36.16,
+          "fill": "#aaaaaa",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "+",
+          "fontSize": 32,
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "44",
+          "styles": {}
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": -25,
+          "top": "-75",
+          "width": 124.52,
+          "height": 36.16,
+          "fill": "black",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "Find the ",
+          "fontSize": "32",
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "94",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": "window.draw_stimulus(\r\n  this,\r\n  125,\r\n  0,\r\n  1,\r\n  this.parameters.display_function,\r\n  50,-75\r\n)\r\n\r\n"
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "targetSpec",
+      "timeout": "1000",
+      "_tab": "Behavior"
+    },
+    "13": {
+      "id": "13",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": "0",
+          "top": "0",
+          "width": 400,
+          "height": 400,
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        },
+        {
+          "type": "i-text",
+          "version": "3.5.1",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": -237,
+          "width": 454.66,
+          "height": 48.82,
+          "fill": "black",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "How long (in seconds) will it take you to find the      \nwhen mixed with this set of distractors?",
+          "fontSize": "20",
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "96",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "Prepare stimulus",
+          "message": "before:prepare",
+          "code": "\n// Enumerate all possible positions and rotations.\n// Because we place stimuli on a 10x10 grid, there\n// are 100 possible positions.\nconst positions = Array(100).fill().map((_, i) => i)\nconst rotations = [0, 45, 90, 135, 180, 225, 270, 315]\n\n// If a target is present, we need to generate \n// one additional item\nconst setSize = 3\n\n// Sample positions and rotations\nconst item_positions = this.random.sample(\n  positions, setSize, false // without replacement\n)\n\nthis.parameters.item_positions = item_positions;\n\nconst item_rotations = this.random.sample(\n  rotations, setSize, true // *with* replacement\n)\n\nthis.parameters.item_rotations = item_rotations;\n\n// Render the items one by one\nthis.parameters.item_positions.forEach((position, i) => {\n  if (!(i+1==0)) {window.draw_stimulus(\n    this,\n    position,\n    this.parameters.item_rotations[i],\n    0,\n    1, NaN, NaN, i\n    \n  )}\n})\n\n\nwindow.draw_stimulus(\n  this,\n  125,\n  0,\n  1,\n  1,\n  223,-250\n)\n"
+        },
+        {
+          "title": "slider",
+          "message": "run",
+          "code": "// Create a pointer to the current component,\r\n// to be used inside of p5.js\r\nvar component = this\r\nwindow.first = true;\r\nwindow.makeS = (component) => {\r\n  var estimate = 0;\r\n  var bonus = 0;\r\n  let mouseBoolean = false\r\n\r\n  // p5.js initialization function\r\n  return (p) => {\r\n\r\n    let x = 100\r\n    let y = 100\r\n\r\n    function drawBackground() {\r\n        //blue bar\r\n        p.fill(255)\r\n        p.stroke(0)\r\n        p.rect(p.width/4, p.height*0.9, p.width/2, 20)\r\n        p.noStroke()\r\n        \r\n        // axes labels\r\n        p.fill(0)\r\n        p.textSize(15)\r\n        p.textStyle(p.NORMAL);\r\n        p.textFont('Quicksand')\r\n        p.text('seconds', p.width/2, p.height*0.9 +35)\r\n        p.push()\r\n        p.translate(p.width*0.3-50, p.height*0.5)\r\n        p.rotate(-Math.PI/2)\r\n        p.text('points', 0,0)\r\n        p.pop()\r\n        p.stroke(153);\r\n        p.line(p.width*0.3, p.height*0.8, \r\n              p.width*0.3, p.height*0.2);\r\n        p.noStroke()\r\n\r\n\r\n\r\n        //ruler\r\n        for (i = 1; i < 10; i++) {\r\n          p.rect(p.width/4 + i * (p.width / 20), p.height*0.9, 1, -3)\r\n          p.text(i/5, p.width/4 + i * (p.width / 20), p.height*0.9 - 10)\r\n        }\r\n\r\n        if (window.first) {\r\n          //previous RTs\r\n          for (RT of window.demoRTs) {\r\n            var center_x = p.width/4+p.width/4*RT\r\n            p.triangle(center_x-4, p.height*0.9+30, center_x+4, p.height*0.9+30,center_x, p.height*0.9+25,)\r\n          }\r\n        }\r\n    }\r\n\r\n    p.setup = function () {\r\n      var cnv = p.createCanvas(\r\n        component.options.canvas.width / window.devicePixelRatio,\r\n        component.options.canvas.height / window.devicePixelRatio\r\n      )\r\n      p.noStroke();\r\n      p.textAlign(p.CENTER,p.CENTER);\r\n\r\n\r\n      // Make it so that HTML positions for the canvases\r\n      // are calculated relative to the container surrounding them\r\n      component.options.canvas.parentElement.style.position = 'relative'\r\n\r\n      // Set the canvas dimensions relative to the container\r\n      // surrounding it.\r\n      cnv.style('display', 'block')\r\n      cnv.style('position', 'absolute')\r\n      cnv.style('left', '0')\r\n      cnv.style('top', '0')\r\n      cnv.style('z-index', '20')\r\n      drawBackground();\r\n    }\r\n\r\n    p.draw = function() {\r\n      \r\n      if (mouseOverSlider()) {\r\n        p.clear()\r\n        drawBackground();\r\n      }\r\n      \r\n      function estimate2width (estimate) {\r\n        return estimate*(p.width/4)\r\n      }\r\n      \r\n      function mouseOverSlider() {\r\n        return p.mouseX>p.width/4 &&\r\n                p.mouseX<p.width*(3/4) &&\r\n                p.mouseY>p.height*0.9-20 &&\r\n                p.mouseY<p.height*0.9+40\r\n      }\r\n      \r\n\r\n      if (mouseOverSlider()) {\r\n        estimate = Math.max((4*p.mouseX/(p.width))-1,0.1);\r\n        bonus = 10/(estimate**(3/4));\r\n        \r\n        if (p.mouseIsPressed) {\r\n            mouseBoolean = true\r\n        }\r\n\r\n        //draw bonus\r\n        p.fill(0);\r\n        p.ellipse(p.width*0.3, p.height*0.8-(0.6*bonus*p.height/57), 72, 72);\r\n        p.fill(255);\r\n        p.ellipse(p.width*0.3, p.height*0.8-(0.6*bonus*p.height/57), 70, 70);\r\n        p.fill(0);\r\n        p.textSize(28)\r\n        // p.textStyle(p.BOLD);\r\n        p.textFont(\"Permanent Marker\");\r\n        p.text(bonus.toFixed(1), p.width*0.3, p.height*0.8-(0.6*bonus*p.height/57))\r\n      }\r\n\r\n      //red bar\r\n      p.fill(0)\r\n      p.rect(p.width/4, p.height*0.9, estimate2width(estimate), 20)\r\n\r\n      if (mouseBoolean && !p.mouseIsPressed && mouseOverSlider()) {\r\n        mouseBoolean = false\r\n        //move to next component\r\n        component.respond(estimate)\r\n        //close sketch\r\n        p.remove()\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n// p5.js instantiation\r\n// (note that the library script has been added\r\n// to the HTML page header via the study-wide options)\r\nlet myp5 = new p5(window.makeS(component), this.options.el)"
+        },
+        {
+          "title": "",
+          "message": "after:end",
+          "code": "const calculateBonus = function(x) {\r\n  console.log(1)\r\n  return 10/x**(3/4);\r\n}\r\nwindow.demoEstimate = this.state.response*1000;\r\nwindow.demoBonus = calculateBonus(this.state.response);\r\nwindow.first = false\r\n"
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "EstimationDemo",
+      "correctResponse": "",
+      "_tab": "Scripts",
+      "timeout": "",
+      "tardy": false
+    },
+    "17": {
+      "id": "17",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": "400",
+          "height": "400",
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "keydown",
+          "target": "",
+          "filter": " Space"
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "Prepare stimulus",
+          "message": "before:prepare",
+          "code": "\n// Render the items one by one\nthis.parameters.item_positions.forEach((position, i) => {\n  \n  window.draw_stimulus(\n    this,\n    position,\n    0,\n    i==0,\n    this.parameters.display_function\n  )\n})\n\n"
+        },
+        {
+          "title": "",
+          "message": "after:end",
+          "code": "window.demoRT = (this.state.duration/1000).toPrecision(2)"
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "Stimulus",
+      "correctResponse": "",
+      "_tab": "Content",
+      "timeout": ""
+    },
+    "18": {
+      "id": "18",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": "400",
+          "height": "400",
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "1",
+          "event": "keypress",
+          "target": "",
+          "filter": "1"
+        },
+        {
+          "label": "2",
+          "event": "keypress",
+          "target": "",
+          "filter": "2"
+        },
+        {
+          "label": "3",
+          "event": "keypress",
+          "target": "",
+          "filter": "3"
+        },
+        {
+          "label": "4",
+          "event": "keypress",
+          "target": "",
+          "filter": "4"
+        },
+        {
+          "label": "5",
+          "event": "keypress",
+          "target": "",
+          "filter": "5"
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "Prepare stimulus",
+          "message": "before:prepare",
+          "code": "// Stimulus generation --------------------------------------------\n\nvar items_to_display = Math.min(5,this.parameters.item_positions.length)\nfor (i=0; i<items_to_display; i++) {\n  window.draw_numbers(\n    this,\n    this.parameters.item_positions[i],\n    0,\n    String(this.parameters.numbers_order[i]), 'black'\n  )\n}"
+        },
+        {
+          "title": "",
+          "message": "after:end",
+          "code": "if (this.state.correct) {\r\n  window.msg = 'This one took you\\n' + window.demoRT + ' seconds.'\r\n} else {\r\n  window.msg = 'You got this one wrong.\\nTry to be as accurate \\nas possible.'\r\n};\r\n\r\nwindow.correct = this.state.correct;\r\n\r\nif (this.state.correct & window.demoRT<2) {\r\n  window.demoRTs.push(window.demoRT)\r\n}"
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "numbers",
+      "correctResponse": "${parameters.numbers_order[0]}",
+      "_tab": "Content"
+    },
+    "19": {
+      "id": "19",
+      "type": "lab.html.Screen",
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "continue",
+          "event": "click",
+          "target": "button",
+          "filter": ""
+        },
+        {
+          "label": "continue",
+          "event": "keypress",
+          "target": "",
+          "filter": "Space"
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "run",
+          "code": "var feedback = document.getElementById(\"feedback\").innerHTML\r\nfeedback = feedback.replace(/_estimate_/g,String((window.demoEstimate/1000).toPrecision(2)))\r\nfeedback = feedback.replace(/_num_points_/g, String(window.demoBonus.toPrecision(2)))\r\ndocument.getElementById(\"feedback\").innerHTML = feedback;"
+        }
+      ],
+      "title": "estimation_feedback",
+      "content": "<main class=\"content-vertical-center content-horizontal-center\">\n  <div class=\"w-m text-justify\">\n    <p id = 'feedback'>For this first estimation, you estimated that it will take you <b>_estimate_</b> seconds to find 1 <i>T</i> among 3 randomly positioned rotated <i>L</i>'s. <br/>\n    If you will find the <i>T</i> in _estimate_ seconds or less in part 3 of the experiment, you will get <b>_num_points_</b> points. Otherwise, you will get zero points. Your final number of points will determine whether you get a bonus or not. </p>\n    <p>In the next 12 trials you wil estimate how long it will take you to find different targets among different distractors.</p>\n  </div>\n</main>\n\n<footer class=\"content-horizontal-right\">\n  <button id=\"continue\">Continue &rarr;</button>\n</footer>",
+      "_tab": "Content",
+      "tardy": true
+    },
+    "20": {
+      "id": "20",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": "0",
+          "top": "0",
+          "width": 400,
+          "height": 400,
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": 18.69,
+          "height": 36.16,
+          "fill": "#aaaaaa",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "+",
+          "fontSize": 32,
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "44",
+          "styles": {}
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": -75,
+          "width": 209.09,
+          "height": 36.16,
+          "fill": "black",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "${window.msg}",
+          "fontSize": 32,
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "211",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "feedback",
+      "timeout": "${window.correct?2000:5000}",
+      "_tab": "Content",
+      "tardy": true
+    },
+    "21": {
+      "id": "21",
+      "type": "lab.html.Screen",
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "continue",
+          "event": "click",
+          "target": "button",
+          "filter": ""
+        },
+        {
+          "label": "continue",
+          "event": "keypress",
+          "target": "",
+          "filter": "Space"
+        }
+      ],
+      "messageHandlers": [],
+      "title": "Instructions2a",
+      "content": "<main class=\"content-vertical-center content-horizontal-center\">\n  <div class=\"w-m text-justify\">\n    <h1>Part 2</h1>\n    <p>Good, you finished the first part!</p>\n    <p>Now, you will estimate how long it will take you to find various targets when mixed with different numbers of various distractors.</p>\n  </div>\n</main>\n\n<footer class=\"content-horizontal-right\">\n  <button id=\"continue\">Continue &rarr;</button>\n</footer>",
+      "_tab": "Content"
+    },
+    "22": {
+      "id": "22",
+      "type": "lab.html.Screen",
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "continue",
+          "event": "click",
+          "target": "button",
+          "filter": ""
+        },
+        {
+          "label": "continue",
+          "event": "keypress",
+          "target": "",
+          "filter": "Space"
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": ""
+        }
+      ],
+      "title": "Instructions3",
+      "content": "<main class=\"content-vertical-center content-horizontal-center\">\n  <div class=\"w-m text-justify\">\n  <h1>Part 3</h1>\n    <p>You finished the second part!</p>\n    <p>In the third and last part of the experiment, you will perform five trials of each visual search task for which you gave a time estimate. Try to be as fast and accurate as possible, as your bonus depends on this! \n      Just like in the first part, there's no time pressure on pressing the number key, but only on pressing the <kbd>spacebar</kbd>.</p>\n\n      <p>The target object will change once in every 5 searches, so pay attention to the instructions before each search.</p>\n  </div>\n</main>\n\n<footer class=\"content-horizontal-right\">\n  <button id=\"continue\">Continue &rarr;</button>\n</footer>",
+      "_tab": "Content"
+    },
+    "23": {
+      "id": "23",
+      "type": "lab.html.Screen",
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "continue",
+          "event": "click",
+          "target": "button",
+          "filter": ""
+        },
+        {
+          "label": "continue",
+          "event": "keypress",
+          "target": "",
+          "filter": "Space"
+        }
+      ],
+      "messageHandlers": [],
+      "title": "Instructions1a",
+      "content": "<main class=\"content-vertical-center content-horizontal-center\">\n  <div class=\"w-m text-justify\">\n    <h1>Part 1</h1>\n    <p>In the first part, you will search for a target object (for example, the letter T) among distractor objects (for example, rotated Ls).</p>\n    <p>First, a gray cross will appear on the screen. Look at the cross. Then, the target and distractors will appear. When you spot the target, press <kbd>spacebar</kbd> as quickly as possible. </p> \n    <p> Upon pressing the <kbd>spacebar</kbd>, the target and distractors\n    will be replaced by up to 5 numbers. To move to the next trial, type in the number that replaced the target.</p>\n  </div>\n</main>\n\n<footer class=\"content-horizontal-right\">\n  <button id=\"continue\">Continue &rarr;</button>\n</footer>",
+      "_tab": "Content"
+    },
+    "25": {
+      "id": "25",
+      "type": "lab.html.Form",
+      "content": "<main class=\"content-vertical-center content-horizontal-center\">\n    <div class=\"w-m text-justify\">\n    <h1>Thank you.</h1>\n    <p id = 'bonus_msg'></p>\n    <p>We will appreciate any thoughts or comments you have about the experiment. You can use the box below to share them with us. Thank you!</p>\n  </div>\n</main>\n\n<div style=\"text-align:center\">\n<form>\n   <textarea name=\"message\" rows=\"10\" cols=\"30\">Your feedback here.</textarea>\n  <br>\n  <input id=\"submit\" type=\"submit\">\n</form>\n</div>",
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "submit",
+          "event": "click",
+          "target": "submit",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "run",
+          "code": "this.data.accuracy = window.accuracy;\r\nthis.data.RT = window.RT;\r\nthis.data.bonus = window.bonus;\r\ndocument.getElementById(\"bonus_msg\").innerHTML = \"You collected \"+ String(Math.round(window.bonus))+ \" points. We will double your payment if this is within the top 30% of our participants\";\r\n"
+        },
+        {
+          "title": "",
+          "message": "",
+          "code": "this.options.events['click button[type=\"submit\"]'] = function() {\r\n  // Get slider value\r\n  const feedback = document.querySelector('input[name=\"message\"]').value\r\n  this.data.feedback = feedback\r\n}"
+        }
+      ],
+      "title": "Form",
+      "_tab": "Scripts",
+      "tardy": true
+    },
+    "27": {
+      "id": "27",
+      "type": "lab.html.Screen",
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "",
+          "code": ""
+        }
+      ],
+      "title": "Screen",
+      "content": "<header>\r\n  <h1>Thank you!</h1>\r\n</header>\r\n <main>\r\n   <p><strong>The experiment is now complete.</strong></p>\r\n   </main>\r\n<footer class=\"content-horizontal-right\">\r\n  <p>You can now close the window</p>\r\n</footer>",
+      "_tab": "Behavior",
+      "timeout": "0"
+    },
+    "34": {
+      "id": "34",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": "400",
+          "height": "400",
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": 18.69,
+          "height": 36.16,
+          "fill": "#aaaaaa",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "+",
+          "fontSize": 32,
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "44",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": ""
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "Fixation",
+      "timeout": "500",
+      "_tab": "Behavior"
+    },
+    "35": {
+      "id": "35",
+      "type": "lab.html.Screen",
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "continue",
+          "event": "click",
+          "target": "button",
+          "filter": ""
+        },
+        {
+          "label": "continue",
+          "event": "keypress",
+          "target": "",
+          "filter": "Space"
+        }
+      ],
+      "messageHandlers": [],
+      "title": "Instructions2b",
+      "content": "<main class=\"content-vertical-center content-horizontal-center\">\n  <div class=\"w-m text-justify\">\n    <p> In each trial, you will estimate how long it will take you to find a target when mixed with other distractors presented in a square. Only the identity and number of distractors are relevant here, not their specific locations.</p>\n    <p>Be as accurate as possible.</p>\n    <p>In the third part, you will perform these searching tasks (the same number and type of distractors, but ordered in a new, random way), and receive points only if you find the target as fast as your estimate, or faster. You will get more points if your estimate was that you will find the target quickly, and fewer points if you estimated that finding the target will take you long.</p>\n     <p>To help you in your estimation, small black arrows will mark your search times from the first part of the experiment. </p>\n    \n  </div>\n</main>\n\n<footer class=\"content-horizontal-right\">\n  <button id=\"continue\">Continue &rarr;</button>\n</footer>",
+      "_tab": "Content"
+    },
+    "36": {
+      "id": "36",
+      "type": "lab.html.Screen",
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "continue",
+          "event": "click",
+          "target": "button",
+          "filter": ""
+        },
+        {
+          "label": "continue",
+          "event": "keypress",
+          "target": "",
+          "filter": "Space"
+        }
+      ],
+      "messageHandlers": [],
+      "title": "Instructions1b",
+      "content": "<main class=\"content-vertical-center content-horizontal-center\">\n  <div class=\"w-m text-justify\">\n   <p>Be quick to press the spacebar. There's no time pressure on pressing the right number key.</p>\n\n    <p>Let's start!</p>\n  </div>\n</main>\n\n<footer class=\"content-horizontal-right\">\n  <button id=\"continue\">Continue &rarr;</button>\n</footer>",
+      "_tab": "Content"
+    },
+    "37": {
+      "id": "37",
+      "type": "lab.flow.Loop",
+      "children": [
+        "38"
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "templateParameters": {
+        "columns": [
+          {
+            "name": "trial_number",
+            "type": "number"
+          },
+          {
+            "name": "set_size",
+            "type": "number"
+          },
+          {
+            "name": "display_function",
+            "type": "number"
+          }
+        ],
+        "rows": [
+          [
+            "1",
+            "6",
+            "2"
+          ],
+          [
+            "2",
+            "18",
+            "2"
+          ],
+          [
+            "3",
+            "6",
+            "3"
+          ],
+          [
+            "4",
+            "18",
+            "3"
+          ],
+          [
+            "5",
+            "6",
+            "4"
+          ],
+          [
+            "6",
+            "18",
+            "4"
+          ],
+          [
+            "7",
+            "6",
+            "5"
+          ],
+          [
+            "8",
+            "18",
+            "5"
+          ],
+          [
+            "9",
+            "6",
+            "6"
+          ],
+          [
+            "10",
+            "18",
+            "6"
+          ],
+          [
+            "11",
+            "6",
+            "7"
+          ],
+          [
+            "12",
+            "18",
+            "7"
+          ]
+        ]
+      },
+      "sample": {
+        "mode": "draw-shuffle",
+        "n": ""
+      },
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": "window.accuracy = {}\r\nwindow.time = {}\r\nwindow.counter = 0;"
+        },
+        {
+          "title": "",
+          "message": "end",
+          "code": "this.data.accuracy = window.accuracy;\r\nthis.data.RT = window.time;\r\nthis.data.bonus = window.bonus;"
+        }
+      ],
+      "title": "Visual search task",
+      "_tab": "Content",
+      "_collapsed": false
+    },
+    "38": {
+      "id": "38",
+      "type": "lab.flow.Loop",
+      "children": [
+        "39"
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "templateParameters": {
+        "columns": [
+          {
+            "name": "repetition",
+            "type": "string"
+          },
+          {
+            "name": "",
+            "type": "string"
+          }
+        ],
+        "rows": [
+          [
+            "1",
+            ""
+          ],
+          [
+            "2",
+            ""
+          ],
+          [
+            "3",
+            ""
+          ],
+          [
+            "4",
+            ""
+          ],
+          [
+            "5",
+            ""
+          ]
+        ]
+      },
+      "sample": {
+        "mode": "sequential"
+      },
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": "window.accuracy[this.parameters.trial_number] = [];\r\nwindow.time[this.parameters.trial_number] = [];"
+        }
+      ],
+      "title": "inner loop",
+      "_tab": "Scripts",
+      "_template": false
+    },
+    "39": {
+      "id": "39",
+      "type": "lab.flow.Sequence",
+      "children": [
+        "40",
+        "2",
+        "41",
+        "4",
+        "42",
+        "43",
+        "44"
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": "// Enumerate all possible positions and rotations.\r\n// Because we place stimuli on a 10x10 grid, there\r\n// are 100 possible positions.\r\nconst positions = Array(100).fill().map((_, i) => i)\r\nconst rotations = [0, 45, 90, 135, 180, 225, 270, 315]\r\n\r\n// If a target is present, we need to generate \r\n// one additional item\r\nconst setSize = this.parameters.set_size+1\r\nthis.parameters.numbers_order =  this.random.sample(\r\n  [1,2,3,4,5], 5, false)\r\n\r\n// Sample positions and rotations\r\nconst item_positions = this.random.sample(\r\n  positions, setSize, false // without replacement\r\n)\r\n\r\nthis.parameters.item_positions = item_positions;\r\n\r\nconst item_rotations = this.random.sample(\r\n  rotations, setSize, true // *with* replacement\r\n)\r\n\r\nthis.parameters.item_rotations = item_rotations;\r\n"
+        }
+      ],
+      "title": "Trial",
+      "_tab": "Scripts"
+    },
+    "40": {
+      "id": "40",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": "400",
+          "height": "400",
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": 18.69,
+          "height": 36.16,
+          "fill": "#aaaaaa",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "+",
+          "fontSize": 32,
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "44",
+          "styles": {}
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": -25,
+          "top": "-75",
+          "width": 124.52,
+          "height": 36.16,
+          "fill": "black",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "Find the ",
+          "fontSize": "32",
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "94",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": "window.draw_stimulus(\r\n  this,\r\n  125,\r\n  0,\r\n  1,\r\n  this.parameters.display_function,\r\n  50,-75\r\n)\r\n\r\n"
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "targetSpec",
+      "timeout": "1000",
+      "_tab": "Behavior"
+    },
+    "41": {
+      "id": "41",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": "400",
+          "height": "400",
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "keydown",
+          "target": "",
+          "filter": " Space"
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "Prepare stimulus",
+          "message": "before:prepare",
+          "code": "\n// Render the items one by one\nthis.parameters.item_positions.forEach((position, i) => {\n    window.draw_stimulus(\n      this,\n      position,\n      this.parameters.item_rotations[i],\n      i==0,\n      this.parameters.display_function,\n      NaN, NaN, i\n    )\n})\n\n\n"
+        },
+        {
+          "title": "",
+          "message": "after:end",
+          "code": "window.time[this.parameters.trial_number].push(this.state.duration);"
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "Stimulus",
+      "correctResponse": "",
+      "_tab": "Content",
+      "timeout": ""
+    },
+    "42": {
+      "id": "42",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": "400",
+          "height": "400",
+          "fill": "transparent",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "16"
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "1",
+          "event": "keypress",
+          "target": "",
+          "filter": "1"
+        },
+        {
+          "label": "2",
+          "event": "keypress",
+          "target": "",
+          "filter": "2"
+        },
+        {
+          "label": "3",
+          "event": "keypress",
+          "target": "",
+          "filter": "3"
+        },
+        {
+          "label": "4",
+          "event": "keypress",
+          "target": "",
+          "filter": "4"
+        },
+        {
+          "label": "5",
+          "event": "keypress",
+          "target": "",
+          "filter": "5"
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "Prepare stimulus",
+          "message": "before:prepare",
+          "code": "// Stimulus generation --------------------------------------------\n\nvar items_to_display = Math.min(5,this.parameters.item_positions.length)\nfor (i=0; i<items_to_display; i++) {\n  window.draw_numbers(\n    this,\n    this.parameters.item_positions[i],\n    0,\n    String(this.parameters.numbers_order[i]), 'black'\n  )\n}"
+        },
+        {
+          "title": "",
+          "message": "after:end",
+          "code": "window.accuracy[this.parameters.trial_number].push(this.state.correct);\r\n\r\nwindow.correct = this.state.correct\r\n\r\nif (window.correct) {\r\n  window.bonus += window.trialBonuses[this.parameters.trial_number];\r\n}"
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "numbers",
+      "correctResponse": "${parameters.numbers_order[0]}",
+      "_tab": "Content"
+    },
+    "43": {
+      "id": "43",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "rect",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": "400",
+          "height": "400",
+          "fill": "#ffffff",
+          "stroke": "#aaaaaa",
+          "strokeWidth": 2,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "rx": 0,
+          "ry": 0,
+          "id": "98"
+        },
+        {
+          "type": "i-text",
+          "version": "2.7.0",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": 0,
+          "width": 18.69,
+          "height": 36.16,
+          "fill": "#aaaaaa",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "text": "+",
+          "fontSize": 32,
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "100",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "",
+          "event": "",
+          "target": "",
+          "filter": ""
+        }
+      ],
+      "messageHandlers": [],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "Inter-trial interval",
+      "timeout": "${window.correct?1000:3000}",
+      "_tab": "Scripts",
+      "tardy": true
+    },
+    "44": {
+      "id": "44",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "i-text",
+          "version": "4.3.1",
+          "originX": "center",
+          "originY": "center",
+          "left": -25,
+          "top": -75,
+          "width": 645.72,
+          "height": 120.05,
+          "fill": "black",
+          "stroke": null,
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeUniform": false,
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "skewX": 0,
+          "skewY": 0,
+          "text": "You finished ${window.counter}\n out of a total of 60 search trials. \nPress Space when you are ready to continue.",
+          "fontSize": "32",
+          "fontWeight": "normal",
+          "fontFamily": "'Quicksand', sans-serif",
+          "fontStyle": "normal",
+          "lineHeight": 1.16,
+          "underline": false,
+          "overline": false,
+          "linethrough": false,
+          "textAlign": "center",
+          "textBackgroundColor": "",
+          "charSpacing": 0,
+          "id": "94",
+          "styles": {}
+        }
+      ],
+      "files": [],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "label": "space",
+          "event": "keypress",
+          "target": "",
+          "filter": "Space"
+        }
+      ],
+      "messageHandlers": [
+        {
+          "title": "",
+          "message": "before:prepare",
+          "code": "window.counter+=1\r\nwindow.skip = !([20,40].includes(window.counter));"
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "title": "trialsLeft",
+      "timeout": "",
+      "_tab": "Scripts",
+      "skipCondition": "${ window.skip }",
+      "skip": false,
+      "tardy": true
+    },
+    "root": {
+      "id": "root",
+      "title": "root",
+      "type": "lab.flow.Sequence",
+      "children": [
+        "1",
+        "23",
+        "36",
+        "7",
+        "21",
+        "35",
+        "13",
+        "19",
+        "3",
+        "22",
+        "37",
+        "25",
+        "27"
+      ],
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "type": "string"
+        }
+      ],
+      "plugins": [
+        {
+          "type": "lab.plugins.Metadata"
+        }
+      ],
+      "metadata": {
+        "title": "meta_VS_asymmetries",
+        "description": "",
+        "repository": "https://github.com/matanmazor/metavisualsearch",
+        "contributors": "Matan Mazor\nMax Siegel\nJosh Tenenbaum"
+      },
+      "messageHandlers": [],
+      "files": []
+    }
+  },
+  "version": [
+    20,
+    2,
+    4
+  ],
+  "files": {
+    "files": {
+      "index.html": {
+        "content": "data:text/html,%3C!doctype%20html%3E%0A%3Chtml%3E%0A%3Chead%3E%0A%20%20%3Cmeta%20charset%3D%22utf-8%22%3E%0A%20%20%3Ctitle%3EExperiment%3C%2Ftitle%3E%0A%20%20%3C!--%20viewport%20setup%20--%3E%0A%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%2C%20initial-scale%3D1%22%3E%0A%20%20%3C!--%20p5.js%20library%20--%3E%0A%20%20%3Cscript%20src%3D%22https%3A%2F%2Fcdn.jsdelivr.net%2Fnpm%2Fp5%2Flib%2Fp5.min.js%22%3E%3C%2Fscript%3E%0A%20%20%3C!--%20Slider%20library%2C%20styles%20and%20dependencies%20--%3E%0A%20%20%3C!--Plugin%20CSS%20file%20with%20desired%20skin--%3E%0A%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A%2F%2Fcdnjs.cloudflare.com%2Fajax%2Flibs%2Fion-rangeslider%2F2.3.0%2Fcss%2Fion.rangeSlider.min.css%22%2F%3E%0A%20%20%3C!--jQuery--%3E%0A%20%20%3Cscript%20src%3D%22https%3A%2F%2Fcdnjs.cloudflare.com%2Fajax%2Flibs%2Fjquery%2F3.3.1%2Fjquery.min.js%22%3E%3C%2Fscript%3E%0A%20%20%3C!--Plugin%20JavaScript%20file--%3E%0A%20%20%3Cscript%20src%3D%22https%3A%2F%2Fcdnjs.cloudflare.com%2Fajax%2Flibs%2Fion-rangeslider%2F2.3.0%2Fjs%2Fion.rangeSlider.min.js%22%3E%3C%2Fscript%3E%0A%20%20%3Cscript%3E%0A%20%20%20%20window.draw_stimulus%20%3D%20%0A(component%2C%20position%2C%20rotation%2C%20target%2C%20display_function%2C%20%0Acostum_x%3DNaN%2C%20costum_y%20%3D%20NaN%2C%20serial_number%20%3D%201)%20%3D%3E%20%7B%0A%0A%0A%20%20var%20x%20%3D%20(Number.isNaN(costum_x))%20%3F%20((position%20%25%2010)%20*%2032%20-%20160)%20%3A%20costum_x%0A%20%20var%20y%20%3D%20(Number.isNaN(costum_y))%20%3F%20Math.floor(position%20%2F%2010)%20*%2032%20-%20160%20%3A%20costum_y%0A%0A%0A%20%20switch%20(display_function)%20%7B%0A%20%20%20%20%0A%20%20case%201%3A%20%2F%2Fpractice%0A%20%20%20%20component.options.content.push(%7B%0A%20%20%20%20%20%20type%3A%20'text'%2C%0A%20%20%20%20%20%20left%3A%20x%2C%20top%3A%20y%2C%20angle%3A%20rotation%2C%0A%20%20%20%20%20%20text%3A%20target%3F%20'T'%3A'L'%2C%0A%20%20%20%20%20%20fontSize%3A%2025%2C%0A%20%20%20%20%20%20fontFamily%3A%20'Helvetica%2C%20Arial%2C%20Sans-Serif'%2C%0A%20%20%20%20%20%20fill%3A%20'black'%2C%0A%20%20%20%20%20%20angle%3A%20target%3F%200%3A90%0A%20%20%20%20%7D)%3B%0A%20%20%20%0A%20%20break%3B%0A%0A%20%20case%202%3A%20%2F%2F%20C%20in%20O%20%0A%20%20%20%20component.options.content.push(%7B%0A%20%20%20%20%20%20type%3A%20'image'%2C%0A%20%20%20%20%20%20left%3A%20x%2C%20top%3A%20y%2C%20angle%3A%200%2Cwidth%3A30%2C%20height%3A30%2C%0A%20%20%20%20%20%20src%3A%20target%3F%20'static%2FC.png'%3A'static%2FO.png'%2C%0A%20%20%20%20%7D)%0A%20%20break%3B%0A%0A%20%20case%203%3A%20%2F%2F%20O%20in%20C%20%0A%20%20%20%20component.options.content.push(%7B%0A%20%20%20%20%20%20type%3A%20'image'%2C%0A%20%20%20%20%20%20left%3A%20x%2C%20top%3A%20y%2C%20angle%3A%200%2Cwidth%3A30%2C%20height%3A30%2C%0A%20%20%20%20%20%20src%3A%20target%3F%20'static%2FO.png'%3A'static%2FC.png'%2C%0A%20%20%20%20%7D)%0A%20%20break%3B%0A%0A%20%20case%204%3A%20%2F%2F%20Q%20in%20O%20%0A%20%20%20%20component.options.content.push(%7B%0A%20%20%20%20%20%20type%3A%20'image'%2C%0A%20%20%20%20%20%20left%3A%20x%2C%20top%3A%20y%2C%20angle%3A%200%2Cwidth%3A30%2C%20height%3A30%2C%0A%20%20%20%20%20%20src%3A%20target%3F%20'static%2FQ.png'%3A'static%2FO.png'%2C%0A%20%20%20%20%7D)%0A%20%20break%3B%0A%0A%20%20case%205%3A%20%2F%2F%20O%20in%20Q%20%0A%20%20%20%20component.options.content.push(%7B%0A%20%20%20%20%20%20type%3A%20'image'%2C%0A%20%20%20%20%20%20left%3A%20x%2C%20top%3A%20y%2C%20angle%3A%200%2Cwidth%3A30%2C%20height%3A30%2C%0A%20%20%20%20%20%20src%3A%20target%3F%20'static%2FO.png'%3A'static%2FQ.png'%2C%0A%20%20%20%20%7D)%0A%20%20break%3B%0A%0A%20%20case%206%3A%20%2F%2F%20vertical%20in%20tilted%0A%20%20%20%20component.options.content.push(%7B%0A%20%20%20%20%20%20type%3A%20'image'%2C%0A%20%20%20%20%20%20left%3A%20x%2C%20top%3A%20y%2C%20angle%3A%20target%3F%200%3A20%2Cwidth%3A30%2C%20height%3A30%2C%0A%20%20%20%20%20%20src%3A%20'static%2Fline.png'%2C%0A%20%20%20%20%7D)%0A%20%20break%3B%0A%0A%20%20case%207%3A%20%2F%2F%20tilted%20in%20vertical%0A%20%20%20%20component.options.content.push(%7B%0A%20%20%20%20%20%20type%3A%20'image'%2C%0A%20%20%20%20%20%20left%3A%20x%2C%20top%3A%20y%2C%20angle%3A%20target%3F%2020%3A0%2Cwidth%3A30%2C%20height%3A30%2C%0A%20%20%20%20%20%20src%3A%20'static%2Fline.png'%2C%0A%20%20%20%20%7D)%0A%20%20break%3B%0A%0A%20%20case%20'mask'%3A%20%2F%2Fpractice%0A%20%20%20%20%20%20component.options.content.push(%7B%0A%20%20%20%20%20%20type%3A%20'image'%2C%0A%20%20%20%20%20%20left%3A%20x%2C%20top%3A%20y%2C%20angle%3A%20target%3F%2020%3A0%2Cwidth%3A30%2C%20height%3A30%2C%0A%20%20%20%20%20%20src%3A%20'static%2Fmask.png'%2C%0A%20%20%20%20%7D)%3B%0A%20%20%20%20%0A%20%20%20%20break%3B%0A%20%20%2F%2F%20%20case%203%3A%20%2F%2F%20conjunction%0A%20%20%2F%2F%20%20%20if%20(target)%20%7B%0A%20%20%2F%2F%20%20%20%20%20var%20stype%20%3D%201%3B%0A%20%20%2F%2F%20%20%20%7D%20else%20%7B%0A%20%20%2F%2F%20%20%20%20%20var%20stype%20%3D%202%2Bserial_number%252%3B%0A%20%20%2F%2F%20%20%20%7D%0A%20%20%2F%2F%20%20%20component.options.content.push(%7B%0A%20%20%2F%2F%20%20%20type%3A%20'rect'%2C%0A%20%20%2F%2F%20%20%20left%3A%20x%2C%20top%3A%20y%2C%20angle%3A%20stype%252%3D%3D0%3F0%3A20%2Cwidth%3A12%2C%20height%3A25%2C%0A%20%20%2F%2F%20%20%20fill%3A%20stype%3E2%3F%20'%2316A085'%3A'%23FF5733'%0A%20%20%2F%2F%20%7D)%3B%0A%20%20%2F%2F%20break%3B%0A%20%20%2F%2F%20case%204%3A%20%2F%2Forientation%0A%20%20%2F%2F%20%20%20component.options.content.push(%7B%0A%20%20%2F%2F%20%20%20type%3A%20'rect'%2C%0A%20%20%2F%2F%20%20%20left%3A%20x%2C%20top%3A%20y%2C%20angle%3A%20target%3F%2020%3A0%2C%20rotation%2Cwidth%3A12%2C%20height%3A25%2C%0A%20%20%2F%2F%20%20%20fill%3A%20'%23FF5733'%0A%20%20%2F%2F%20%7D)%3B%0A%20%20%2F%2F%20break%3B%0A%20%20%7D%0A%7D%0A%0Awindow.draw_numbers%20%3D%20(component%2C%20position%2C%20rotation%2C%20content%2C%20color%20%3D%20'black'%2C%0Acostum_x%3DNaN%2C%20costum_y%20%3D%20NaN)%20%3D%3E%20%7B%0A%20%20var%20x%20%3D%20(Number.isNaN(costum_x))%20%3F%20((position%20%25%2010)%20*%2032%20-%20160)%20%3A%20costum_x%0A%20%20var%20y%20%3D%20(Number.isNaN(costum_y))%20%3F%20Math.floor(position%20%2F%2010)%20*%2032%20-%20160%20%3A%20costum_y%0A%0A%20%20component.options.content.push(%7B%0A%20%20%20%20type%3A%20'text'%2C%0A%20%20%20%20left%3A%20x%2C%20top%3A%20y%2C%20angle%3A%20rotation%2C%0A%20%20%20%20text%3A%20content%2C%0A%20%20%20%20fontSize%3A%2032%2C%0A%20%20%20%20fontFamily%3A%20'Helvetica%2C%20Arial%2C%20Sans-Serif'%2C%0A%20%20%20%20fill%3A%20color%0A%20%20%7D)%0A%7D%0A%3C%2Fscript%3E%0A%20%20%3C!--%20lab.js%20library%20and%20experiment%20code%20--%3E%0A%20%20%24%7B%20header%20%7D%0A%20%20%3Clink%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPermanent%2BMarker%22%20rel%3D%22stylesheet%22%3E%20%0A%20%20%3Clink%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DQuicksand%22%20rel%3D%22stylesheet%22%3E%20%0A%20%20%3Clink%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInria%2BSerif%22%20rel%3D%22stylesheet%22%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%20%3C!--%20If%20you'd%20rather%20have%20a%20container%20with%20a%20fixed%20width%0A%20%20%20%20%20%20%20and%20variable%20height%2C%20try%20removing%20the%20fullscreen%20class%20below%20--%3E%0A%20%20%3Cdiv%20class%3D%22container%20fullscreen%22%20data-labjs-section%3D%22main%22%3E%0A%20%20%20%20%3Cmain%20class%3D%22content-vertical-center%20content-horizontal-center%22%3E%0A%20%20%20%20%20%20%3Cdiv%3E%0A%20%20%20%20%20%20%20%20%3Ch2%3ELoading%20Experiment%3C%2Fh2%3E%0A%20%20%20%20%20%20%20%20%3Cp%3EThe%20experiment%20is%20loading%20and%20should%20start%20in%20a%20few%20seconds%3C%2Fp%3E%0A%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%3C%2Fmain%3E%0A%20%20%3C%2Fdiv%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E%0A",
+        "source": "library"
+      },
+      "style.css": {
+        "content": "data:text/css,textarea%20%7B%0D%0A%20%20%20%20display%3A%20block%3B%0D%0A%20%20%20%20margin-left%3A%20auto%3B%0D%0A%20%20%20%20margin-right%3A%20auto%3B%0D%0A%7D%0D%0A%0D%0Ah1%20%7Bfont-family%3A%20'Quicksand'%3B%20%0D%0A%20%20%20%20font-size%3A%20200%25%3B%20%0D%0A%20%20%20%20letter-spacing%3A0.05em%3B%20%0D%0A%20%20%20%20text-align%3Acenter%7D%0D%0A%20%20%20%20%0D%0Ap%20%7B%20font-family%3A%20'Quicksand'%2C%20sans-serif%3B%20%7D%0D%0A%0D%0Abutton%20%7B%20font-family%3A%20'Inria%20Serif'%2C%20sans-serif%3B%20%20font-weight%3A%20bold%7D%0D%0A%0D%0Atextarea%20%7B%20font-family%3A%20'Quicksand'%2C%20sans-serif%3B%20%7D%0D%0A%0D%0Ainput%20%7B%20font-family%3A%20'Quicksand'%2C%20sans-serif%3B%20%7D",
+        "source": "library"
+      },
+      "static/C.png": {
+        "content": "data:image/png;base64,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",
+        "source": "embedded-global",
+        "checkSum": "343e8ea53e55dcbc57756b15d1f5917ae242c497b55287a49520ac624360c172"
+      },
+      "static/O.png": {
+        "content": "data:image/png;base64,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",
+        "source": "embedded-global",
+        "checkSum": "4227426629e47d8027a0e92c6e3fba689582dc5e1aa9ef026f81e105d38187c3"
+      },
+      "static/line.png": {
+        "content": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAYAAACI7Fo9AAAACXBIWXMAAC4jAAAuIwF4pT92AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAmJJREFUeNrs1sEJwzAUREF/o0JSWjox6cSlpBR1spFLUC6JxQwInXRZeKBKsgFr200AQgeEDggdEDogdEDogNABoYPQAaEDQgeEDggdEDogdEDoIHRA6IDQgb/VTLCmqnqM6zn57EzSrSd07uMK/Zh88x5H6L7ugNABoQNCB4QOCB0QOggdEDogdEDogNABoQNCB4QOCB2EDggdEDogdEDogNABoQNCB6EDQgeEDggdEDogdEDogNBB6IDQAaEDQgeEDggdEDogdEDoIHRA6IDQAaEDQgeEDggdEDoIHRA6IHRA6IDQAaEDQgeEDkIHhA4IHRA6IHRA6IDQAaEDQgehA0IHhA4IHRA6IHRA6IDQQeiA0AGhA0IHhA4IHRA6IHQQOiB0QOiA0AGhA0IHhA4IHRA6CB0QOiB0QOiA0AGhA0IHhA5CB4QOCB0QOiB0QOiA0AGhg9ABoQNCB4QOCB0QOiB0QOiA0EHogNABoQNCB4QOCB0QOiB0EDogdEDogNABoQNCB4QOCB2EDggdEDogdEDogNABoQNCB6GbAIQOCB0QOiB0QOiA0AGhA0IHoQNCB4QOCB0QOiB0QOiA0EHogNABoQNCB4QOCB0QOiB0EDogdEDogNABoQNCB4QOCB0QOggdEDogdEDogNABoQNCB4QOQgeEDggdEDogdEDogNABoYPQAaEDQgeEDggdEDogdEDogNBB6IDQAaEDQgeEDggdmNVMsKw+zuuLNyyoklgBfN0BoQNCB4QOCB0QOiB0QOggdEDogNABoQNCB4QOCB0QOggdEDogdEDowI98BBgAAvQRcwCVs5MAAAAASUVORK5CYII=",
+        "source": "embedded-global",
+        "checkSum": "43d78de183949c4915dd8e2e763b290db08aec5873086b7f96ad2ae20ec28914"
+      },
+      "static/Q.png": {
+        "content": "data:image/png;base64,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",
+        "source": "embedded-global",
+        "checkSum": "0a74f939aa69219eb4b9ff1160d1a50995a638be6da1a18586389a10bc4e3ae9"
+      },
+      "static/mask.png": {
+        "content": "data:image/png;base64,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",
+        "source": "embedded-global",
+        "checkSum": "03405563034b22a89c503a8db4beaa2412fdb517d38cf76004cb536f053782a4"
+      }
+    },
+    "bundledFiles": {
+      "lib/lab.js": {
+        "type": "application/javascript"
+      },
+      "lib/lab.js.map": {
+        "type": "text/plain"
+      },
+      "lib/lab.fallback.js": {
+        "type": "application/javascript"
+      },
+      "lib/lab.legacy.js": {
+        "type": "application/javascript"
+      },
+      "lib/lab.legacy.js.map": {
+        "type": "text/plain"
+      },
+      "lib/lab.css": {
+        "type": "text/css"
+      },
+      "lib/loading.svg": {
+        "type": "image/svg+xml"
+      }
+    }
+  }
+}
