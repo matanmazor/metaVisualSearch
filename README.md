@@ -2,7 +2,13 @@
 
 Matan Mazor, Max Siegel & Josh Tenenbaum
 
-![Alignment of estimates and search times in Experiment 3](https://github.com/matanmazor/metaVisualSearch/blob/master/docs/figures/Exp3scatter.png)
+Accepted for publication in Journal of Experimental Psychology: General.
+
+![Experimental design, Exp. 1 and 2](https://github.com/matanmazor/metaVisualSearch/blob/master/docs/figures/methods1.png)
+
+## Paper and analysis Scripts
+
+[The full paper]https://github.com/matanmazor/metaVisualSearch/blob/master/docs/MVS_paper.doc) can be fully reproduced from experimental data by knitting [The Rmarkdown file]https://github.com/matanmazor/metaVisualSearch/blob/master/docs/MVS.rmd). 
 
 ## Experiment demos
 
