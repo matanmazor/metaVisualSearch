@@ -1,5 +1,4 @@
-# metaVisualSearch
-## Internal models of visual search are rich, person-specific, and mostly accurate
+# Prospective search time estimates reveal the strengths and limits of internal models of visual search
 
 Matan Mazor, Max Siegel & Josh Tenenbaum
 
