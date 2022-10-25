@@ -52,7 +52,7 @@ draft             : no
 
 documentclass     : "apa6"
 classoption       : "man"
-output            : papaja::apa6_pdf
+output            : papaja::apa6_doc
 appendix          : "Appendix1.rmd"
 ---
 
@@ -1860,11 +1860,11 @@ This hypothetical model of people's intuitions about visual search is different 
 
 In its item-based, basic form, our speculative dwelling-based model predicts that search slopes are a function of the similarity between individual distractors and the target. As such, mixing different types of distractors within the same search array should result in intermediate search slopes, a weighted average of the slopes obtained for individual distractor classes. For example, if participants in Exp. 1 believed that the search slope for color is 18 ms/item, and for shape it is 26 ms/item, the estimated search slope for shape-color conjunction search must, according to this model, be somewhere between 18 and 26 ms/item, and by no means higher than both. Instead, in both Experiments 1 and 2 conjunction search slopes were numerically higher than search slopes for their constituent features, indicating that internal models of visual search are sensitive to global properties of the display, and not only to properties of individual objects. One mechanism by which subjects may believe that global properties of the search array affect search time is via sequential interactions, such that processing an item is faster after the processing of similar, or identical, distractors. More work is needed to directly test this idea, and to test whether this proposed model captures subjects' intuitions about visual search more generally. 
 
-Finally, it remains an open question whether people’s internal models of visual search are represented as an approximate probabilistic or alternatively as a list of rules. For example, an alternative description of the above model is captured by three simple rules: people believe that searches are harder when 1) there are many distractors, 2) the distractors are similar to the target, and 3) the distractors are different from each other. A list of rules may be easier for subjects to represent than a probabilistic model, but this comes at the expense of being less flexible in predicting search times in unfamiliar settings. We leave it for future work to answer this important question.
+Finally, it remains an open question whether people’s internal models of visual search are represented as an approximate probabilistic model or alternatively as a list of rules. For example, an alternative description of the above model is captured by three simple rules: people believe that searches are harder when 1) there are many distractors, 2) the distractors are similar to the target, and 3) the distractors are different from each other. A list of rules may be easier for subjects to represent than a probabilistic model, but this comes at the expense of being less flexible in predicting search times in unfamiliar settings. We leave it for future work to answer this important question.
 
 ### Conclusion
 
-Together, our results reveal an alignment between prospective search time estimates and search times. We find that search difficulty is represented along a gradient, and is not person-invariant. Our results also reveal important limitations on subject's ability to predict their visual search behaviour; most notably, that subjects have no metacognitive access to pre-attentive stages of visual search. Our findings place a lower bound on the richness and complexity of subjects’ internal model of visual search and attention more generally, opening a promising avenue for studying humans’ intuitive understanding of their own mental processes.
+Together, our results reveal an alignment between prospective search time estimates and search times. We find that search difficulty is represented along a gradient, and is not person-invariant. Our results also reveal important limitations on subject's ability to predict their visual search behaviour; most notably, we find that subjects have no metacognitive access to pre-attentive stages of visual search. Our findings place a lower bound on the richness and complexity of subjects’ internal model of visual search and attention more generally, opening a promising avenue for studying humans’ intuitive understanding of their own mental processes.
 
 \newpage
 
