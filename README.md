@@ -1,6 +1,6 @@
 # Prospective search time estimates reveal the strengths and limits of internal models of visual search
 
-Matan Mazor, Max Siegel & Josh Tenenbaum
+Matan Mazor 👁️👁️, Max Siegel 👁️👁️ & Josh Tenenbaum 👁️👁️
 
 Accepted for publication pending minor revisions in *Journal of Experimental Psychology: General*.
 
