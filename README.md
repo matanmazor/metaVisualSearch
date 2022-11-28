@@ -22,4 +22,6 @@ Accepted for publication pending minor revisions in *Journal of Experimental Psy
 
 [Experiment 5 (Visual search asymmetries)](https://matanmazor.github.io/metaVisualSearch/experiments/demos/Experiment5/)
 
+[Experiment 6 (Target-distractor similarity)](https://matanmazor.github.io/metaVisualSearch/experiments/demos/Experiment6/)
+
 Note: experiments in the data and experiments subdirectories are presented in the order in which they were run, with 1 and 2 being the two exploratory experiments, and 3 and 4 the pre-registered ones. In the paper we group exploratory experiments with their pre-registered extensions, such that Experiment 3 is presented as Experiment 2, and Experiment 3 is presented as Experiment 3.

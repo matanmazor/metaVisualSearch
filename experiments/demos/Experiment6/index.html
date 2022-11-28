@@ -1,0 +1,287 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Experiment</title>
+  <!-- viewport setup -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- p5.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/p5/lib/p5.min.js"></script>
+  <!-- Slider library, styles and dependencies -->
+  <!--Plugin CSS file with desired skin-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/css/ion.rangeSlider.min.css"/>
+  <!--jQuery-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--Plugin JavaScript file-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js"></script>
+  <script>
+    window.draw_stimulus = 
+(component, position, rotation, target, display_function, 
+costum_x=NaN, costum_y = NaN, serial_number = 1) => {
+
+
+  var x = (Number.isNaN(costum_x)) ? ((position % 10) * 32 - 160) : costum_x
+  var y = (Number.isNaN(costum_y)) ? Math.floor(position / 10) * 32 - 160 : costum_y
+
+
+  switch (display_function) {
+    
+  case 1: //practice
+    component.options.content.push({
+      type: 'text',
+      left: x, top: y, angle: rotation,
+      text: target? 'T':'L',
+      fontSize: 25,
+      fontFamily: 'Helvetica, Arial, Sans-Serif',
+      fill: 'black',
+      angle: target? 0:90
+    });
+   
+  break;
+
+  case 2: // Numbers in numbers 
+    if (target) {
+        var txt = '7';
+      } else {
+        var txt = '012345689'[serial_number%9];
+      }
+    component.options.content.push({
+      type: 'text',
+      left: x, top: y,
+      text: txt,
+      fontSize: 25,
+      fontFamily: 'Helvetica, Arial, Sans-Serif',
+      fill: 'black',
+      angle: 0
+    });
+    
+  break;
+
+  case 3: // Letter in numbers 
+    if (target) {
+        var txt = 'Z';
+      } else {
+        var txt = '012345689'[serial_number%9];
+      }
+    component.options.content.push({
+      type: 'text',
+      left: x, top: y,
+      text: txt,
+      fontSize: 25,
+      fontFamily: 'Helvetica, Arial, Sans-Serif',
+      fill: 'black',
+      angle: 0
+    });
+    
+  break;
+
+  case 4: // Number in letters
+    if (target) {
+        var txt = '7';
+      } else {
+        var txt = 'ABCDEFGHI'[serial_number%9];
+      }
+    component.options.content.push({
+      type: 'text',
+      left: x, top: y,
+      text: txt,
+      fontSize: 25,
+      fontFamily: 'Helvetica, Arial, Sans-Serif',
+      fill: 'black',
+      angle: 0
+    });
+    
+  break;
+
+  case 5: // Letter in letters
+    if (target) {
+        var txt = 'Z';
+      } else {
+        var txt = 'ABCDEFGHI'[serial_number%9];
+      }
+    component.options.content.push({
+      type: 'text',
+      left: x, top: y,
+      text: txt,
+      fontSize: 25,
+      fontFamily: 'Helvetica, Arial, Sans-Serif',
+      fill: 'black',
+      angle: 0
+    });
+    
+  break;
+
+  case 6: // E in letters
+    if (target) {
+          var img = 'E'+'t';
+        } else {
+          var img = 'AH'[serial_number%2]+'t';
+        }
+    component.options.content.push({
+      type: 'image',
+      left: x, top: y, angle:0,width:30, height:30,
+      src: 'static/'+img+'.png',
+    })
+  break;
+
+ case 7: // E in numbers
+    if (target) {
+          var img = 'E'+'t';
+        } else {
+          var img = '82'[serial_number%2]+'t';
+        }
+    component.options.content.push({
+      type: 'image',
+      left: x, top: y, angle:0,width:30, height:30,
+      src: 'static/'+img+'.png',
+    })
+  break;
+
+ case 8: // 3 in letters
+    if (target) {
+          var img = '3'+'t';
+        } else {
+          var img = 'AH'[serial_number%2]+'t';
+        }
+    component.options.content.push({
+      type: 'image',
+      left: x, top: y, angle:0,width:30, height:30,
+      src: 'static/'+img+'.png',
+    })
+  break;
+
+ case 9: // 3 in numbers
+    if (target) {
+          var img = '3'+'t';
+        } else {
+          var img = '82'[serial_number%2]+'t';
+        }
+    component.options.content.push({
+      type: 'image',
+      left: x, top: y, angle:0,width:30, height:30,
+      src: 'static/'+img+'.png',
+    })
+  break;
+
+   case 10: // E in fonts //Felix tiling/ Segoe script
+    if (target) {
+          var img = 'E';
+        } else {
+          var img = 'E'+'cs'[serial_number%2];
+        }
+    component.options.content.push({
+      type: 'image',
+      left: x, top: y, angle:0,width:30, height:30,
+      src: 'static/'+img+'.png',
+    })
+  break;
+
+  case 11: // 3 in fonts //Felix tiling/ Segoe script
+    if (target) {
+          var img = '3';
+        } else {
+          var img = '3'+'cs'[serial_number%2];
+        }
+    component.options.content.push({
+      type: 'image',
+      left: x, top: y, angle:0,width:30, height:30,
+      src: 'static/'+img+'.png',
+    })
+  break;
+
+   case 12: // 3 in upright numbers
+    if (target) {
+          var img = '3'+'t';
+        } else {
+          var img = '82'[serial_number%2];
+        }
+    component.options.content.push({
+      type: 'image',
+      left: x, top: y, angle: 0 ,width:30, height:30,
+      src: 'static/'+img+'.png',
+    })
+  break;
+
+  case 13: // E in upright letters
+    if (target) {
+          var img = 'E'+'t';
+        } else {
+          var img = 'AH'[serial_number%2];
+        }
+    component.options.content.push({
+      type: 'image',
+      left: x, top: y, angle: 0 ,width:30, height:30,
+      src: 'static/'+img+'.png',
+    })
+  break;
+
+  case 'mask': 
+      component.options.content.push({
+      type: 'image',
+      left: x, top: y, angle: 0,width:30, height:30,
+      src: 'static/mask.png',
+    });
+    
+    break;
+  //  case 3: // conjunction
+  //   if (target) {
+  //     var stype = 1;
+  //   } else {
+  //     var stype = 2+serial_number%2;
+  //   }
+  //   component.options.content.push({
+  //   type: 'rect',
+  //   left: x, top: y, angle: stype%2==0?0:20,width:12, height:25,
+  //   fill: stype>2? '#16A085':'#FF5733'
+  // });
+  // break;
+  // case 4: //orientation
+  //   component.options.content.push({
+  //   type: 'rect',
+  //   left: x, top: y, angle: target? 20:0, rotation,width:12, height:25,
+  //   fill: '#FF5733'
+  // });
+  // break;
+  }
+}
+
+window.draw_numbers = (component, position, rotation, content, color = 'black',
+costum_x=NaN, costum_y = NaN) => {
+  var x = (Number.isNaN(costum_x)) ? ((position % 10) * 32 - 160) : costum_x
+  var y = (Number.isNaN(costum_y)) ? Math.floor(position / 10) * 32 - 160 : costum_y
+
+  component.options.content.push({
+    type: 'text',
+    left: x, top: y, angle: rotation,
+    text: content,
+    fontSize: 32,
+    fontFamily: 'Helvetica, Arial, Sans-Serif',
+    fill: color
+  })
+}
+</script>
+  <!-- lab.js library and experiment code -->
+  <!-- lab.js library code -->
+  <script src="lib/lab.js" data-labjs-script="library"></script>
+  <script src="lib/lab.fallback.js" data-labjs-script="fallback"></script>
+  <link rel="stylesheet" href="lib/lab.css">
+  <!-- study code and styles -->
+  <script src="script.js" defer="true"></script>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Inria+Serif" rel="stylesheet">
+</head>
+<body>
+  <!-- If you'd rather have a container with a fixed width
+       and variable height, try removing the fullscreen class below -->
+  <div class="container fullscreen" data-labjs-section="main">
+    <main class="content-vertical-center content-horizontal-center">
+      <div>
+        <h2>Loading Experiment</h2>
+        <p>The experiment is loading and should start in a few seconds</p>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
