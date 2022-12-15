@@ -2,7 +2,7 @@
 
 Matan Mazor 👁️👁️, Max Siegel 👁️👁️ & Josh Tenenbaum 👁️👁️
 
-Accepted for publication pending minor revisions in *Journal of Experimental Psychology: General*.
+In press, *Journal of Experimental Psychology: General*.
 
 ![Experimental design, Exp. 1 and 2](https://github.com/matanmazor/metaVisualSearch/blob/master/docs/figures/methods1.png)
 
