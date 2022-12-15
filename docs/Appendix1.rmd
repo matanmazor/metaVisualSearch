@@ -31,7 +31,7 @@ Since we assumed log RTs are distributed normally, we can express $log(x)$ relat
 
 where $z$ is the standardized $log(RT)$, with mean 0 and standard deviation 1. $\mu$ only appears in the third term in the product, which functions as a constant multiplier that scales the expected bonus equally for all choices of $\alpha$. It then follows that the function relating the choice of $\alpha$ to the expected bonus preserves its shape for all possible values of $\mu$. This function reaches a maximum for $\alpha=0.52$ (the 70th quantile) in Exp. 1-4, and for $\alpha=0$ (the 50th quantile) in Exp. 5:
 
-```{r bonus-scheme, echo=FALSE, message=FALSE, warning=FALSE, fig.cap='Upper panel: response time distributions are modeled as exponents of values drawn from a normal distribution with different values of mu. Middle panel: the estimate value that maximizes the expected bonus is fixed with respect to the mean of the log(RT) distributions, regardless of what the mean is. The expected bonus is higher for lower values of mu, but to maximize their bonus participants should always choose an estimate that is positioned in the 70 quantile of the RT distribution (mean + 0.518 standard deviaions in log space). Lower panel: in Exp. 5, the bonus is maximized for estimates that are aligned with the median of the RT distribution.', fig.scap='bonus structure'}
+```{r bonus-scheme, echo=FALSE, message=FALSE, warning=FALSE, fig.cap='Upper panel: response time distributions are modeled as exponents of values drawn from a normal distribution with different values of mu. Middle panel: the estimate value that maximizes the expected bonus is fixed with respect to the mean of the log(RT) distributions, regardless of what the mean is. The expected bonus is higher for lower values of mu, but to maximize their bonus participants should always choose an estimate that is positioned in the 70 quantile of the RT distribution (mean + 0.518 standard deviations in log space). Lower panel: in Exp. 5, the bonus is maximized for estimates that are aligned with the median of the RT distribution.', fig.scap='bonus structure'}
 
 library(dplyr);
 library(ggplot2);
@@ -123,5 +123,15 @@ p3 <- ggplot(df,aes(x=alpha,y=new_bonus,color=mu))+
 #        y='expected bonus')+
 #   theme_classic()
 
-grid.arrange(p1,p2, p3)
+# p <- grid.arrange(p1,p2, p3)
+# ggsave('figures/appendix_bonus_fig.png', p,width=6, height=5);
+knitr::include_graphics('figures/appendix_bonus_fig.png')
+
+```
+
+# Exp. 6 additional analyses {#App:exp6}
+
+
+```{r exp6-full-fig, cache=TRUE, echo=FALSE, fig.cap="Search times and search time estimates as a function of target and distractors, Exp. 6. Error bars represent the standard error of the median, estimated with bootstrapping.", fig.align='center', out.width = '100%'}
+knitr::include_graphics("figures/exp6_by_dist.png")
 ```

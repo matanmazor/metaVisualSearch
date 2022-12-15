@@ -29,16 +29,16 @@ affiliation:
     institution   : "Department of Brain and Cognitive Sciences, Massachusetts Institute of Technology"
 
 abstract: |
-  Having an internal model of one's attention can be useful for effectively managing limited perceptual and cognitive resources. While previous work has hinted at the existence of an internal model of attention, it is still unknown how rich and flexible this model is, whether it corresponds to one's own attention or alternatively to a generic person-invariant schema, and whether it is specified as a list of facts and rules, or alternatively as a probabilistic simulation model.  To this end, we tested participants' ability to estimate their own behavior in a visual search task with novel displays. In five online experiments (three pre-registered), prospective search time estimates reflected accurate metacognitive knowledge of key findings in the visual search literature, including the set-size effect, higher efficiency of color over conjunction search, and the visual search asymmetry for familiar and unfamiliar stimuli. In contrast, estimates were biased to assume serial search, and demonstrated little to no insight into search asymmetries for the presence or absence of basic visual features. Together, our findings are consistent with internal models that represent visual search as a serial process that is sensitive to a person-specific, graded notion of search difficulty. 
+  Having an internal model of one's attention can be useful for effectively managing limited perceptual and cognitive resources. While previous work has hinted at the existence of an internal model of attention, it is still unknown how rich and flexible this model is, whether it corresponds to one's own attention or to a generic person-invariant schema, and whether it is specified as a list of facts and rules, or alternatively as a probabilistic simulation model.  To this end, we tested participants' ability to estimate their own behavior in a visual search task with novel displays. In six online experiments (four pre-registered), prospective search time estimates reflected accurate metacognitive knowledge of key findings in the visual search literature, including the set-size effect, higher efficiency of color over conjunction search, and the asymmetric contributions of target and distractor identities to search difficulty. In contrast, estimates were biased to assume serial search, and demonstrated little to no insight into sizeable effects of search asymmetries for basic visual features, and of visual and semantic similarity between target and distractors. Together, our findings reveal a complex picture, where internal models of visual search are sensitive to some, but not all, of the factors that make some searches more difficult than others. 
   
 note              : |
- Anonymized data, analysis scripts, and stimulus materials are available at [github.com/matanmazor/metaVisualSearch](https://github.com/matanmazor/metaVisualSearch). This research was funded in whole, or in part, by the Wellcome Trust [Grant 203147/Z/16/].  Matan Mazor was supported by a UCL Bogue Fellowship. For the purpose of open access, the author has applied a CC BY public copyright licence to any Author Accepted Manuscript version arising from this submission. The authors have no conflicting interests to disclose. We thank signed Reviewer Jeremy Wolfe, two anonymous reviewers and Noam Mazor for their useful comments and input, and Felix Henninger for his help in programming the online experiments.  Correspondence concerning this article should be addressed to Matan Mazor, WC1E 7HX, London UK. E-mail: mtnmzor@gmail.com. 
+ Anonymized data, analysis scripts, experiment demos, and stimulus materials are available at [github.com/matanmazor/metaVisualSearch](https://github.com/matanmazor/metaVisualSearch). Experiments 2, 4, 5 and 6 were pre-registered prior to data collection. Pre-registration documents are available at [https://osf.io/e48n5/registrations](https://osf.io/e48n5/registrations). M.M. was supported by a UCL Bogue Fellowship. This research was funded in whole, or in part, by the Wellcome Trust [Grant 203147/Z/16/]. For the purpose of open access, the author has applied a CC BY public copyright licence to any Author Accepted Manuscript version arising from this submission. The authors have no conflicting interests to disclose. We thank two anonymous reviewers for their useful comments and input, Noam and Bat-Sheva Mazor for help with developing the bonus structure, and Felix Henninger for assistance and guidance in programming the online experiments. We would especially like to thank signed reviewer Jeremy Wolfe for invaluable feedback on previous drafts of this paper, and for suggesting we run Experiments 5 and 6. Correspondence concerning this article should be addressed to Matan Mazor, WC1E 7HX, London UK. E-mail: mtnmzor@gmail.com. 
 
   
   <!-- https://tinyurl.com/ybremelq -->
   
 keywords          : "metacognition, self-model, attention-schema, visual search"
-wordcount         : "8957"
+wordcount         : "9686"
 
 bibliography      : ["r-references.bib"]
 
@@ -93,7 +93,7 @@ Agents may benefit from having a simplified model not only of the environment, o
 
 Indeed, people are not only capable of predicting the temporal unfolding of physical scenes, or the behavior of other agents, but also the workings of their own attention under hypothetical scenarios. In one study, participants held accurate beliefs about the serial nature of visual search for a conjunction of features, and the parallel nature of visual search for a distinct color [@levin2008visual]. Similarly, the majority of third graders knew that the addition of distractors makes finding the target harder, particularly if the distractors and target are of the same color [@miller1977children]. These and similar studies established the existence of metacognitive knowledge about visual search, as a result raising new questions about its structure, limits, and origins. We identify three such open questions. First, do internal models of visual search represent search difficulty along a gradient, or alternatively classify search displays as being either parallel or serial? Second, to what extent is knowledge about visual search learned or calibrated based on first-person experience? And third, are internal models of visual search structured as a list of facts and laws, or as an approximate probabilistic simulation? 
 
-Here we take a first step toward providing answers to these three questions, using visual search as our model test case for internal models of perception and attention more generally. Participants estimated their prospective search times in visual search tasks and then performed the same searches. Similar to using colliding balls [@smith2013sources] and falling blocks [@battaglia2013simulation] to study intuitive physics, here we chose visual search for being thoroughly studied and for following robust behavioral laws. In Experiments 1 and 2, we used simple colored shapes as our stimuli, and compared participants' internal models to scientific theories of attention that distinguish parallel from serial processing. We found that participants represented the relative efficiency of different search tasks, but had a persistent bias to assume serial search. In Experiments 3 and 4 we used unfamiliar stimuli from the Omniglot dataset [@lake2011one] with the purpose of testing the richness and compositional nature of participants' internal models, and their reliance on person-specific knowledge. We find that participants are capable of predicting their search times, even for novel stimuli. Furthermore, we show that for complex stimuli, internal models of visual search are better fitted to one's own search behavior compared with the search behavior of other participants. In Experiment 5, we find that participants' internal models fail to represent asymmetries between searching for the presence or absence of basic visual features. Together, our findings are consistent with an internal model of visual search that integrates person-specific perceptions of complexity and similarity with person-invariant beliefs about factors that contribute to search difficulty, in representing the later post-attentional stages of the search process. 
+Here we take a first step toward providing answers to these three questions, using visual search as our model test case for internal models of perception and attention more generally. Participants estimated their prospective search times in visual search tasks and then performed the same searches. Similar to using colliding balls [@smith2013sources] and falling blocks [@battaglia2013simulation] to study intuitive physics, here we chose visual search for being thoroughly studied and for following robust behavioral laws. In Experiments 1 and 2, we used simple colored shapes as our stimuli, and compared participants' internal models to scientific theories of attention that distinguish parallel from serial processing. We found that participants represented the relative efficiency of different search tasks, but had a persistent bias to assume serial search. In Experiments 3 and 4 we used unfamiliar stimuli from the Omniglot dataset [@lake2011one] with the purpose of testing the richness and compositional nature of participants' internal models, and their reliance on person-specific knowledge. We find that participants are capable of predicting their search times, even for novel stimuli. Furthermore, we show that for complex stimuli, internal models of visual search are better fitted to one's own search behavior compared with the search behavior of other participants. Finally, in Experiments 5 and 6, we find important limitations of these models: they fail to represent asymmetries between searching for the presence or absence of basic visual features, and are blind to the effects of semantic target-distractor similarity on search difficulty. Together, we find that people are capable of estimating the relative search difficulty of previously unseen searches, but that this ability is limited by having only partial insight into the many factors that affect visual search.
 
 
 # Experiments 1 and 2: shape, orientation, and color
@@ -102,7 +102,7 @@ An internal model of visual search may take a similar form to that of a scientif
 
 A simplifying assumption of Feature Integration Theory is that there is no transfer of information between the pre-attentive and focused attention stages. In other words, observers cannot selectively direct their focused attention to items that produced strong activations in the pre-attentive stage. *Guided Search* models [@wolfe1989guided; @wolfe1994guided; @wolfe2021guided] assume instead that participants use these pre-attentive guiding signals in their serial search. Compared to Feature Integration Theory, Guided Search models provide much better fit to empirical data, at the expense of being more complex and rich in detail. To date, it is unknown where internal models of visual search fall on this performance-complexity trade-off: do people differentiate between parallel and serial searches like in Feature Integration Theory, or do they represent search difficulty on a continuum, more like Guided Search?  
 
-In Experiments 1 and 2 we used stimuli that lend themselves to a categorical distinction between parallel and serial search: simple geometrical shapes of different colors and orientations. We asked whether participants' internal models of visual search predict which search displays demand serial deployment of attention and which don't. Critically, participants gave their search time estimates before they were asked to perform searches involving these or similar stimuli, so their search time estimates reflected prior beliefs about search efficiency. Experiment 2 was designed to replicate and generalize the results of Exp. 1 to a new stimulus dimension (orientation) and distractor set sizes. Our hypotheses and analysis plan for Experiment 2, based on the results of Experiment 1, were pre-registered prior to data collection (pre-registration document: [osf.io/2dpq9](https://osf.io/2dpq9)). Raw data and full analysis scripts are available at [github.com/matanmazor/metaVisualSearch](https://github.com/matanmazor/metaVisualSearch).
+In Experiments 1 and 2 we used stimuli that lend themselves to a categorical distinction between parallel and serial search: simple geometrical shapes of different colors and orientations. We asked whether participants' internal models of visual search predict which search displays demand serial deployment of attention and which don't. Critically, participants gave their search time estimates before they were asked to perform searches involving these or similar stimuli, so their search time estimates reflected prior beliefs about search efficiency. Experiment 2 was designed to replicate and generalize the results of Exp. 1 to a new stimulus dimension (orientation) and distractor set sizes. Our hypotheses and analysis plan for Experiment 2, based on the results of Experiment 1, were pre-registered prior to data collection (pre-registration document: [doi.org/10.17605/OSF.IO/2DPQ9](https://doi.org/10.17605/OSF.IO/2DPQ9)). Raw data, experiment demos, and full analysis scripts are available at [github.com/matanmazor/metaVisualSearch](https://github.com/matanmazor/metaVisualSearch).
 
 
 ## Participants
@@ -473,6 +473,14 @@ e1$RT_est_corr <- e1$avgd %>%
   group_by(Subj_id) %>%
   summarize(COR = cor(RT,estimates,method = 'spearman',use='complete.obs'))
 
+# Group correlations
+e1$RT_est_avgs <- e1$avgd %>%
+  group_by(search_type,set_size) %>%
+  summarise(
+    estimates=mean(estimates), 
+    RT=mean(RT)) %>%
+  ungroup()
+
 # Spearman part correlations, controlling for set size
 e1$RT_est_corr_no_set_size <- e1$avgd %>%
   group_by(Subj_id) %>%
@@ -562,6 +570,14 @@ e2$t_est_slope_orientation <- e2$est_slopes %>%
 e2$RT_est_corr <- e2$avgd %>%
   group_by(Subj_id) %>%
   summarize(COR = cor(RT,estimates,method = 'spearman',use='complete.obs'))
+
+# Group correlations
+e2$RT_est_avgs <- e2$avgd %>%
+  group_by(search_type,set_size) %>%
+  summarise(
+    estimates=mean(estimates), 
+    RT=mean(RT)) %>%
+  ungroup()
 
 # Spearman part correlations, controlling for set size
 e2$RT_est_corr_no_set_size <- e2$avgd %>%
@@ -824,7 +840,7 @@ e2 <- compareSlopesInSubj(e2);
 
 In Experiments 1 and 2 an internal model of visual search allowed participants to accurately estimate how long it would take them to find a target stimulus in arrays of distractor stimuli. Participants had insight into the set-size effect and into the fact that conjunction searches are more difficult than color searches. Positive color search slopes that are nevertheless significantly shallower than conjunction search slopes further suggested a graded representation of search efficiency, but no awareness of the possibility of parallel processing of preattentive basic features. An alternative interpretation is that a gradient of positive search slopes emerges due to a group averaging effect of individual dichotomous representations. If some participants represent color search as parallel, and others as equally difficult as conjunction search, the mean slope for color search would be higher than zero and significantly lower than for conjunction search. 
 
-In Experiments 3 and 4 we addressed this possibility, and further asked how rich this model is, by using displays of complex stimuli with which participants are unlikely to have any prior experience (letters from a medieval Alphabet and from the Futurama TV series, hand drawn by Mechanical Turk workers). Here, insight into the set size effect and its absence in feature searches would not be useful for generating accurate search time estimates. Instead, participants' internal model of visual search must be capable of extracting relevant features from rich stimuli, and using these features to generate graded stimulus-specific predictions. Using these more complex stimuli further allowed us to ask if search-time estimates rely on person-specific knowledge, as subjects are expected to vary more in their search behavior in more complex displays. Exp. 4 followed Exp. 3 and was pre-registered (pre-registration document: [osf.io/dprtk](https://osf.io/dprtk)). Raw data and full analysis scripts are available at [github.com/matanmazor/metaVisualSearch](https://github.com/matanmazor/metaVisualSearch).
+In Experiments 3 and 4 we addressed this possibility, and further asked how rich this model is, by using displays of complex stimuli with which participants are unlikely to have any prior experience (letters from a medieval Alphabet and from the Futurama TV series, hand drawn by Mechanical Turk workers). Here, insight into the set size effect and its absence in feature searches would not be useful for generating accurate search time estimates. Instead, participants' internal model of visual search must be capable of extracting relevant features from rich stimuli, and using these features to generate graded stimulus-specific predictions. Using these more complex stimuli further allowed us to ask if search-time estimates rely on person-specific knowledge, as subjects are expected to vary more in their search behavior in more complex displays. Exp. 4 followed Exp. 3 and was pre-registered (pre-registration document: [doi.org/10.17605/OSF.IO/DPRTK](https://doi.org/10.17605/OSF.IO/DPRTK)). Raw data,experiment demos, and full analysis scripts are available at [github.com/matanmazor/metaVisualSearch](https://github.com/matanmazor/metaVisualSearch).
 
 ## Participants
 
@@ -838,7 +854,7 @@ The procedure for Experiments 3 and 4 was similar to that of Exp. 1 with several
 Stimuli were letters drawn by Mechanical Turk workers [@lake2011one], instead of geometrical shapes (see Fig. \@ref(fig:MVS-methods2)). In Exp. 3, we used letters from the *Alphabet of the Magi*. In Exp. 4, we used letters from the *Futurama* television series as well as Latin letters. We explained to participants that they will search for a specific letter (the target letter) among copies of another letter (the distractor letter). In Exp. 3, both target and distractor were letters from the Alphabet of the Magi, and distractors were drawn by different Mechanical Turk workers. In Exp. 4, on half of the trials the target was a Latin letter and distractors were Futurama letters and on the other half the target was a Futurama letter and distractors were Latin letters. In these experiments, distractors were copies of the same letter drawn by the same Mechanical Turk worker. This was important for our visual search asymmetry analysis (see below).
 
 ```{r MVS-methods2, cache=TRUE, echo=FALSE, fig.cap="In Exp. 3, stimuli were characters from the Alphabet of the Magi, and distractors were drawn by different Mechanical Turk users. In Exp.4, stimuli were characters from the Latin and Futurama alphabets. Stimulus pairs 1-4 and 5-8 are identical except for the target assignment. In Exp. 4, all distractors in a display were drawn by the same Mechanical Turk user, and were presented on an invisible clock face.", fig.align='center', out.width = '100%'}
-knitr::include_graphics("figures/methods2.png")
+knitr::include_graphics("figures/methods2bold.png")
 ```
 
 In the familiarization part, we used as target and distractors two letters from the Alphabet of the Magi (Exp. 3) and two letters from the Futurama alphabet (Exp. 4). Importantly, these letters were only used for training, and did not appear in the Estimation or Visual search parts. In the Estimation part participants gave search time estimates for 8 search tasks, all involving 10 distractors, and in the Visual Search part they performed these search tasks. To minimize random variation in spatial configurations (which was important for the search asymmetry analysis), in Exp. 4 letters appeared on an invisible clock face. Finally, the report scale ranged from 0.1 to 4 seconds in Exp. 3 and to 2 seconds in Exp. 4.
@@ -1028,7 +1044,7 @@ e3$sem <- e3$avgd %>%
 mylegend <- readPNG('figures/search_legend_exp2.png')
 g <- rasterGrob(mylegend, interpolate=TRUE)
 
-ggplot(e3$median,
+p <- ggplot(e3$median,
        aes(x=RT,y=estimates, label=rank(RT)))+
   geom_errorbar(
     aes(ymin = estimates-e3$sem$estimates,ymax = estimates + e3$sem$estimates),size=0.5)+
@@ -1038,6 +1054,10 @@ ggplot(e3$median,
   geom_point()+
   theme_classic() + labs(x='RT (ms.)', y='estimates (ms.)', title='Estimation accuracy: Experiment 3') +  theme(legend.position='bottom')+geom_text(position = position_nudge(y = -30, x=-30))+ ylim(c(700,1800))+
   annotation_custom(g, xmin=1050, xmax=1750, ymin=600, ymax=1100) 
+
+knitr::include_graphics("figures/results3.png")
+
+
 ```
 
 ```{r MVS-e3-cross-participant-corr, include=FALSE, cache=TRUE}
@@ -1154,8 +1174,7 @@ p <- ggplot(null_df,aes(x=correlation))+
 
 ggsave('figures/alignment.png',p,width=6, height=4);
 #after some manual tweaks
-img <- png::readPNG('figures/alignment_edited.png');
-grid::grid.raster(img)
+knitr::include_graphics('figures/alignment_edited.png');
 ```
 
 ```{r MVS-exp4-estimation-scatter, cache=TRUE, echo=FALSE}
@@ -1341,7 +1360,7 @@ long_data <- e4$RT_est_corr %>%
   mutate(condition=factor(condition, levels=c(
     'COR_flipped', 
     'COR')));
-
+ 
 sum_long_data <- long_data %>%
   group_by(condition) %>%
   summarise(mean_cor=mean(mycor, na.rm=TRUE),
@@ -1349,29 +1368,30 @@ sum_long_data <- long_data %>%
   
 p <- long_data %>%
   ggplot(aes(x=condition,y=mycor, group=condition)) +
-  geom_flat_violin(position=position_nudge(x=.2,y=0),adjust=1.5, size=1) +
-  geom_point(position=position_jitter(width=.05),size=2,alpha=0.2) +
+  geom_flat_violin(position=position_nudge(x=.2,y=0),adjust=1, size=1) +
+  geom_point(position=position_jitter(width=.1),size=2,alpha=0.2) +
   ylab('Spearman correlation') +
   # theme_cowplot() +
   guides(fill=FALSE,color=FALSE) +
-  geom_boxplot(aes(x=as.numeric(condition)+0.125,y=mycor),
+  geom_boxplot(aes(x=as.numeric(condition),y=mycor),
                outlier.shape = NA, 
                alpha=0.3, 
-               width=0.1, 
-               color='black') +
+               width=0.2, 
+               color='black',
+               size=1) +
   geom_errorbar(data=sum_long_data,
-                aes(x=as.numeric(condition)+.2,
+                aes(x=as.numeric(condition),
                     y=mean_cor,
                     ymin=mean_cor-se_cor,
                     ymax=mean_cor+se_cor),
-                width=0.05,
+                width=0.1,
                 color='black',
                 size=1)+
   geom_line(data=sum_long_data,
-                aes(x=as.numeric(condition)+.2,
+                aes(x=as.numeric(condition),
                     y=mean_cor,
                     group=1),
-                linetype=3,
+                linetype=2,
             size=0.75)+
   scale_x_discrete(labels=c('flipped labels','true labels'))+
   scale_y_continuous(breaks=seq(-1,1,0.5), limits=c(-1,1))+
@@ -1379,15 +1399,14 @@ p <- long_data %>%
   theme_minimal()+
   labs(title='Metacognitive awareness to search asymmetry', y='Spearman correlation',x='');
 
-ggsave('figures/asymmetry.png',p,width=6, height=4);
+ggsave('figures/asymmetry_box.png',p,width=6, height=4);
 #after some manual tweaks
-img <- png::readPNG('figures/exp4.png');
-grid::grid.raster(img)
+knitr::include_graphics('figures/exp4box.png');
 ``` 
 
 # Experiment 5: three search asymmetries
 
-In Exp. 4, search time estimates were sensitive to the assignment of stimuli to target and distractor roles, but not to the visual search asymmetry for familiar and unfamiliar stimuli. In Exp. 5, we examined three additional search asymmetries (line orientation, open edges, and line addition), and asked whether they are accurately specified in participants' internal models of visual search. 
+In Exp. 4, search time estimates were sensitive to the assignment of stimuli to target and distractor roles, but not to the visual search asymmetry for familiar and unfamiliar stimuli. In Exp. 5, we examined three additional search asymmetries (line orientation, open edges, and line addition), and asked whether they are accurately specified in participants' internal models of visual search. Exp. 5 was pre-registered (pre-registration document: [doi.org/10.17605/OSF.IO/VJQ2F](https://doi.org/10.17605/OSF.IO/VJQ2F)). Raw data, experiment demos, and full analysis scripts are available at [github.com/matanmazor/metaVisualSearch](https://github.com/matanmazor/metaVisualSearch).
 
 ## Participants
 
@@ -1825,46 +1844,435 @@ img <- png::readPNG('figures/Exp5.png');
 grid::grid.raster(img)
 ```
 
+# Experiment 6: semantic versus visual similarity
+
+Search difficulty is a function, among other things, of the similarity between the target and the distractors. If this fact is represented in internal models of visual search, the question remains what kinds of similarity affect people's intuitions about search difficulty, and whether they are the same ones that affect visual search in practice. To test this, in Exp. 6 we manipulated semantic and visual similarity between targets and distractors, and measured their independent effects on search times and search time estimates. Exp. 6 was pre-registered (pre-registration document: [doi.org/10.17605/OSF.IO/AH9NR](https://doi.org/10.17605/OSF.IO/AH9NR)). Raw data, experiment demos, and full analysis scripts are available at [github.com/matanmazor/metaVisualSearch](https://github.com/matanmazor/metaVisualSearch).
+
+## Participants
+
+For Exp. 6, 150 participants were recruited from the Prolific crowdsourcing web-service. The experiment took about 10
+minutes to complete. Participants were paid \$2. The highest performing 30\% of participants received an additional bonus of \$2. 
+
+## Procedure
+
+The procedure for Experiments 6 was similar to that of Exp. 5. Participants estimated their prospective search times for six different searches: three searches with the letter E and three with the number 3 serving as targets. Each target was used in three conditions involving distractors that could be semantically and visually similar to the target (baseline condition: the letters H and A for the target E or the numbers 8 and 2 for the target 3), semantically dissimilar but visually similar (the numbers 8 and 2 for the letter E and the letters A and H for the number 3), or semantically similar but visually dissimilar (same as the baseline condition, but appearing in a different font (italics versus not) relative to the target letter; see Fig. \@ref(fig:MVS-exp6-fig), left panel). For each target and condition, subjects provided estimates for set sizes of 6 and 18. 
+
+
+## Results
+
+```{r MVS-e6-descriptives, include=FALSE, cache=TRUE}
+
+e6=list();
+
+e6$df <- read.csv('../data/expt6.csv') %>%
+  mutate(search_type=as.factor(stim),
+         Subj_id=as.factor(Subj_id)) 
+
+filterDataFrame <- function(e) {
+  
+  e$all_subjects <- e$df$Subj_id%>%unique();
+
+  e$N_total <- e$all_subjects%>%length();
+
+  # summarize accuracy
+  e$acc <- e$df %>% 
+    group_by(Subj_id) %>%
+    summarize(acc = mean(accuracy, na.rm=TRUE)) %>%
+    pull(acc);
+  
+  e$num_errors <- length(which(e$df$accuracy==0));
+  e$too_fast <- length(which(e$df$RT<min_RT));
+  e$too_slow <- length(which(e$df$RT>max_RT));
+  e$slow_est <- length(which(e$df$timeToEstimate>max_tte))/3;
+  
+  # add an 'include' column based on reaction time, estimation time, 
+  # and response accuracy
+  e$df %<>%
+    mutate(include=ifelse(accuracy==1 & 
+                            !is.na(RT) &
+                            RT>min_RT &
+                            RT<max_RT,
+                            1,0)) %>%
+    mutate(timeToEstimate = ifelse(timeToEstimate <30, 
+                                   timeToEstimate, NA ))
+  
+  e$filtered_df <- e$df %>%
+    group_by(Subj_id) %>% 
+    filter(mean(include)>(100-max_exclude)/100) %>%
+    filter(include==1 & repetition!=0);
+  
+  # how many participants have survived exclusion?
+  e$N <- length(unique(e$filtered_df$Subj_id))
+  
+  # average all four trials from each search type
+  e$avgd <- e$filtered_df %>% 
+    group_by(Subj_id,search_type,set_size) %>%
+    summarize_at(vars('RT','estimates','timeToEstimate'),mean)
+
+  return(e)
+}
+
+e6 <- e6%>%filterDataFrame();
+
+```
+
+
+
+Accuracy in the visual search task was high (`r e6$acc%>%t.test()%>%apa_print()%>%'$'(estimate)`). Error trials and visual search trials that took shorter than `r min_RT*1000` milliseconds or longer than `r max_RT` seconds were excluded from all further analysis. Participants were excluded if more than `r max_exclude`\% of their trials were excluded based on the aforementioned criteria, leaving `r e6$N` participants for the main analysis of Experiment 6. 
+
+
+```{r MVS-e6-search-slopes, include=FALSE, cache=TRUE}
+
+getSlopes <- function(e) {
+  
+  # fit a linear model predicting RT from set size for each 
+  # subject and search type
+  e$search_slopes <- e$filtered_df %>%
+    group_by(Subj_id,search_type) %>%
+    do(model=lm(RT~set_size,data=.)) %>%
+    mutate(tidys=list(broom::tidy(model))) %>%
+    unnest(tidys) %>%
+    filter(term=='set_size');
+  
+  e$mean_search_slopes <- e$search_slopes %>%
+  group_by(search_type) %>%
+  summarize(mean=mean(estimate)*1000) %>%
+  spread(key=search_type, value=mean);
+  
+  # dfs<-e$filtered_df
+  # dfs[,c(7)]=scale(dfs[,c(7)]) # center set size
+  # e$RT_model <- lmer(RT ~ set_size*search_type + ((1+set_size*search_type)| Subj_id), data=dfs);
+  # e$est_model <- lmer(estimates ~ set_size*search_type + ((1+set_size*search_type)| Subj_id), data=dfs); 
+  
+  return(e)
+}
+
+e6 <- e6%>%getSlopes()
+e6$search_slopes_anova <- aov_car(estimate ~ search_type + Error(Subj_id/search_type), data=e6$search_slopes)
+
+e6$slope_diffs <- e6$search_slopes %>%
+  dplyr::select(Subj_id, search_type, estimate) %>%
+  spread(search_type, estimate) %>%
+  mutate(diff3 = `3in82`-`3inAH`,
+         diffE = EinAH-Ein82)
+      
+
+```
+
+```{r MVS-e6-estimation, include=FALSE, cache=TRUE}
+
+analyzeEstimatesExp6 <- function(e) {
+  
+  # mean search times and estimated search times per participant
+  e$mean_times <- e$filtered_df %>% 
+  group_by(Subj_id) %>%
+  summarize_at(vars('RT','estimates'),mean)
+
+  e$time_comparison = t.test(e$mean_times$estimates, 
+                             e$mean_times$RT, 
+                             paired=TRUE);
+  
+  # because we only have two set sizes, the code breaks if I'm trying to fit a regression model
+  e$est_slopes <- e$filtered_df %>%
+  group_by(Subj_id,search_type,set_size)%>%
+  summarise(estimates=mean(estimates))%>%
+  group_by(Subj_id,search_type) %>%
+  spread(set_size,estimates,sep='_') %>%
+  mutate(estimate=(set_size_18-set_size_6)/12)
+  
+  e$est_intercepts <- e$filtered_df %>%
+  group_by(Subj_id,search_type,set_size)%>%
+  summarise(estimates=mean(estimates))%>%
+  group_by(Subj_id,search_type) %>%
+  spread(set_size,estimates,sep='_') %>%
+  mutate(estimate=(set_size_6*1.5-set_size_18*0.5))
+    
+  e$mean_est_slopes <- e$est_slopes %>%
+  group_by(search_type) %>%
+  summarize(mean=mean(estimate)*1000) %>%
+  spread(key=search_type, value=mean)
+  
+  e$slope_comparison <- t.test(
+  aggregate(e$est_slopes$estimate, by=list(e$est_slopes$Subj_id), FUN=mean)$x,
+  aggregate(e$search_slopes$estimate, by=list(e$search_slopes$Subj_id), FUN=mean)$x,
+  paired=TRUE);
+
+  return(e)
+};
+
+e6 <- e6 %>%
+  analyzeEstimatesExp6() 
+
+e6$est_slopes_anova <- aov_car(estimate ~ search_type + Error(Subj_id/search_type), data=e6$est_slopes)
+
+# Spearman correlations
+e6$RT_est_corr <- e6$avgd %>%
+  group_by(Subj_id) %>%
+  summarize(COR = cor(RT,estimates,method = 'spearman',use='complete.obs'),
+            COR6 = cor(RT[set_size==6], estimates[set_size==6],method = 'spearman',use='complete.obs'),
+            COR18 = cor(RT[set_size==18], estimates[set_size==18],method = 'spearman',use='complete.obs'))
+
+```
+
+```{r MVS-e6-by-condition, include=FALSE, cache=TRUE}
+
+e6$search_slopes <- e6$search_slopes %>%
+  mutate(condition = ifelse(search_type %in% c('3in82','EinAH'), 
+                            'baseline', ifelse(search_type %in% c('Ein82', '3inAH'), 
+                                   'semantic','visual')),
+         target = substr(as.character(search_type),0,1),
+         distractors = ifelse(search_type %in% c('3in82','Ein82','3inUpright'), 
+                            'numbers', 'letters'))
+
+e6$search_slopes_by_condition <- e6$search_slopes %>%
+  group_by(Subj_id,condition)%>%
+  summarise(estimate=mean(estimate)) %>%
+  spread(condition,estimate) %>%
+  mutate(semantic_diff=semantic-baseline,
+         visual_diff = visual-baseline)
+
+e6$search_slopes_by_target <- e6$search_slopes %>%
+  group_by(Subj_id,target)%>%
+  summarise(estimate=mean(estimate)) %>%
+  spread(target,estimate) %>%
+  mutate(diff=E-`3`)
+
+
+e6$search_slopes_by_distractors <- e6$search_slopes %>%
+  group_by(Subj_id,distractors)%>%
+  summarise(estimate=mean(estimate)) %>%
+  spread(distractors,estimate) %>%
+  mutate(diff=letters-numbers)
+
+e6$est_slopes <- e6$est_slopes  %>%
+  mutate(condition = ifelse(search_type %in% c('3in82','EinAH'), 
+                            'baseline', ifelse(search_type %in% c('Ein82', '3inAH'), 
+                                   'semantic','visual')),
+         target = substr(as.character(search_type),0,1),
+         distractors = ifelse(search_type %in% c('3in82','Ein82','3inUpright'), 
+                            'numbers', 'letters'))
+
+e6$est_slopes_by_condition <- e6$est_slopes %>%
+  group_by(Subj_id,condition)%>%
+  summarise(estimate=mean(estimate)) %>%
+  spread(condition,estimate) %>%
+  mutate(semantic_diff=semantic-baseline,
+         visual_diff = visual-baseline)
+
+e6$est_slopes_by_target <- e6$est_slopes %>%
+  group_by(Subj_id,target)%>%
+  summarise(estimate=mean(estimate)) %>%
+  spread(target,estimate) %>%
+  mutate(diff=E-`3`)
+
+
+e6$est_slopes_by_distractors <- e6$est_slopes %>%
+  group_by(Subj_id,distractors)%>%
+  summarise(estimate=mean(estimate)) %>%
+  spread(distractors,estimate) %>%
+  mutate(diff=letters-numbers)
+
+```
+
+
+```{r MVS-exp6-fig, cache=TRUE, echo=FALSE, fig.cap="Exp. 6. Left: experimental conditions. Participants searched for an E or a 3 among semantically and visually similar (black circles, first row), semantically dissimilar but visually similar (red triangles, second row), or semantically similar but visually dissimilar distractors (blue squares, third row). Right: true and estimated search times for the three conditions.", fig.align='center', out.width = '100%'}
+
+e6$avgd_by_condition <- e6$avgd  %>%
+  mutate(condition = ifelse(search_type %in% c('3in82','EinAH'), 
+                            'baseline', ifelse(search_type %in% c('Ein82', '3inAH'), 
+                                   'semantic','visual'))) %>%
+  group_by(Subj_id,set_size,condition) %>%
+  summarise(RT=mean(RT),
+            estimates=mean(estimates),
+            timeToEstimate=mean(timeToEstimate))
+
+e6$median_long <- e6$avgd_by_condition %>%
+group_by(condition,set_size) %>%
+summarize_at(vars('RT','estimates'),median, na.rm=TRUE)%>%
+  mutate(RT=RT*1000,
+         estimates=estimates*1000)%>%
+  pivot_longer(cols=c('RT','estimates'),
+               names_to='measure',
+               values_to = 'median')
+
+e6$sem_long <- e6$avgd_by_condition %>%
+  group_by(condition,set_size) %>%
+  summarize_at(vars('RT','estimates'),bootstrap_error)%>%
+  mutate(RT=RT*1000,
+         estimates=estimates*1000)%>%
+  pivot_longer(cols=c('RT','estimates'),
+               names_to='measure',
+               values_to = 'sem')
+
+
+e6$median_figure_facet <- e6$median_long %>% 
+  merge(e6$sem_long) %>%
+  mutate(measure=factor(measure, levels=c('RT','estimates'), labels=c('RT','estimate')))%>%
+  ggplot(aes(x=set_size,y=median,color=condition,pch=condition, fill=condition))+
+  geom_errorbar(
+    aes(ymin = median-sem,ymax = median+sem),width=2)+
+  geom_point(alpha=0.5,size=6)+
+  geom_path(size=1)+
+    theme_bw() + 
+    labs(x='set size',
+         y='median search time (ms)') +
+  facet_grid(cols=vars(measure))+
+    guides(size=FALSE) +
+    scale_x_continuous(breaks=e6$median_long$set_size%>%unique())+
+    scale_fill_manual(values = c('black',"#e41a1c","#377eb8","#4daf4a")) + 
+    scale_color_manual(values = c('black',"#e41a1c","#377eb8","#4daf4a")) +
+  theme(legend.position='na')
+
+ggsave('figures/exp6medians.png',e6$median_figure_facet,width=5, height=2.5);
+
+e6$median_long_by_st <- e6$avgd %>%
+group_by(search_type,set_size) %>%
+summarize_at(vars('RT','estimates'),median, na.rm=TRUE)%>%
+  mutate(RT=RT*1000,
+         estimates=estimates*1000)%>%
+  pivot_longer(cols=c('RT','estimates'),
+               names_to='measure',
+               values_to = 'median')
+
+e6$sem_long_by_st <- e6$avgd %>%
+  group_by(search_type,set_size) %>%
+  summarize_at(vars('RT','estimates'),bootstrap_error)%>%
+  mutate(RT=RT*1000,
+         estimates=estimates*1000)%>%
+  pivot_longer(cols=c('RT','estimates'),
+               names_to='measure',
+               values_to = 'sem')
+
+
+e6$median_by_st_figure_facet <- e6$median_long_by_st %>% 
+  merge(e6$sem_long_by_st) %>%
+  mutate(condition = ifelse(search_type %in% c('3in82','EinAH'), 
+                            'baseline', ifelse(search_type %in% c('Ein82', '3inAH'), 
+                                   'semantic','visual')),
+         target=substr(as.character(search_type),0,1),
+         measure=factor(measure, levels=c('RT','estimates'), labels=c('RT','estimate')))%>%
+  ggplot(aes(x=set_size,y=median,color=condition,pch=condition, fill=condition))+
+  geom_errorbar(
+    aes(ymin = median-sem,ymax = median+sem),width=2)+
+  geom_point(alpha=0.5,size=6)+
+  geom_path(size=1)+
+    theme_bw() + 
+    labs(x='set size',
+         y='median search time (ms)') +
+  facet_grid(cols=vars(measure),rows=vars(target))+
+    guides(size=FALSE) +
+    scale_x_continuous(breaks=e6$median_long$set_size%>%unique())+
+    scale_fill_manual(values = c('black',"#e41a1c","#377eb8","#4daf4a")) + 
+    scale_color_manual(values = c('black',"#e41a1c","#377eb8","#4daf4a")) +
+  theme(legend.position='na')
+
+
+e6$median_by_dist_figure_facet <- e6$median_long_by_st %>% 
+  merge(e6$sem_long_by_st) %>%
+  mutate(condition = ifelse(search_type %in% c('3in82','EinAH'), 
+                            'baseline', ifelse(search_type %in% c('Ein82', '3inAH'), 
+                                   'semantic','visual')),
+         distractors=ifelse(search_type %in% c('3in82','Ein82', '3inUpright'), 
+                            'numbers','letters'),
+         measure=factor(measure, levels=c('RT','estimates'), labels=c('RT','estimate')))%>%
+  ggplot(aes(x=set_size,y=median,color=condition,pch=condition, fill=condition))+
+  geom_errorbar(
+    aes(ymin = median-sem,ymax = median+sem),width=2)+
+  geom_point(alpha=0.5,size=6)+
+  geom_path(size=1)+
+    theme_bw() + 
+    labs(x='set size',
+         y='median search time (ms)') +
+  facet_grid(cols=vars(measure),rows=vars(distractors))+
+    guides(size=FALSE) +
+    scale_x_continuous(breaks=e6$median_long$set_size%>%unique())+
+    scale_fill_manual(values = c('black',"#e41a1c","#377eb8","#4daf4a")) + 
+    scale_color_manual(values = c('black',"#e41a1c","#377eb8","#4daf4a")) +
+  theme(legend.position='na')
+
+ggsave('figures/exp6medians_by_dist.png',e6$median_by_dist_figure_facet,width=5, height=5);
+
+
+# e6$median_long_by_st %>% 
+#   merge(e6$sem_long_by_st) %>%
+#   mutate(distractors = ifelse(search_type %in% c('3in82','Ein82', '3inUpright'), 
+#                             'numbers', 'letters'),
+#          target=substr(as.character(search_type),0,1),
+#          upright=ifelse(search_type %in% c('3inUpright','EinUpright'),'upright','tilted'),
+#          measure=factor(measure, levels=c('RT','estimates'), labels=c('RT','estimate'))) %>%
+#   ggplot(aes(x=set_size,y=median,color=distractors,pch=target, fill=distractors, linetype=upright, label=ifelse(target=='3','3','')))+
+#   geom_errorbar(
+#     aes(ymin = median-sem,ymax = median+sem),width=2)+
+#   geom_point(alpha=0.5,size=6)+
+#   geom_path(size=1)+
+#     theme_bw() + 
+#     labs(x='set size',
+#          y='median search time (ms)') +
+#   # geom_text(color='black',size=4)+
+#   facet_grid(cols=vars(measure))+
+#     guides(size=FALSE) +
+#     scale_x_continuous(breaks=e6$median_long$set_size%>%unique())+
+#     scale_fill_manual(values = c("#e41a1c","#377eb8","#4daf4a")) + 
+#     scale_color_manual(values = c("#e41a1c","#377eb8","#4daf4a"))+
+#   theme(legend.pos = 'na')
+# 
+# ggsave('figures/exp6medians_unpacked.png',width=5, height=2.5);
+knitr::include_graphics("figures/exp6.png")
+
+```
+
+
+Search slopes were significantly different for the six searches (`r apa_print(e6$search_slopes_anova)$full_result$search_type`; see Fig. \@ref(fig:MVS-exp6-fig)). Specifically, search slopes were significantly shallower when the target and distractors were of different semantic categories (`r round(e6$search_slopes_by_condition$semantic%>%mean(na.rm=T)*1000)` ms/item) compared to the baseline condition (`r round(e6$search_slopes_by_condition$baseline%>%mean(na.rm=T)*1000)` ms/item; `r apa_print(e6$search_slopes_by_condition$semantic_diff%>%t.test())$statistic`). Visual dissimilarity produced an even stronger effect on estimation slopes (`r round(e6$search_slopes_by_condition$visual%>%mean(na.rm=T)*1000)` ms/item in the visual dissimilarity condition versus `r round(e6$search_slopes_by_condition$baseline%>%mean(na.rm=T)*1000)` ms/item in the baseline condition; `r apa_print(e6$search_slopes_by_condition$visual_diff%>%t.test())$statistic`). Finally, searching among number distractors was overall harder than searching among letter distractors (`r apa_print(e6$search_slopes_by_distractors$diff%>%t.test())$statistic`; See Fig. \@ref(fig:exp6-full-fig) for distractor-specific effects). 
+
+Prospective search time estimates were significantly correlated with actual search times (within-subject Spearman correlations: `r apa_print(e6$RT_est_corr$COR%>%t.test())$full_result`). Similar to search slopes, estimation slopes were also significantly different for the six searches (`r apa_print(e6$est_slopes_anova)$full_result$search_type`). However, unlike true search times, here we find no significant differences as a function of semantic dissimilarity (`r round(e6$est_slopes_by_condition$semantic%>%mean(na.rm=T)*1000)` ms/item for both the semantic dissimilarity and baseline conditions; `r apa_print(e6$est_slopes_by_condition$semantic_diff%>%t.test())$statistic`), or visual similarity (`r round(e6$est_slopes_by_condition$visual%>%mean(na.rm=T)*1000)` ms/item and `r round(e6$est_slopes_by_condition$baseline%>%mean(na.rm=T)*1000)` ms/item in the visual dissimilarity and baseline conditions; `r apa_print(e6$est_slopes_by_condition$visual_diff%>%t.test())$statistic`). Subjects were however sensitive to the main effect of distractor type on search time, producing steeper estimation slopes for numbers (`r round(e6$est_slopes_by_distractors$numbers%>%mean(na.rm=T)*1000)` ms/item) than for letters  (`r round(e6$est_slopes_by_distractors$letters%>%mean(na.rm=T)*1000)` ms/item; `r apa_print(e6$est_slopes_by_distractors$diff%>%t.test())$statistic`; See Fig. \@ref(fig:exp6-full-fig)). Together, target-distractor similarity along the manipulated dimensions had significant effects on search difficulty, but we found no trace for these effects in search time estimates. 
 
 ## Discussion
 
 Over more than four decades of research on spatial attention, experiments where participants report the presence or absence of a target in a display revealed basic principles such as the set-size effect [@treisman1986features; @treisman1990conjunction; @wolfe1998can], the advantage for feature search over more complicated conjunction and spatial configuration searches [@treisman1986features; @treisman1990conjunction], and asymmetries in the representations of visual features [@treisman1985search; @shen2001visual; @malinowski2001effect; @treisman1988feature]. Some of these findings are intuitive, but others are more surprising; even without training in psychology, people have a set of expectations and beliefs about their own perception and attention, and about visual search more specifically. 
 
-Here we measured these expectations and their alignment with actual visual search behavior. In five experiments, we show that naive participants provide reasonably accurate prospective estimates for their search times. In line with previous reports, prospective search time estimates reflected accurate knowledge of the set size effect and differences in efficiency between feature and conjunction searches [@levin2008visual; @miller1977children]. We asked whether participants categorically distinguish 'easy' from 'hard' searches, or alternatively represent search efficiency along a continuum. The estimates of single participants revealed a graded representation of search efficiency, indicating metacognitive knowledge that is compatible with contemporary theories of visual search such as Guided Search models. Furthermore, participants were able to provide accurate search time estimates for complex stimuli and displays with which they had no prior experience, and their estimates were sensitive to the assignment of stimuli to target and distractor roles. At the same time, subjects showed little to no insight into visual search asymmetries, and as a group their estimates revealed no awareness of the pop-out effect for color search. In the following paragraphs, we unpack our central findings in more detail, and ask what structure of internal models of visual search best accounts for the entirety of our findings. 
+Here we measured these expectations and their alignment with actual visual search behavior. In six experiments, we show that naive participants provide search time estimates that are consistent with partial metacognitive knowledge of their own attention. In line with previous reports, prospective search time estimates reflected accurate knowledge of the set size effect and differences in efficiency between feature and conjunction searches [@levin2008visual; @miller1977children]. Participants represented search efficiency along a continuum, were able to provide reasonably accurate search time estimates for complex stimuli and displays with which they had no prior experience, and were sensitive to the assignment of stimuli to target and distractor roles. At the same time, they showed little to no insight into visual search asymmetries and the effects of semantic target-distractor similarity on search efficiency, and as a group their estimates revealed no awareness of the pop-out effect for color search. In the following paragraphs, we unpack our central findings in more detail. 
 
 ### Do subjects know that color pops out?
 
 Searching for a deviant color is relatively easy, and people know that. Psychology students correctly estimated that searching for a green vertical line is harder when some distractors are green compared to when all are red, and that increasing the number of distractors would make the search harder in the former, but not in the latter all-red case [@levin2008visual]. The understanding that adding more distractors does not affect search time in color search reflects metacognitive insight into the parallel nature of color search. Similarly, when asked to order visual search displays according to difficulty, 81% of third graders used color, but only 48% used shape, to inform their orderings [@miller1977children]. Knowledge about the special status of color is also evident in the way we communicate with others about what we see. People consistently prefer object descriptions that include information about color, even when color information is fully redundant [@jara2021social]. To account for this fact, @jara2021social suggested that speakers hold mental models of the visual search behavior of their listeners, and choose their words to maximize search efficiency according to these models. In their hypothetical implementation of this model, color information allows listeners to restrict their search to objects of the target's color, making the search highly efficient. Thus, knowing that listeners can easily orient their attention by color, speakers prefer longer descriptions that reduce the effective set size and by that improve search efficiency. 
 
-In Experiments 1 and 2, we similarly found evidence for metacognitive knowledge that color search is easy. Estimation slopes for color search were consistently shallower than for orientation-color and shape-color conjunction searches (for comparison, estimation slopes for shape and orientation searches showed no such difference). Still, although shallower than conjunction estimation slopes, color estimation slopes were significantly positive at the group level, reflecting a belief that color search is serial in nature. This seems to be in conflict with the results of Levin and Angelone (2008), where only 32.5% of subjects thought that adding more distractors to a color search would make it slower (compared to 87.9% for color-orientation conjunction search). However, two differences between our studies are worth pointing out. First, Levin and Angelone's sample consisted of students, who may have learned or heard about visual search, and updated their internal models accordingly. And second, the fact that the mean estimation slopes in our experiments were overall positive does not preclude the possibility that for a subset of participants it was in fact zero. Using the proportion of positive estimation slopes for color search in Experiments 1 and 2 (`r printnum((e2$est_slopes%>%filter(search_type=='color')%>%mutate(pos=estimate>0)%>%pull(pos)%>%mean()+e1$est_slopes%>%filter(search_type=='color')%>%mutate(pos=estimate>0)%>%pull(pos)%>%mean())/2)`), and the fact that this proportion should equal 0.5 among subjects who believe that set size has no effect on color search but their estimates are affected by random noise, we can extract a lower bound for the proportion of subjects who believed color search had a positive slope $p$ by solving the equation $p+0.5(1-p)=0.71$, resulting in an estimate of $p=0.42$. Note that this analysis conservatively assumes that estimate slopes should be positive for all subjects who believed color search was serial. In other words, among our random sample of online participants, more than 40% of subjects provided estimates that are consistent with color search being serial.
+In Experiments 1 and 2, we similarly found evidence for metacognitive knowledge that color search is easy. Estimation slopes for color search were consistently shallower than for orientation-color and shape-color conjunction searches (for comparison, estimation slopes for shape and orientation searches showed no such difference). Still, although shallower than conjunction estimation slopes, color estimation slopes were significantly positive at the group level, reflecting a belief that color search is serial in nature. This seems to be in conflict with the results of Levin and Angelone (2008), where only 32.5% of subjects thought that adding more distractors to a color search would make it slower (compared to 87.9% for color-orientation conjunction search). However, two differences between our studies are worth pointing out. First, Levin and Angelone's sample consisted of students, who may have learned or heard about visual search, and updated their internal models accordingly. And second, the fact that the mean estimation slopes in our experiments were overall positive does not preclude the possibility that for a subset of participants it was in fact zero. Using the proportion of positive estimation slopes for color search in Experiments 1 and 2 (`r printnum((e2$est_slopes%>%filter(search_type=='color')%>%mutate(pos=estimate>0)%>%pull(pos)%>%mean()+e1$est_slopes%>%filter(search_type=='color')%>%mutate(pos=estimate>0)%>%pull(pos)%>%mean())/2)`), and into the fact that this proportion should equal 0.5 among subjects who believe that set size has no effect on color search but their estimates are affected by random noise, we can extract a lower bound for the proportion of subjects who believed color search had a positive slope $p$ by solving the equation $p+0.5(1-p)=0.71$, resulting in an estimate of $p=0.42$. Note that this analysis conservatively assumes that estimate slopes should be positive for all subjects who believed color search was serial. In other words, among our random sample of online participants, more than 40% of subjects provided estimates that are consistent with color search being serial.
 
-Beliefs about the relative efficiency of different search tasks can also be probed by measuring the time participants take to conclude that a target is absent from a display. Unlike target-present trials that are terminated upon detecting the target, in target-absent trials decisions are made based on the belief that a hypothetical target would have been found. For example, if subjects know that color search is parallel, they may immediately conclude that a target is absent from an array if the target color does not immediately pop out to their attention. In contrast, subjects that hold the erroneous belief that finding a color requires a serial search will take longer to conclude that a target is missing. Using this indirect approach, and focusing on the first trials of the experiment, before subjects have the opportunity to adapt their search termination strategies, @mazor2022efficient found that subjects immediately terminate a search when the target color is absent from the search array. This provides indirect evidence that the implicit metacognitive knowledge that is involved in guiding search termination is dissociable from the kind of explicit metacognitive knowledge that we measure here. For example, our numeric report scheme may have encouraged participants to adopt an analytical disposition to the problem, rather than relying fully on their intuitions. In support of this dissociation between search termination behavior and explicit metacognitive ratings of search difficulty, Mazor and Fleming found that search termination slopes were shallower for feature searches than for conjunction searches even among participants whose explicit metacognitive ratings reflected a belief that feature searches are harder. 
+This blindness to pop-out effects indicates a missing component in internal models of visual search (or at least, in the models of some participants): unlike Feature Integration Theory and Guided Search models, they have no pre-attentive components. This means that items are randomly selected in no particular order, and the only thing that changes between easier and harder searches is the speed with which this serial process can take place. Without a bottom-up activation of 'feature maps', or effortless processing of guiding signals, this model echos early theories of vision as a sense that operates more like touch than like hearing, by sending out sensors to explore the environment [for a review, see @dedes2005mechanism]. The immediate pop-out of color cannot take place in a model that requires subjects to voluntarily attend to individual items in order to perceive them.
+
+Beliefs about the relative efficiency of different search tasks can also be probed by measuring the time participants take to conclude that a target is absent from a display. Unlike target-present trials that are terminated upon detecting the target, in target-absent trials decisions are made based on the belief that a hypothetical target would have been found. For example, if subjects know that color search is parallel, they may immediately conclude that a target is absent from an array if the target color does not immediately pop out to their attention. In contrast, subjects that hold the erroneous belief that finding a color requires a serial search will take longer to conclude that a target is missing. Using this indirect approach, and focusing on the first trials of the experiment, before subjects have the opportunity to adapt their search termination strategies, @mazor2022efficient found that subjects immediately terminate a search when the target color is absent from the search array. This provides indirect evidence that the implicit metacognitive knowledge that is involved in guiding search termination is dissociable from the kind of explicit metacognitive knowledge that we measure here. In support of this dissociation between search termination behavior and explicit metacognitive ratings of search difficulty, Mazor and Fleming found that search termination slopes were shallower for feature searches than for conjunction searches even among participants whose explicit metacognitive ratings reflected a belief that feature searches are harder. 
 
 ### What is person-specific about internal models of visual search?
 
 In Experiments 3 and 4, we show that internal models of visual search are at least partly person-specific: participants' predictions better fitted their own search times compared to the search times of other participants. Still, in both experiments, the correlation between participants' estimates and the search times of other participants was considerably above zero (see Fig. \@ref(fig:MVS-self-other-permutations)). We note that above-zero self-other correlations are expected even if internal models of visual search are fully person-specific, as long as search behavior is relatively conserved across different individuals. In contrast, a significant difference between self-self and self-other correlations is expected only if some of the knowledge that is expressed in search time estimates relies on idiosyncratic knowledge. We consider two possible sources of inter-subject variation that may contribute to idiosyncratic beliefs about visual search: judgments about similarity or complexity of visual objects, and person-specific knowledge about attention. 
 
-First, subjects may vary in how they perceive different visual objects to be simple or complex, similar or different. If perceptions of complexity and similarity contribute to search behavior, and if subjects' internal models correctly specify these effects of complexity and similarity on search behavior, generic internal models of visual search may produce person-specific search time estimates. Indeed, we found an advantage for self-self correlations only in Experiments 3 and 4, where stimuli were complex enough to produce meaningful variability in how they are perceived by different subjects. However, as we show in Exp. 4, any person-invariant specification of how similarity contributes to search time would need to be sensitive to asymmetries in the perception of similarity [@tversky1977features] in order to fully account for our findings of a drop in the correlation between estimated and true search times when swapping the target and distractor roles. For example, internal models may specify that what matters most to search time is whether the target is similar to the distractors, but not so much whether the distractors are similar to the target. Even if not person-specific themselves, our findings show that to the very least internal models of visual search interface with person-specific knowledge in nontrivial ways. 
+First, subjects may vary in how they perceive different visual objects to be simple or complex, similar or different. If perceptions of complexity and similarity contribute to search behavior, and if subjects' internal models correctly specify these effects of complexity and similarity on search behavior, generic internal models of visual search may produce person-specific search time estimates. Indeed, we found an advantage for self-self correlations only in Experiments 3 and 4, where stimuli were complex enough to produce meaningful variability in how they are perceived by different subjects. However, as we show in Exp. 4 and 5, any person-invariant specification of how similarity contributes to search time would need to be sensitive to asymmetries in the perception of similarity [@tversky1977features] in order to fully account for our findings of a drop in the correlation between estimated and true search times when swapping the target and distractor roles. For example, internal models may specify that what matters most to search time is whether the target is similar to the distractors, but not so much whether the distractors are similar to the target. 
 
-Second, beliefs about attention itself may be learned or calibrated based on first-person experience. Humans accumulate observations not only of external events and objects, but also of their own cognitive and perceptual states. Specifically, subjects have been shown to notice when their attention is captured by a distractor [@adams2021introspective]  even in the absence of an overt eye movement [@adams2020assessing]. These observations can then be integrated into an internal model or an intuitive theory: which items are more or less likely to capture attention, under what circumstances, etc. Future research into the development of this simplified model and its expansion based on new evidence [for example, by measuring intuitions before and after exposure to some evidence; @bonawitz2019sticking] is needed to understand the relation between metacognitive monitoring of attention and metacognitive knowledge of attentional processes.
+Second, beliefs about attention itself may be learned or calibrated based on first-person experience. Humans accumulate observations not only of external events and objects, but also of their own cognitive and perceptual states. Specifically, subjects have been shown to notice when their attention is captured by a distractor [@adams2021introspective]  even in the absence of an overt eye movement [@adams2020assessing]. These observations can then be integrated into an internal model or an intuitive theory: which items are more or less likely to capture attention, under what circumstances, etc. Future research into the development of this simplified model and its expansion based on new evidence [for example, by measuring intuitions before and after exposure to some evidence, @bonawitz2019sticking] is needed to understand the relation between metacognitive monitoring of attention and metacognitive knowledge of attentional processes.
 
-This relates to recent theoretical and empirical advances underscoring the utility of keeping a *mental self-model*, or a *self-schema* for attention control [@wilterson2020attention], social cognition [@graziano2013consciousness] , phenomenal experience [@metzinger2003phenomenal], and inference about absence [@mazorinference; @mazor2022efficient].  For example, knowing that a red berry would be easy to find among green leaves, a forager can quickly decide that a certain bush bears no ripe fruit. Alternatively, knowing that a snake would be difficult to spot in the sand, they might allocate more attentional resources to scanning the ground. Experiments 3 and 4 show that this knowledge is more than a set of heuristics or rules, but reflects an intricate internal model of spatial attention that can be applied to unseen stimuli in novel displays, and is at least partly tailored to one's own perceptual and cognitive machinery. 
+This relates to recent theoretical and empirical advances underscoring the utility of keeping a *mental self-model*, or a *self-schema* for attention control [@wilterson2020attention], social cognition [@graziano2013consciousness] , phenomenal experience [@metzinger2003phenomenal], and inference about absence [@mazorinference; @mazor2022efficient].  For example, knowing that a red berry would be easy to find among green leaves, a forager can quickly decide that a certain bush bears no ripe fruit. Alternatively, knowing that a snake would be difficult to spot in the sand, they might allocate more attentional resources to scanning the ground. Reasonably accurate search time estimates in Experiments 3 and 4 suggest that internal models of spatial attention that can be applied to unseen stimuli in novel displays, and are at least partly tailored to one's own perceptual and cognitive machinery. 
 
-### What is the structure of internal models of visual search?
+### What is the role of target-distractor similarity?
 
-Across five experiments, we observed the following patterns in prospective search time estimates: First, estimates correlated with search times (Exp. 1-5). Second, estimates reflected knowledge of the set-size effect (Exp. 1, 2, 5), and were biased to assume a set-size effect even in searches that are in fact parallel (Exp. 1, 2). Third, estimates were sensitive to the relative efficiency of different searches (Exp. 1-5), even for complex, unfamiliar stimuli (Exp. 3, 4). Lastly, estimates were sensitive to the assignment of stimuli to target and distractor roles (Exp. 4, 5), but did not show reliable search asymmetries for basic visual features (Exp. 5). In this last section, we speculate about one possible specification of internal models of visual search that can account for these patterns. Importantly, the following is not meant to account for visual search behaviour, but for people's intuitions about visual search.
+Visual search is harder when distractors are similar to the target. Having insight into this simple fact, and the fact that searches become harder with the addition of more distractors, should be sufficient to produce search time estimates that are aligned with actual search times. This way, subjects can rely on a rough overlap between items that are similar to the target and ones that have the potential to be distracting, and produce relatively accurate search time estimates based on their similarity judgments alone. Alternatively, as described above, subjects may be using an approximate probabilistic model of their own attention, producing search time estimates that correlate with, but are not causally dependent on, perceptions of similarity.
 
-According to this speculative model, subjects represent visual search as a serial search among items, where the dwelling time on each item before moving to the next one is a function of the perceived similarity between the distractor set and the target. As a result, set size will always have an effect on search time (that is, all searches are serial), but the effect of set size will be modulated by the similarity to the target, with steeper set size effects for more similar distractors. This model accounts for the set-size effect and its over-generalization to color search, for the ability to represent a graded notion of search efficiency, and, when considering that similarity is not always symmetric (such that the similarity between items A and B may be higher than the similarity between B and A), it also accounts for the sensitivity of estimates to the assignment of stimuli to target and distractor roles.
+We set up Exp. 6 to directly test the effect of target-distractor similarity on perceived search difficulty. To our surprise, search time estimates were not at all sensitive to sizeable effects of semantic and visual target-distractor similarity on search time. This metacognitive blindness was specific to the interaction between target and distractor identities: subjects were sensitive to the fact that number distractors are more distracting overall -- an effect that we, based on our knowledge of scientific models of visual search, could not predict in advance. 
 
-This hypothetical model of people's intuitions about visual search is different from both Feature Integration Theory and Guided Search models in that it has no pre-attentive components. Items are randomly selected in no particular order, and the only thing that changes between easier and harder searches is the dwelling time on individual items, before abandoning them and selecting the next items to be scanned. Without a bottom-up activation of 'feature maps', or effortless processing of guiding signals, this model echos early theories of vision as a sense that operates more like touch than like hearing, by sending out sensors to explore the environment [for a review, see @dedes2005mechanism]. The immediate pop-out of color cannot take place in a model that requires subjects to voluntarily attend to individual items in order to perceive them.
+Importantly, this finding is consistent with search time estimates being causally dependent on perceptions of similarity, just not the kind in which a number is similar to a number more than to a letter, or a tilted character more similar to tilted than to upright characters. Instead, in this hypothetical similarity space number distractors in Exp. 6 were more similar to both 3s and Es than were letter distractors. More broadly, if search time estimates are driven by implicit judgments of target-distractor similarity, they seem to be selective to specific similarity metrics that are perceived as being relevant to search behaviour. As a result, even this metacognitively lean account of our findings requires subjects to hold nuanced beliefs about their visual search behaviour.  As we discuss above, internal models of visual search may alternatively produce search time estimates based on an approximate probabilistic model, and without any reference to target-distractor similarity. More work is needed to determine where internal models of visual search fall on the continuum between being simulation-based and being rule-based, noting that much of human knowledge may lie somewhere in between these two ends [@hegarty2004mechanical; @bass2021partial].
 
-In its item-based, basic form, our speculative dwelling-based model predicts that search slopes are a function of the similarity between individual distractors and the target. As such, mixing different types of distractors within the same search array should result in intermediate search slopes, a weighted average of the slopes obtained for individual distractor classes. For example, if participants in Exp. 1 believed that the search slope for color is 18 ms/item, and for shape it is 26 ms/item, the estimated search slope for shape-color conjunction search must, according to this model, be somewhere between 18 and 26 ms/item, and by no means higher than both. Instead, in both Experiments 1 and 2 conjunction search slopes were numerically higher than search slopes for their constituent features, indicating that internal models of visual search are sensitive to global properties of the display, and not only to properties of individual objects. One mechanism by which subjects may believe that global properties of the search array affect search time is via sequential interactions, such that processing an item is faster after the processing of similar, or identical, distractors. More work is needed to directly test this idea, and to test whether this proposed model captures subjects' intuitions about visual search more generally. 
+<!-- In this last section, we speculate about one possible specification of internal models of visual search that can account for these patterns. Importantly, the following is not meant to account for visual search behaviour, but for people's intuitions about visual search. -->
 
-Finally, it remains an open question whether people’s internal models of visual search are represented as an approximate probabilistic model or alternatively as a list of rules. For example, an alternative description of the above model^[proposed by signed Reviewer Jeremy Wolfe] consists of the following three rules: people believe that searches are harder when 1) there are many distractors, 2) the distractors are similar to the target, and 3) the distractors are different from each other. A list of rules may be easier for subjects to represent than a probabilistic model, but this comes at the expense of being less flexible in predicting search times in unfamiliar settings. More work is needed to determine subjects' ability to mentally simulate their own attention and the role of such simulation in predicting visual search behaviour, noting that simulation- and rule-based accounts are not mutually exclusive [@hegarty2004mechanical; @bass2021partial]. 
+<!-- According to this speculative model, subjects represent visual search as a serial search among items, where the dwelling time on each item before moving to the next one is a function of the perceived similarity between the distractor set and the target. As a result, set size will always have an effect on search time (that is, all searches are serial), but the effect of set size will be modulated by the similarity to the target, with steeper set size effects for more similar distractors. This model accounts for the set-size effect and its over-generalization to color search, for the ability to represent a graded notion of search efficiency, and, when considering that similarity is not always symmetric (such that the similarity between items A and B may be higher than the similarity between B and A), it also accounts for the sensitivity of estimates to the assignment of stimuli to target and distractor roles. -->
+
+<!-- In its item-based, basic form, our speculative dwelling-based model predicts that search slopes are a function of the similarity between individual distractors and the target. As such, mixing different types of distractors within the same search array should result in intermediate search slopes, a weighted average of the slopes obtained for individual distractor classes. For example, if participants in Exp. 1 believed that the search slope for color is 18 ms/item, and for shape it is 26 ms/item, the estimated search slope for shape-color conjunction search must, according to this model, be somewhere between 18 and 26 ms/item, and by no means higher than both. Instead, in both Experiments 1 and 2 conjunction search slopes were numerically higher than search slopes for their constituent features, indicating that internal models of visual search are sensitive to global properties of the display, and not only to properties of individual objects. One mechanism by which subjects may believe that global properties of the search array affect search time is via sequential interactions, such that processing an item is faster after the processing of similar, or identical, distractors. More work is needed to directly test this idea, and to test whether this proposed model captures subjects' intuitions about visual search more generally.  -->
+
+<!-- Finally, it remains an open question whether people’s internal models of visual search are represented as an approximate probabilistic model or alternatively as a list of rules. For example, an alternative description of the above model^[proposed by signed Reviewer Jeremy Wolfe] consists of the following three rules: people believe that searches are harder when 1) there are many distractors, 2) the distractors are similar to the target, and 3) the distractors are different from each other. A list of rules may be easier for subjects to represent than a probabilistic model, but this comes at the expense of being less flexible in predicting search times in unfamiliar settings. More work is needed to determine subjects' ability to mentally simulate their own attention and the role of such simulation in predicting visual search behaviour, noting that simulation- and rule-based accounts are not mutually exclusive [@hegarty2004mechanical; @bass2021partial].  -->
 
 ### Conclusion
 
-Together, our results reveal an alignment between prospective search time estimates and search times. Specifically, we find that search difficulty is represented along a gradient in a person-specific manner, but is subject to persistent limitations. Most notably, we find that subjects have no metacognitive access to pre-attentive stages of visual search. Our findings place a lower bound on the richness and complexity of subjects’ internal model of visual search and attention more generally, opening a promising avenue for studying humans’ intuitive understanding of their own mental processes.
+Across six experiments, we observed the following patterns in prospective search time estimates: First, estimates correlated with search times (Exp. 1-6). Second, estimates reflected knowledge of the set-size effect (Exp. 1, 2, 5 and 6), and were biased to assume a set-size effect even in searches that are in fact parallel (Exp. 1, 2). Third, estimates were sensitive to the relative efficiency of different searches (Exp. 1-6), even for complex, unfamiliar stimuli (Exp. 3, 4). Fourth, estimates were sensitive to the assignment of stimuli to target and distractor roles (Exp. 4, 5), but did not show reliable search asymmetries for basic visual features (Exp. 5). Finally, estimates were not sensitive to direct manipulation of target-distractor similarity along visual and semantic dimensions (Exp. 6). 
+
+Together, our results reveal that search difficulty is represented along a gradient in a person-specific manner, but that this representation is limited. Most notably, we find that subjects have no metacognitive access to pre-attentive stages of visual search. Our findings place a lower bound on the richness and complexity of subjects’ internal model of visual search and attention more generally, opening a promising avenue for studying humans’ intuitive understanding of their own mental processes.
 
 \newpage
 
