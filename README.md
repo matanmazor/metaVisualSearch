@@ -1,14 +1,13 @@
-# Prospective search time estimates reveal the strengths and limits of internal models of visual search
+# Prospective search time estimates reveal the strengths and limits of internal models of visual search | [*Journal of Experimental Psychology: General*, 2023](https://matanmazor.github.io/files/papers/mazor2023prospective.pdf)
 
 Matan Mazor 👁️👁️, Max Siegel 👁️👁️ & Josh Tenenbaum 👁️👁️
 
-In press, *Journal of Experimental Psychology: General*.
 
 ![Experimental design, Exp. 1 and 2](https://github.com/matanmazor/metaVisualSearch/blob/master/docs/figures/methods1.png)
 
 ## Paper and analysis Scripts
 
-[The full paper](https://github.com/matanmazor/metaVisualSearch/blob/master/docs/MVS_paper.pdf) can be fully reproduced from experimental data by knitting [The Rmarkdown file](https://github.com/matanmazor/metaVisualSearch/blob/master/docs/MVS.rmd).
+[The full paper](https://matanmazor.github.io/files/papers/mazor2023prospective.pdf) can be fully reproduced from experimental data by knitting [The Rmarkdown file](https://github.com/matanmazor/metaVisualSearch/blob/master/docs/MVS.rmd).
 
 ## Experiment demos
 
